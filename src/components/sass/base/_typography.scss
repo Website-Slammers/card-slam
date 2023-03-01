@@ -1,0 +1,23 @@
+.heading-primary {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+
+  &--main {
+    font-size: 10rem;
+    font-family: $font-rale, sans-serif;
+    font-weight: 900;
+    color: white;
+    display: inline-block;
+    cursor: default;
+
+  }
+
+  &--sub {
+    font-family: $font-bench, sans-serif;
+    font-size: 5rem;
+    color: white;
+    display: block;
+    margin-left: 2rem;
+  }
+}

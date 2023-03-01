@@ -1,0 +1,53 @@
+.btn {
+  text-decoration: none;
+
+  &:active,
+  &:visited {
+    color: white;
+  }
+
+
+  &--home {
+    border: none;
+    padding: 12px 40px;
+    background-color: grey;
+    color: white;
+    font-family: 'BenchNine', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    margin-left: 3rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: -5px;
+      left: -5px;
+      border-top: 2px solid grey;
+      border-left: 2px solid grey;
+      transition: all 0.25s;
+    }
+    
+    &:hover:before,
+    &:hover:after {
+      height: 100%;
+      width: 100%;
+    }
+    
+    &:after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      bottom: -5px;
+      right: -5px;
+      border-bottom: 2px solid grey;
+      border-right: 2px solid grey;
+      transition: all 0.25s;
+    }
+
+  }
+}

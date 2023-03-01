@@ -1,10 +1,15 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
 import './css/style.css'
 
 function App() {
   return (
-    <div>App</div>
+    <div>
+
+      <Outlet context />
+
+    </div>
   )
 }
 
