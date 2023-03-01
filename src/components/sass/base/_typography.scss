@@ -2,6 +2,7 @@
   font-family: sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
+  margin-left: 2rem;
 
   &--main {
     font-size: 10rem;
@@ -11,6 +12,14 @@
     display: inline-block;
     cursor: default;
 
+    // @media only screen and (max-width: $bp-large) {
+    //   top: 10%;
+    // }
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 6rem;
+    }
+
   }
 
   &--sub {
@@ -18,6 +27,11 @@
     font-size: 5rem;
     color: white;
     display: block;
-    margin-left: 2rem;
+    margin-left: 1rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 4rem;
+      margin-left: 0;
+    }
   }
 }
