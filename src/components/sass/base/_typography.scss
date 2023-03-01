@@ -12,10 +12,6 @@
     display: inline-block;
     cursor: default;
 
-    // @media only screen and (max-width: $bp-large) {
-    //   top: 10%;
-    // }
-
     @media only screen and (max-width: $bp-medium) {
       font-size: 6rem;
     }
