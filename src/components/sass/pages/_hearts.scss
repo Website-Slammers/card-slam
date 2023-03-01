@@ -1,3 +1,35 @@
 .hearts {
   font-size: 2rem;
+
+  &__hand {
+    // create flexbox
+
+    &--1 {
+      //rotate box  
+    }
+
+    &--2 {
+      //rotate box  
+    }
+
+    &--3 {
+      //rotate box  
+    }
+
+    &--4 {
+      //rotate box  
+    }
+  }
+
+  &__card {
+    // define height, width
+    
+    &--front {
+
+    }
+
+    &--back {
+
+    }
+  }
 }
