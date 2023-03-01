@@ -1,8 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=BenchNine&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 *,
 *::before,
 *::after {
   box-sizing: border-box; }
 
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  /* Hide scrollbar for Chrome, Safari and Opera */ }
+  html::-webkit-scrollbar {
+    display: none; }
+
 body {
-  background-color: #1e1e1e;
+  background-color: black;
   color: green; }
+
+.heading-primary {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem; }
+  .heading-primary--main {
+    font-size: 10rem;
+    font-family: "Raleway", sans-serif, sans-serif;
+    font-weight: 900;
+    color: white;
+    display: inline-block;
+    cursor: default; }
+  .heading-primary--sub {
+    font-family: "BenchNine", sans-serif, sans-serif;
+    font-size: 5rem;
+    color: white;
+    display: block;
+    margin-left: 2rem; }
+
+.btn {
+  text-decoration: none; }
+  .btn:active, .btn:visited {
+    color: white; }
+  .btn--home {
+    border: none;
+    padding: 12px 40px;
+    background-color: grey;
+    color: white;
+    font-family: 'BenchNine', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    margin-left: 3rem; }
+    .btn--home:before {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: -5px;
+      left: -5px;
+      border-top: 2px solid grey;
+      border-left: 2px solid grey;
+      transition: all 0.25s; }
+    .btn--home:hover:before, .btn--home:hover:after {
+      height: 100%;
+      width: 100%; }
+    .btn--home:after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      bottom: -5px;
+      right: -5px;
+      border-bottom: 2px solid grey;
+      border-right: 2px solid grey;
+      transition: all 0.25s; }
+
+.home {
+  height: 100vh;
+  background-image: url("https://i.imgur.com/A9Q8fdi.png");
+  background-size: cover;
+  background-position: center;
+  position: relative; }

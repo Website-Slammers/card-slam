@@ -6,6 +6,11 @@ import Home from './components/Home'
 import App from './components/App'
 import ErrorPage from './components/ErrorPage';
 
+import Play from './components/Play'
+
+import Hearts from './components/games/Hearts'
+import Spades from './components/games/Spades'
+
 // import Play from './components/Play'
 
 const appElement = document.getElementById('app');
@@ -19,6 +24,18 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home />
+            },
+            {
+                path: "play",
+                element: <Play />
+            },
+            {
+                path: "play/hearts",
+                element: <Hearts />
+            },
+            {
+                path: "play/spades",
+                element: <Spades />
             }
         ]
     }
