@@ -32,3 +32,32 @@
     }
   }
 }
+
+.heading-secondary {
+
+  & a {
+    text-decoration: none;
+  }
+  
+
+  &--main {
+    display: block;
+    font-size: 10rem;
+    line-height: 10rem;
+    font-family: $font-header, sans-serif;
+    font-weight: 40;
+    color: white;
+  }
+
+  &--sub {
+    display: block;
+    font-family: $font-bench, sans-serif;
+    font-weight: 44;
+    font-size: 5rem;
+    line-height: 5rem;
+    letter-spacing: 1rem;
+    text-align: center;
+    color: darken(white, 25);
+
+  }
+}

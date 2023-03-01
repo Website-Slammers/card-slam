@@ -1,19 +1,21 @@
 .play {
-  background: darkgreen;
+  background: darken(darkgreen, 5);
   height: 100svh;
   width: 100vw;
+  overflow: scroll;
 
   &__main {
     display: flex;
-    margin: 0 3rem;
+    // margin: 0 3rem;
     padding: 5rem;
-    border: 2px solid white;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   &__card {
     display: block;
     width: 20rem;
+    flex-grow: 1;
     height: 20rem;
     border-radius: 3px;
     display: flex;
@@ -28,7 +30,7 @@
     transform-origin: center;
 
     &:hover {
-      transform: scale(.98);
+      transform: scale(.9);
       box-shadow: 0 .5rem 1rem black;
     }
 
