@@ -6,14 +6,13 @@ const cardDeck = [
     'AS','2S','3S','4S','5S','6S','7S','8S','9S','1S','JS','QS','KS',
     'AD','2D','3D','4D','5D','6D','7D','8D','9D','1D','JD','QD','KD',
     'AH','2H','3H','4H','5H','6H','7H','8H','9H','1H','JH','QH','KH'
-]
+    ]
 
-let pullDeck = JSON.parse(JSON.stringify(cardDeck))
+export function pullAHand(handSize, players, gameType, jokers = false){
+    
+    let pullDeck = JSON.parse(JSON.stringify(cardDeck))
 
-console.log(pullDeck);
-
-function pullAHand(pullDeck, handSize, players, jokers = false){
-    pullDeck = JSON.parse(JSON.stringify(cardDeck))
+    pullDeck = shuffle(pullDeck, null,gameType)
     let playerHands = {}
     for(let i = 1;i<players+1; i++){
         if(!playerHands['player'+i]) playerHands['player'+i] = []
@@ -27,9 +26,17 @@ function pullAHand(pullDeck, handSize, players, jokers = false){
     return playerHands
 }
 
-console.log(pullAHand(pullDeck, 13, 4))
-console.log(pullAHand(pullDeck, 7, 4))
+// console.log(pullAHand(pullDeck, 13, 4, 'hearts'))
+// console.log(pullAHand(pullDeck, 7, 4, 'goFish'))
 
-function shuffle(pullDeck, discard){
-    pullDeck = [...discard]
+function shuffle(pullDeck, discard, gameType){
+    
+    if(gameType == 'hearts'){
+        pullDeck = JSON.parse(JSON.stringify(cardDeck))
+    }
+    else{
+        //pullDeck = ...discard 
+        pullDeck = JSON.parse(JSON.stringify(cardDeck))
+    }
+    return pullDeck
 }
