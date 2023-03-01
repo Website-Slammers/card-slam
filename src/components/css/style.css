@@ -51,6 +51,27 @@ body {
         font-size: 4rem;
         margin-left: 0; } }
 
+.heading-secondary a {
+  text-decoration: none; }
+
+.heading-secondary--main {
+  display: block;
+  font-size: 10rem;
+  line-height: 10rem;
+  font-family: "Anton", sans-serif, sans-serif;
+  font-weight: 40;
+  color: white; }
+
+.heading-secondary--sub {
+  display: block;
+  font-family: "BenchNine", sans-serif, sans-serif;
+  font-weight: 44;
+  font-size: 5rem;
+  line-height: 5rem;
+  letter-spacing: 1rem;
+  text-align: center;
+  color: #bfbfbf; }
+
 .btn {
   text-decoration: none; }
   .btn:active, .btn:visited {
@@ -93,6 +114,15 @@ body {
       border-right: 2px solid red;
       transition: all 0.25s; }
 
+.header {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5rem;
+  background: black;
+  border-bottom: 2px solid white;
+  box-shadow: 0 1rem 2rem black; }
+
 .home {
   height: 100vh;
   position: relative; }
@@ -123,18 +153,19 @@ body {
         height: 75svh; } }
 
 .play {
-  background: darkgreen;
+  background: #004b00;
   height: 100svh;
-  width: 100vw; }
+  width: 100vw;
+  overflow: scroll; }
   .play__main {
     display: flex;
-    margin: 0 3rem;
     padding: 5rem;
-    border: 2px solid white;
-    gap: 2rem; }
+    flex-wrap: wrap;
+    gap: 1rem; }
   .play__card {
     display: block;
     width: 20rem;
+    flex-grow: 1;
     height: 20rem;
     border-radius: 3px;
     display: flex;
@@ -148,7 +179,7 @@ body {
     transition: all .5s;
     transform-origin: center; }
     .play__card:hover {
-      transform: scale(0.98);
+      transform: scale(0.9);
       box-shadow: 0 .5rem 1rem black; }
     .play__card span {
       font-size: 3rem;
