@@ -106,7 +106,13 @@ body {
     z-index: -1; }
     @media only screen and (max-width: 68.75em) {
       .home__bg {
-        top: 10%; } }
+        top: 10%;
+        height: 90vh; } }
     @media only screen and (max-width: 56.25em) {
       .home__bg {
-        top: 25%; } }
+        top: 25%;
+        height: 75vh; } }
+    @media only screen and (max-width: 31.25em) {
+      .home__bg {
+        top: 25%;
+        height: 75svh; } }
