@@ -36,45 +36,45 @@ function Hearts() {
   return (
     <div className="hearts">
       Hearts
-      <div className="hand1">Player 1</div>
+      <div onClick={pickACard} className="hearts__hand hearts__hand--1">Player 1</div>
       {
         !hands || !hand1 ?<div>Hand Pull failed</div>:
         hand1.map((card, index)=>{
           return(
-            <div className='hand1__card'>
+            <div className='hearts__card'>
               {card}
             </div>
           )
         })
       }
-        <div className="hand2">Player 2</div>
+        <div className="hearts__hand hearts__hand--2">Player 2</div>
           {
             !hands || !hand2?<div>Hand Pull failed</div>:
             hand2.map((card, index)=>{
               return(
-                <div className='hand2__card'>
+                <div className='hearts__card'>
                   {card}
                 </div>
               )
             })
           }
-        <div className="hand3">Player 3</div>
+        <div className="hearts__hand hearts__hand--3">Player 3</div>
           {
             !hands || !hand3?<div>Hand Pull failed</div>:
             hand3.map((card, index)=>{
               return(
-                <div className='hand3__card'>
+                <div className='hearts__card'>
                   {card}
                 </div>
               )
             })
           }
-        <div className="hand4">Player 4</div>
+        <div className="hearts__hand hearts__hand--4">Player 4</div>
           {
             !hands || !hand4?<div>Hand Pull failed</div>:
             hand4.map((card, index)=>{
               return(
-                <div className='hand4__card'>
+                <div className='hearts__card'>
                   {card}
                 </div>
               )
