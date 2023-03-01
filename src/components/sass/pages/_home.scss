@@ -20,10 +20,17 @@
 
     @media only screen and (max-width: $bp-large) {
       top: 10%;
+      height: 90vh;
     }
 
     @media only screen and (max-width: $bp-medium) {
       top: 25%;
+      height: 75vh;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      top: 25%;
+      height: 75svh;
     }
   }
 
