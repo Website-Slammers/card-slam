@@ -6,8 +6,8 @@
 
   &--main {
     font-size: 10rem;
-    font-family: $font-rale, sans-serif;
-    font-weight: 900;
+    font-family: $font-header, sans-serif;
+    font-weight: 40;
     color: white;
     display: inline-block;
     cursor: default;
@@ -25,9 +25,10 @@
   &--sub {
     font-family: $font-bench, sans-serif;
     font-size: 5rem;
-    color: white;
+    color: darken(white, 25);
     display: block;
-    margin-left: 1rem;
+    margin-top: -2rem;
+    margin-left: .5rem;
 
     @media only screen and (max-width: $bp-medium) {
       font-size: 4rem;
