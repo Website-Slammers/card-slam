@@ -18,13 +18,16 @@ html {
     display: none; }
 
 body {
+  margin: 0;
+  padding: 0;
   background-color: black;
   color: green; }
 
 .heading-primary {
   font-family: sans-serif;
   font-weight: 400;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  margin-left: 2rem; }
   .heading-primary--main {
     font-size: 10rem;
     font-family: "Raleway", sans-serif, sans-serif;
@@ -32,12 +35,19 @@ body {
     color: white;
     display: inline-block;
     cursor: default; }
+    @media only screen and (max-width: 56.25em) {
+      .heading-primary--main {
+        font-size: 6rem; } }
   .heading-primary--sub {
     font-family: "BenchNine", sans-serif, sans-serif;
     font-size: 5rem;
     color: white;
     display: block;
-    margin-left: 2rem; }
+    margin-left: 1rem; }
+    @media only screen and (max-width: 56.25em) {
+      .heading-primary--sub {
+        font-size: 4rem;
+        margin-left: 0; } }
 
 .btn {
   text-decoration: none; }
@@ -80,7 +90,29 @@ body {
 
 .home {
   height: 100vh;
-  background-image: url("https://i.imgur.com/A9Q8fdi.png");
-  background-size: cover;
-  background-position: center;
   position: relative; }
+  @media only screen and (max-width: 68.75em) {
+    .home {
+      height: 100svh; } }
+  .home__bg {
+    background-image: url("https://i.imgur.com/A9Q8fdi.png");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1; }
+    @media only screen and (max-width: 68.75em) {
+      .home__bg {
+        top: 10%;
+        height: 90vh; } }
+    @media only screen and (max-width: 56.25em) {
+      .home__bg {
+        top: 25%;
+        height: 75vh; } }
+    @media only screen and (max-width: 31.25em) {
+      .home__bg {
+        top: 25%;
+        height: 75svh; } }
