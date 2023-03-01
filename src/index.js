@@ -8,7 +8,7 @@ import ErrorPage from './components/ErrorPage';
 
 import Play from './components/Play'
 
-import Hearts from './components/games/Hearts'
+import Hearts from './components/games/deck/hearts/Hearts'
 import Spades from './components/games/Spades'
 
 // import Play from './components/Play'
