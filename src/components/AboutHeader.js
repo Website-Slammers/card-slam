@@ -9,7 +9,7 @@ function Header() {
         <h2 className="heading-secondary">
           <Link to='/play'>
             <span className="heading-secondary--main">
-              About <span>Webslam</span>
+              About
             </span>
           </Link>
         </h2>

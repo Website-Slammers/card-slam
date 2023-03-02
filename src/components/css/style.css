@@ -127,7 +127,7 @@ body {
   height: 14rem;
   border-radius: 3px;
   background-color: white;
-  margin: 2rem;
+  margin: 1rem;
   position: relative;
   z-index: 1; }
   .playing-card--s {
@@ -397,7 +397,9 @@ body {
 .about__main {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  background: #004b00;
+  padding: 5rem; }
 
 .home {
   height: 100vh;
@@ -446,17 +448,17 @@ body {
     display: flex;
     padding: 5rem;
     flex-wrap: wrap;
-    gap: 1rem; }
+    gap: 1.5rem; }
   .play__card {
     display: block;
     width: 20rem;
     flex-grow: 1;
-    max-width: 30rem;
+    max-width: 25rem;
     height: 20rem;
     border-radius: 3px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     color: white;
     text-decoration: none;
     font-family: "BenchNine", sans-serif;
@@ -465,9 +467,10 @@ body {
     transition: all .5s;
     transform-origin: center;
     position: relative;
-    z-index: 10; }
+    z-index: 10;
+    border: 0px solid white; }
     .play__card:hover {
-      transform: scale(0.95);
+      transform: scale(0.98);
       box-shadow: 0 .5rem 1rem black; }
     .play__card span {
       font-size: 3.5rem;
@@ -478,13 +481,13 @@ body {
       font-weight: 500;
       text-transform: uppercase;
       text-align: center;
-      background: linear-gradient(to right top, rgba(0, 0, 0, 0.8), rgba(128, 128, 128, 0.8)); }
+      background: linear-gradient(to right top, black, gray); }
     .play__card--hearts {
-      background-image: url("https://i.imgur.com/lAbIZVD.png");
+      background-image: url("https://i.imgur.com/LOn53Ye.png");
       background-size: cover;
       background-position: right; }
     .play__card--spades {
-      background-image: url("https://i.imgur.com/FY2GBbu.png");
+      background-image: url("https://i.imgur.com/pVgXoFT.png");
       background-size: cover;
       background-position: right; }
     .play__card--sudoku {

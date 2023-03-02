@@ -24,33 +24,6 @@ function Play() {
 
         <a className="play__card play__card--puppy-clicker" target="_blank" href="https://puppy-clicker.netlify.app"><span>Puppy Clicker</span></a>
 
-        <Link className="play__card play__card--hearts" to="/play/Hearts"><span>Hearts</span></Link>
-
-        <Link className="play__card play__card--spades" to="/play/Spades"><span>Spades</span></Link>
-
-        <Link className="play__card play__card--hearts" to="/play/Hearts"><span>Hearts</span></Link>
-
-        <Link className="play__card play__card--spades" to="/play/Spades"><span>Spades</span></Link>
-
-        <Link className="play__card play__card--hearts" to="/play/Hearts"><span>Hearts</span></Link>
-
-        <Link className="play__card play__card--spades" to="/play/Spades"><span>Spades</span></Link>
-
-        <Link className="play__card play__card--hearts" to="/play/Hearts"><span>Hearts</span></Link>
-
-        <Link className="play__card play__card--spades" to="/play/Spades"><span>Spades</span></Link>
-
-        <Link className="play__card play__card--hearts" to="/play/Hearts"><span>Hearts</span></Link>
-
-        <Link className="play__card play__card--spades" to="/play/Spades"><span>Spades</span></Link>
-
-        <Link className="play__card play__card--hearts" to="/play/Hearts"><span>Hearts</span></Link>
-
-        <Link className="play__card play__card--spades" to="/play/Spades"><span>Spades</span></Link>
-
-        <Link className="play__card play__card--hearts" to="/play/Hearts"><span>Hearts</span></Link>
-
-        <Link className="play__card play__card--spades" to="/play/Spades"><span>Spades</span></Link>
 
       </div>
 
