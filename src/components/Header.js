@@ -7,19 +7,22 @@ function Header() {
 
       <div className="header__textbox">
         <h2 className="heading-secondary">
-          <Link to="/">
+
             <span className="heading-secondary--main">
               Card Games
             </span>
             <span className="heading-secondary--sub">
               by Web Slammers
             </span>
-          </Link>
+
         </h2>
       </div>
 
       <div className="header__nav">
-        options
+        <div className="header__nav-item">
+          about</div>
+        <div className="header__nav-item">
+          options</div>
       </div>
 
     </div>
