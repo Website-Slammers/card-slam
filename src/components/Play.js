@@ -35,7 +35,7 @@ function Play() {
 
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
       
     </div>
   )
