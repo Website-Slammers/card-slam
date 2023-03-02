@@ -19,7 +19,7 @@ function Header() {
       </div>
 
       <div className="header__nav">
-        NAVIGATION
+        options
       </div>
 
     </div>

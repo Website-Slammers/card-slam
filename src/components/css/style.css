@@ -127,6 +127,22 @@ body {
   background: black;
   border-bottom: 2px solid white;
   box-shadow: 0 1rem 2rem black; }
+  .header__nav {
+    font-family: "Oswald", sans-serif;
+    color: white;
+    text-transform: lowercase;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s; }
+    .header__nav-item {
+      transition: all .3s;
+      cursor: pointer; }
+      .header__nav-item:not(:last-child) {
+        margin-right: 1.5rem; }
+      .header__nav-item:hover {
+        color: #bababa; }
 
 .hearts {
   font-size: 1.6rem;

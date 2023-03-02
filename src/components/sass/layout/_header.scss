@@ -12,7 +12,27 @@
   }
 
   &__nav {
+    font-family: $font-oswald;
+    color: white;
+    text-transform: lowercase;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
 
+    &-item{
+      transition: all .3s;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+
+      &:hover {
+        color: darken(lightgrey, 10);
+      }
+    }
   }
 
 }

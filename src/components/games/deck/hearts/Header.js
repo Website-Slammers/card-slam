@@ -16,7 +16,14 @@ function Header() {
       </div>
 
       <div className="header__nav">
-        NAVIGATION
+        <div className="header__nav-item">
+          new game</div>
+        <div className="header__nav-item">
+          rules</div>
+        <div className="header__nav-item">
+          options</div>
+        <div className="header__nav-item">
+          multiplayer</div>
       </div>
 
     </div>
