@@ -9,6 +9,11 @@ function About() {
 
     <AboutHeader />
 
+    <div className="about__main">
+
+      <div className="playing-card playing-card--1s">&nbsp;</div>
+    </div>
+
     </div>
   )
 }
