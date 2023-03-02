@@ -134,7 +134,8 @@ body {
     font-size: 3rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
+    margin-bottom: 1.5rem;
     transition: all .5s; }
     .header__nav-item {
       transition: all .3s;
