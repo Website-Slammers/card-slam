@@ -19,9 +19,11 @@
   }
 
   &--sub {
-    font-family: $font-bench, sans-serif;
+    font-family: $font-oswald, sans-serif;
     font-size: 5rem;
     color: darken(white, 25);
+    color: red;
+    font-weight: 600;
     display: block;
     margin-top: -2rem;
     margin-left: .5rem;
@@ -42,22 +44,25 @@
 
   &--main {
     display: block;
-    font-size: 10rem;
-    line-height: 10rem;
+    font-size: 8rem;
+    line-height: 8rem;
     font-family: $font-header, sans-serif;
     font-weight: 40;
     color: white;
+
   }
 
   &--sub {
     display: block;
-    font-family: $font-bench, sans-serif;
-    font-weight: 44;
-    font-size: 5rem;
-    line-height: 5rem;
-    letter-spacing: 1rem;
+    display: none;
+    font-family: $font-oswald, sans-serif;
+    font-weight: 600;
+    font-size: 4rem;
+    line-height: 4rem;
+    letter-spacing: .25rem;
     text-align: center;
     color: darken(white, 25);
+    color: red;
 
   }
 }

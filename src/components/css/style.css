@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=BenchNine&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 *,
 *::before,
 *::after {
@@ -40,9 +41,11 @@ body {
       .heading-primary--main {
         font-size: 6rem; } }
   .heading-primary--sub {
-    font-family: "BenchNine", sans-serif, sans-serif;
+    font-family: "Oswald", sans-serif, sans-serif;
     font-size: 5rem;
     color: #bfbfbf;
+    color: red;
+    font-weight: 600;
     display: block;
     margin-top: -2rem;
     margin-left: .5rem; }
@@ -56,21 +59,23 @@ body {
 
 .heading-secondary--main {
   display: block;
-  font-size: 10rem;
-  line-height: 10rem;
+  font-size: 8rem;
+  line-height: 8rem;
   font-family: "Anton", sans-serif, sans-serif;
   font-weight: 40;
   color: white; }
 
 .heading-secondary--sub {
   display: block;
-  font-family: "BenchNine", sans-serif, sans-serif;
-  font-weight: 44;
-  font-size: 5rem;
-  line-height: 5rem;
-  letter-spacing: 1rem;
+  display: none;
+  font-family: "Oswald", sans-serif, sans-serif;
+  font-weight: 600;
+  font-size: 4rem;
+  line-height: 4rem;
+  letter-spacing: .25rem;
   text-align: center;
-  color: #bfbfbf; }
+  color: #bfbfbf;
+  color: red; }
 
 .btn {
   text-decoration: none; }
@@ -122,6 +127,9 @@ body {
   background: black;
   border-bottom: 2px solid white;
   box-shadow: 0 1rem 2rem black; }
+
+.hearts {
+  font-size: 2rem; }
 
 .home {
   height: 100vh;
