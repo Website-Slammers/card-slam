@@ -201,8 +201,10 @@ body {
       background-position: right; }
 
 .hearts {
-  font-size: 2rem;
-  color: #f1fdac; }
+  font-size: 1.9rem;
+  color: #f1fdac;
+  display: flex;
+  justify-content: center; }
   .hearts__table {
     display: flex;
     position: relative;
@@ -211,7 +213,9 @@ body {
     width: 50rem;
     margin: 2rem; }
   .hearts span {
-    display: block; }
+    font-size: 4rem;
+    display: block;
+    color: #e07233; }
   .hearts__hand {
     display: flex;
     flex-direction: row;
@@ -235,6 +239,7 @@ body {
       right: -35%;
       transform: rotate(270deg); }
   .hearts__card {
-    border: 1px solid #550c0c;
+    border: 2px dotted #7a2222;
     height: 4rem;
-    width: 4rem; }
+    width: 4rem;
+    box-sizing: border-box; }
