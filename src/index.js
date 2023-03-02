@@ -10,7 +10,7 @@ import About from './components/About'
 import Play from './components/Play'
 
 import Hearts from './components/games/deck/hearts/Hearts'
-import Spades from './components/games/Spades'
+import Spades from './components/games/deck/spades/Spades'
 
 // import Play from './components/Play'
 
