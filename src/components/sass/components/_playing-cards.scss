@@ -1,6 +1,281 @@
 .playing-card {
-
-  width: 2rem;
-  height: 2rem;
+  width: 9rem;
+  height: 14rem;
+  border-radius: 3px;
   background-color: white;
+  margin: 2rem;
+  position: relative;
+  z-index: 1;
+
+  // Spades
+  &--s {
+    color: black;
+    background-color: white;
+    position: relative;
+
+    &:before {
+      content: (attr(data-text) ' \2660');
+      font-size: 2rem;
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem;
+      // border: 1px solid black;
+    }
+
+    &:after {
+      content: (attr(data-text) ' \2660');
+      font-size: 2rem;
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      transform: rotate(180deg);
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem;
+      // border: 1px solid black;
+    }
+  }
+
+  // Hearts
+  &--h {
+    color: darken(red, 10);
+    background-color: white;
+    position: relative;
+
+    &:before {
+      content: (attr(data-text) ' \2665');
+      font-size: 2rem;
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem;
+      // border: 1px solid black;
+    }
+
+    &:after {
+      content: (attr(data-text) ' \2665');
+      font-size: 2rem;
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      transform: rotate(180deg);
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem;
+      // border: 1px solid black;
+    }
+  }
+
+  // Clubs
+  &--c {
+    color: black;
+    background-color: white;
+    position: relative;
+
+    &:before {
+      content: (attr(data-text) ' \2663');
+      font-size: 2rem;
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem;
+      // border: 1px solid black;
+    }
+
+    &:after {
+      content: (attr(data-text) ' \2663');
+      font-size: 2rem;
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      transform: rotate(180deg);
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem;
+      // border: 1px solid black;
+    }
+  }
+
+  // Diamonds
+  &--d {
+    color: darken(red, 10);
+    background-color: white;
+    position: relative;
+
+    &:before {
+      content: (attr(data-text) ' \2666');
+      font-size: 2rem;
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem;
+      // border: 1px solid black;
+    }
+
+    &:after {
+      content: (attr(data-text) ' \2666');
+      font-size: 2rem;
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      transform: rotate(180deg);
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem;
+      // border: 1px solid black;
+    }
+  }
+
+  &--1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    flex: 0 0 1;
+  }
+
+
+
+  &--2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 3rem;
+    text-align: center;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+  }
+
+  &--3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  &--4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  &--5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1.5rem;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  &--6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1.5rem;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  &--7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  &--8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  &--9 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  &--10 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding: 2rem;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  &--J {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    flex: 0 0 1;
+  }
+
+  &--Q {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    flex: 0 0 1;
+  }
+
+  &--K {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    flex: 0 0 1;
+  }
 }
+
