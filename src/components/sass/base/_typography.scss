@@ -70,3 +70,21 @@
 
   }
 }
+
+.heading-tertiary {
+  display: block;
+  width: 25rem;
+  font-size: 3.5rem;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 0;
+  color: white;
+  text-align: center;
+  font-family: $font-oswald;
+  box-shadow: 0 1rem 2rem black;
+  cursor: default;
+
+  border-radius: 3px;
+
+  background: linear-gradient(to right top,rgba(black,1),rgba(grey,1));
+}

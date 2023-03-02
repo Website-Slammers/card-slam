@@ -1,0 +1,85 @@
+.footer {
+  background-image: radial-gradient(circle, grey, black);
+  background: black;
+   
+  padding: 3rem 0;
+  margin-top: 4rem;
+  color: white;
+  border-radius: 3px;
+  margin-top: -1rem;
+  font-size: 16px;
+
+
+  // Remove Highlight Select
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none;
+
+          
+
+  &__logo-box {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: $font-oswald;
+    font-size: 2rem;
+    color: white;
+
+
+    &--author {
+      font-family: sans-serif;
+    }
+  }
+
+  &__flexbox {
+    display: flex;
+
+    
+  }
+
+  &__flexbox-item {
+    display: block;
+    flex: 0 0 50%;
+    padding: 2rem;
+  }
+
+  &__navigation {
+    border-top: 1px solid white;
+    padding-top: 1rem;
+    display: block;
+    text-align: center;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+
+
+  &__link {
+    &:link,
+    &:visited {
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      text-transform: uppercase;
+      transition: all .2s;
+    }
+
+    &:hover,
+    &:active {
+      color: white;
+      box-shadow: 0 1rem 2rem rgba(black, .4);
+      transform: scale(1.1)
+    }
+  }
+
+  &__copyright {
+    border-top: 1px solid white;
+    padding-top: 1rem;
+    text-align: justify;
+  }
+}
