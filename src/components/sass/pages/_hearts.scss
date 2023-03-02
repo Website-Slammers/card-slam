@@ -18,8 +18,14 @@
 
   &__player{
     font-size:4rem;
+    line-height: 4rem;
+    text-align: center;
+    height: 4rem;
+    width: 4rem;
     display:block;
     color:rgb(224, 114, 51);
+    border: 1px solid rgb(224, 114, 51);
+    border-radius: 50%;
   }
 
   &__hand {

@@ -180,8 +180,14 @@ body {
     margin: 2rem; }
   .hearts__player {
     font-size: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    height: 4rem;
+    width: 4rem;
     display: block;
-    color: #e07233; }
+    color: #e07233;
+    border: 1px solid #e07233;
+    border-radius: 50%; }
   .hearts__hand {
     display: flex;
     flex-direction: row;
@@ -371,8 +377,14 @@ body {
     margin: 2rem; }
   .hearts__player {
     font-size: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    height: 4rem;
+    width: 4rem;
     display: block;
-    color: #e07233; }
+    color: #e07233;
+    border: 1px solid #e07233;
+    border-radius: 50%; }
   .hearts__hand {
     display: flex;
     flex-direction: row;
