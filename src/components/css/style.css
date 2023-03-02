@@ -534,7 +534,8 @@ body {
     display: flex;
     padding: 5rem;
     flex-wrap: wrap;
-    gap: 1.5rem; }
+    gap: 1.5rem;
+    justify-content: center; }
   .play__card {
     display: block;
     width: 20rem;
