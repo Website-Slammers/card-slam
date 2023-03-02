@@ -1,18 +1,18 @@
 .hearts {
   font-size: 1.6rem;
-  color:rgb(241, 253, 172);
-  display:flex;
+  color: rgb(241, 253, 172);
+  display: flex;
   flex-direction: column;
 
   
   &__table {
     align-self: center;
-    display:flex;
-    position:relative;
-    border:2px solid pink;
-    height:50rem;
-    width:50rem;
-    margin:2rem;
+    display: flex;
+    position: relative;
+    border: 2px solid pink;
+    height: 60rem;
+    width: 60rem;
+    margin: 2rem;
   }
 
 
@@ -21,13 +21,14 @@
     display:block;
     color:rgb(224, 114, 51);
   }
+
   &__hand {
-    display:flex;
-    flex-direction:row;
+    display: flex;
+    flex-direction: row;
     background-color: rgb(88, 88, 88);
-    width:40rem;
-    height:5rem;
-    position:absolute;
+    width: 50rem;
+    height: 5rem;
+    position: absolute;
     
 
     &--1 {
@@ -54,12 +55,95 @@
     }
   }
 
+  &__cards {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__card {
-    border:2px dotted rgb(122, 34, 34);
-    height:4rem;
-    width:4rem;
+    border: 2px dotted rgb(122, 34, 34);
+    height: 4rem;
+    width: 4rem;
     box-sizing: border-box;
+    position: relative;
     // define height, width
+
+    &:not(:last-child) {
+      margin-right: -1.5rem;
+    }
+
+    &:nth-child(1) {
+      background-color: green;
+      z-index: 1;
+    }
+
+    &:nth-child(2) {
+      background-color: blue;
+      z-index: 2;
+    }
+
+    &:nth-child(3) {
+      background-color: green;
+      z-index: 2;
+    }
+
+    &:nth-child(4) {
+      background-color: blue;
+      z-index: 2;
+    }
+
+    &:nth-child(5) {
+      background-color: green;
+      z-index: 2;
+    }
+
+    &:nth-child(6) {
+      background-color: blue;
+      z-index: 2;
+    }
+
+    &:nth-child(7) {
+      background-color: green;
+      z-index: 2;
+    }
+
+    &:nth-child(8) {
+      background-color: blue;
+      z-index: 2;
+    }
+
+    &:nth-child(9) {
+      background-color: green;
+      z-index: 2;
+    }
+
+    &:nth-child(10) {
+      background-color: blue;
+      z-index: 2;
+    }
+
+    &:nth-child(11) {
+      background-color: green;
+      z-index: 2;
+    }
+
+    &:nth-child(12) {
+      background-color: blue;
+      z-index: 2;
+    }
+
+    &:nth-child(13) {
+      background-color: green;
+      z-index: 2;
+    }
+
+
     
     &--front {
 

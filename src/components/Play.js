@@ -52,22 +52,6 @@ function Play() {
 
         <Link className="play__card play__card--spades" to="/play/Spades"><span>Spades</span></Link>
 
-        <Link className="play__card play__card--hearts" to="/play/Hearts"><span>Hearts</span></Link>
-
-        <Link className="play__card play__card--spades" to="/play/Spades"><span>Spades</span></Link>
-
-        <Link className="play__card play__card--hearts" to="/play/Hearts"><span>Hearts</span></Link>
-
-        <Link className="play__card play__card--spades" to="/play/Spades"><span>Spades</span></Link>
-
-        <Link className="play__card play__card--hearts" to="/play/Hearts"><span>Hearts</span></Link>
-
-        <Link className="play__card play__card--spades" to="/play/Spades"><span>Spades</span></Link>
-
-        <Link className="play__card play__card--hearts" to="/play/Hearts"><span>Hearts</span></Link>
-
-        <Link className="play__card play__card--spades" to="/play/Spades"><span>Spades</span></Link>
-
       </div>
 
       <Footer />
