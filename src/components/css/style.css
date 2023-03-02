@@ -121,6 +121,11 @@ body {
       border-right: 2px solid red;
       transition: all 0.25s; }
 
+.playing-card {
+  width: 2rem;
+  height: 2rem;
+  background-color: white; }
+
 .header {
   font-size: 1.6rem;
   display: flex;
