@@ -175,8 +175,8 @@ body {
     display: flex;
     position: relative;
     border: 2px solid pink;
-    height: 50rem;
-    width: 50rem;
+    height: 60rem;
+    width: 60rem;
     margin: 2rem; }
   .hearts__player {
     font-size: 4rem;
@@ -186,7 +186,7 @@ body {
     display: flex;
     flex-direction: row;
     background-color: #585858;
-    width: 40rem;
+    width: 50rem;
     height: 5rem;
     position: absolute; }
     .hearts__hand--1 {
@@ -204,11 +204,61 @@ body {
       top: 45%;
       right: -35%;
       transform: rotate(270deg); }
+  .hearts__cards {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   .hearts__card {
     border: 2px dotted #7a2222;
     height: 4rem;
     width: 4rem;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    position: relative; }
+    .hearts__card:not(:last-child) {
+      margin-right: -1.5rem; }
+    .hearts__card:nth-child(1) {
+      background-color: green;
+      z-index: 1; }
+    .hearts__card:nth-child(2) {
+      background-color: blue;
+      z-index: 2; }
+    .hearts__card:nth-child(3) {
+      background-color: green;
+      z-index: 2; }
+    .hearts__card:nth-child(4) {
+      background-color: blue;
+      z-index: 2; }
+    .hearts__card:nth-child(5) {
+      background-color: green;
+      z-index: 2; }
+    .hearts__card:nth-child(6) {
+      background-color: blue;
+      z-index: 2; }
+    .hearts__card:nth-child(7) {
+      background-color: green;
+      z-index: 2; }
+    .hearts__card:nth-child(8) {
+      background-color: blue;
+      z-index: 2; }
+    .hearts__card:nth-child(9) {
+      background-color: green;
+      z-index: 2; }
+    .hearts__card:nth-child(10) {
+      background-color: blue;
+      z-index: 2; }
+    .hearts__card:nth-child(11) {
+      background-color: green;
+      z-index: 2; }
+    .hearts__card:nth-child(12) {
+      background-color: blue;
+      z-index: 2; }
+    .hearts__card:nth-child(13) {
+      background-color: green;
+      z-index: 2; }
 
 .home {
   height: 100vh;
@@ -253,6 +303,7 @@ body {
     display: block;
     width: 20rem;
     flex-grow: 1;
+    max-width: 30rem;
     height: 20rem;
     border-radius: 3px;
     display: flex;
@@ -264,14 +315,16 @@ body {
     letter-spacing: .25rem;
     box-shadow: 0 1rem 2rem black;
     transition: all .5s;
-    transform-origin: center; }
+    transform-origin: center;
+    position: relative;
+    z-index: 10; }
     .play__card:hover {
-      transform: scale(0.9);
+      transform: scale(0.95);
       box-shadow: 0 .5rem 1rem black; }
     .play__card span {
-      font-size: 3rem;
-      height: 3rem;
-      line-height: 3rem;
+      font-size: 3.5rem;
+      height: 5rem;
+      line-height: 5rem;
       display: block;
       width: 100%;
       font-weight: 500;
@@ -294,6 +347,14 @@ body {
       background-image: url("https://i.imgur.com/EnfwSav.png");
       background-size: cover;
       background-position: center; }
+    .play__card--pixelate {
+      background-image: url("https://i.imgur.com/GJcAJt4.png");
+      background-size: cover;
+      background-position: center; }
+    .play__card--puppy-clicker {
+      background-image: url("https://i.imgur.com/XBauiCd.png");
+      background-size: cover;
+      background-position: center; }
 
 .hearts {
   font-size: 1.6rem;
@@ -305,8 +366,8 @@ body {
     display: flex;
     position: relative;
     border: 2px solid pink;
-    height: 50rem;
-    width: 50rem;
+    height: 60rem;
+    width: 60rem;
     margin: 2rem; }
   .hearts__player {
     font-size: 4rem;
@@ -316,7 +377,7 @@ body {
     display: flex;
     flex-direction: row;
     background-color: #585858;
-    width: 40rem;
+    width: 50rem;
     height: 5rem;
     position: absolute; }
     .hearts__hand--1 {
@@ -334,8 +395,58 @@ body {
       top: 45%;
       right: -35%;
       transform: rotate(270deg); }
+  .hearts__cards {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   .hearts__card {
     border: 2px dotted #7a2222;
     height: 4rem;
     width: 4rem;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    position: relative; }
+    .hearts__card:not(:last-child) {
+      margin-right: -1.5rem; }
+    .hearts__card:nth-child(1) {
+      background-color: green;
+      z-index: 1; }
+    .hearts__card:nth-child(2) {
+      background-color: blue;
+      z-index: 2; }
+    .hearts__card:nth-child(3) {
+      background-color: green;
+      z-index: 2; }
+    .hearts__card:nth-child(4) {
+      background-color: blue;
+      z-index: 2; }
+    .hearts__card:nth-child(5) {
+      background-color: green;
+      z-index: 2; }
+    .hearts__card:nth-child(6) {
+      background-color: blue;
+      z-index: 2; }
+    .hearts__card:nth-child(7) {
+      background-color: green;
+      z-index: 2; }
+    .hearts__card:nth-child(8) {
+      background-color: blue;
+      z-index: 2; }
+    .hearts__card:nth-child(9) {
+      background-color: green;
+      z-index: 2; }
+    .hearts__card:nth-child(10) {
+      background-color: blue;
+      z-index: 2; }
+    .hearts__card:nth-child(11) {
+      background-color: green;
+      z-index: 2; }
+    .hearts__card:nth-child(12) {
+      background-color: blue;
+      z-index: 2; }
+    .hearts__card:nth-child(13) {
+      background-color: green;
+      z-index: 2; }

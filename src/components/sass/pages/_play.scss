@@ -16,6 +16,7 @@
     display: block;
     width: 20rem;
     flex-grow: 1;
+    max-width: 30rem;
     height: 20rem;
     border-radius: 3px;
     display: flex;
@@ -28,16 +29,37 @@
     box-shadow: 0 1rem 2rem black;
     transition: all .5s;
     transform-origin: center;
+    position: relative;
+    z-index: 10;
+
+    // &:before {
+    //   display: block;
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-color: white;
+    //   z-index: -1;
+    // }
 
     &:hover {
-      transform: scale(.9);
+      transform: scale(.95);
       box-shadow: 0 .5rem 1rem black;
+      // z-index: 10;
     }
 
+    // &:hover &:before {
+    //   width: 105%;
+    //   height: 105%;
+    //   background-color: blue;
+    // }
+
     & span {
-      font-size: 3rem;
-      height: 3rem;
-      line-height: 3rem;
+      font-size: 3.5rem;
+      height: 5rem;
+      line-height: 5rem;
       display: block;
       width: 100%;
       font-weight: 500;
@@ -71,6 +93,18 @@
 
     &--connect-four {
       background-image: url("https://i.imgur.com/EnfwSav.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    &--pixelate {
+      background-image: url("https://i.imgur.com/GJcAJt4.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    &--puppy-clicker {
+      background-image: url("https://i.imgur.com/XBauiCd.png");
       background-size: cover;
       background-position: center;
     }

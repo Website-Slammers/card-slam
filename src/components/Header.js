@@ -7,14 +7,14 @@ function Header() {
 
       <div className="header__textbox">
         <h2 className="heading-secondary">
-
+          <Link to="/">
             <span className="heading-secondary--main">
               Card Games <span>+ More</span>
             </span>
             <span className="heading-secondary--sub">
               by Web Slammers
             </span>
-
+          </Link>
         </h2>
       </div>
 
