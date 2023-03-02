@@ -50,6 +50,10 @@
     font-weight: 40;
     color: white;
 
+    & span {
+      color: red;
+    }
+
   }
 
   &--sub {

@@ -16,6 +16,8 @@ function Header() {
       </div>
 
       <div className="header__nav">
+        <Link to="/play" className="header__nav-item">
+          home</Link>
         <div className="header__nav-item">
           new game</div>
         <div className="header__nav-item">
