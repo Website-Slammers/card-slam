@@ -553,15 +553,15 @@ body {
       font-weight: 500;
       text-transform: uppercase;
       text-align: center;
-      background: linear-gradient(to right top, black, gray); }
+      background: linear-gradient(to right top, rgba(0, 0, 0, 0.9), gray); }
     .play__card--hearts {
-      background-image: url("https://i.imgur.com/LOn53Ye.png");
+      background-image: url("https://i.imgur.com/0dNQZmz.png");
       background-size: cover;
-      background-position: right; }
+      background-position: top; }
     .play__card--spades {
-      background-image: url("https://i.imgur.com/pVgXoFT.png");
+      background-image: url("https://i.imgur.com/GhIT8FT.png");
       background-size: cover;
-      background-position: right; }
+      background-position: top; }
     .play__card--sudoku {
       background-image: linear-gradient(to right bottom, rgba(255, 192, 203, 0.6), rgba(154, 205, 50, 0.4)), url("https://i.imgur.com/efHBmNO.png");
       background-size: cover;
