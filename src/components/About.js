@@ -1,6 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { GiImperialCrown } from 'react-icons/gi'
+import { GiQueenCrown } from 'react-icons/gi'
+import { GiFlowerStar } from 'react-icons/gi'
+import { GiJesterHat } from 'react-icons/gi'
+
 import AboutHeader from './AboutHeader'
 
 function About() {
@@ -10,6 +15,10 @@ function About() {
     <AboutHeader />
 
     <div className="about__main">
+
+      {/* <div className="playing-card playing-card--joker playing-card--s" data-text="1"><GiJesterHat /></div>
+
+      <div className="playing-card playing-card--joker playing-card--s" data-text="1"><GiJesterHat /></div> */}
 
       <div className="playing-card playing-card--1 playing-card--s" data-text="1">&#9824;</div>
 
@@ -31,11 +40,13 @@ function About() {
 
       <div className="playing-card playing-card--10 playing-card--s" data-text="X">&#9824; &#9824; &#9824; &#9824; &#9824; &#9824; &#9824; &#9824; &#9824; &#9824;</div>
 
-      <div className="playing-card playing-card--J playing-card--s" data-text="J">Jack</div>
+      <div className="playing-card playing-card--J playing-card--s" data-text="J"><GiFlowerStar /></div>
 
-      <div className="playing-card playing-card--Q playing-card--s" data-text="Q">Queen</div>
+      <div className="playing-card playing-card--Q playing-card--s" data-text="Q"><GiQueenCrown /></div>
 
-      <div className="playing-card playing-card--K playing-card--s" data-text="K">King</div>
+      <div className="playing-card playing-card--K playing-card--s" data-text="K"><GiImperialCrown /></div>
+
+      <div className="playing-card playing-card--a playing-card--s" data-text="A">&#9824;</div>
 
       {/* Hearts */}
 
@@ -59,11 +70,13 @@ function About() {
 
       <div className="playing-card playing-card--10 playing-card--h" data-text="X">&#9829; &#9829; &#9829; &#9829; &#9829; &#9829; &#9829; &#9829; &#9829; &#9829;</div>
 
-      <div className="playing-card playing-card--J playing-card--h" data-text="J">Jack</div>
+      <div className="playing-card playing-card--J playing-card--h" data-text="J"><GiFlowerStar /></div>
 
-      <div className="playing-card playing-card--Q playing-card--h" data-text="Q">Queen</div>
+      <div className="playing-card playing-card--Q playing-card--h" data-text="Q"><GiQueenCrown /></div>
 
-      <div className="playing-card playing-card--K playing-card--h" data-text="K">King</div>
+      <div className="playing-card playing-card--K playing-card--h" data-text="K"><GiImperialCrown /></div>
+
+      <div className="playing-card playing-card--a playing-card--h" data-text="A">&#9829;</div>
 
       {/* Clubs */}
 
@@ -87,11 +100,13 @@ function About() {
 
       <div className="playing-card playing-card--10 playing-card--c" data-text="X">&#9827; &#9827; &#9827; &#9827; &#9827; &#9827; &#9827; &#9827; &#9827; &#9827;</div>
 
-      <div className="playing-card playing-card--J playing-card--c" data-text="J">Jack</div>
+      <div className="playing-card playing-card--J playing-card--c" data-text="J"><GiFlowerStar /></div>
 
-      <div className="playing-card playing-card--Q playing-card--c" data-text="Q">Queen</div>
+      <div className="playing-card playing-card--Q playing-card--c" data-text="Q"><GiQueenCrown /></div>
 
-      <div className="playing-card playing-card--K playing-card--c" data-text="K">King</div>
+      <div className="playing-card playing-card--K playing-card--c" data-text="K"><GiImperialCrown /></div>
+
+      <div className="playing-card playing-card--a playing-card--c" data-text="A">&#9827;</div>
 
       {/* Diamonds */}
 
@@ -115,11 +130,13 @@ function About() {
 
       <div className="playing-card playing-card--10 playing-card--d" data-text="X">&#9830; &#9830; &#9830; &#9830; &#9830; &#9830; &#9830; &#9830; &#9830; &#9830;</div>
 
-      <div className="playing-card playing-card--J playing-card--d" data-text="J">Jack</div>
+      <div className="playing-card playing-card--J playing-card--d" data-text="J"><GiFlowerStar /></div>
 
-      <div className="playing-card playing-card--Q playing-card--d" data-text="Q">Queen</div>
+      <div className="playing-card playing-card--Q playing-card--d" data-text="Q"><GiQueenCrown /></div>
 
-      <div className="playing-card playing-card--K playing-card--d" data-text="K">King</div>
+      <div className="playing-card playing-card--K playing-card--d" data-text="K"><GiImperialCrown /></div>
+
+      <div className="playing-card playing-card--a playing-card--d" data-text="A">&#9830;</div>
 
       </div>
 
