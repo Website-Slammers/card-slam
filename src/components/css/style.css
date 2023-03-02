@@ -156,7 +156,7 @@ body {
     font-size: 3rem;
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
     margin-bottom: 1.5rem;
     transition: all .5s; }
     .header__nav a {
