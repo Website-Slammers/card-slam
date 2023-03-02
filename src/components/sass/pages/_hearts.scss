@@ -1,11 +1,12 @@
 .hearts {
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   color:rgb(241, 253, 172);
   display:flex;
-  justify-content: center;
+  flex-direction: column;
 
   
   &__table {
+    align-self: center;
     display:flex;
     position:relative;
     border:2px solid pink;
@@ -15,7 +16,7 @@
   }
 
 
-  & span{
+  &__player{
     font-size:4rem;
     display:block;
     color:rgb(224, 114, 51);
