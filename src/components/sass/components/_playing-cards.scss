@@ -277,5 +277,21 @@
     font-size: 3rem;
     flex: 0 0 1;
   }
+
+  &--a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    flex: 0 0 1;
+  }
+
+  &--joker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    flex: 0 0 1;
+  }
 }
 

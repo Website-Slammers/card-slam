@@ -337,6 +337,18 @@ body {
     align-items: center;
     font-size: 3rem;
     flex: 0 0 1; }
+  .playing-card--a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    flex: 0 0 1; }
+  .playing-card--joker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    flex: 0 0 1; }
 
 .header {
   font-size: 1.6rem;
