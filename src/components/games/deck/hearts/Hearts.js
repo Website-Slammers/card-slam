@@ -2,6 +2,8 @@ import React, { useState,useEffect } from 'react'
 import { cardSorter } from '../../cardSorter'
 import { pullAHand } from '../deck'
 
+import Header from './Header'
+
 
 function Hearts() {
   const [chosenCard, setChosenCard] = useState('')
@@ -50,10 +52,11 @@ function Hearts() {
 
   return (
     <div className="hearts">
+      <Header />
       <div className="hearts__table">
         Hearts
         <div  className="hearts__hand hearts__hand--1">
-          <span>1</span>
+          <span className="hearts__player">1</span>
           {
             !hands || !hand1 ?<div>Hand Pull failed</div>:
             hand1.map((card, index)=>{
@@ -66,7 +69,7 @@ function Hearts() {
           }
         </div>
           <div className="hearts__hand hearts__hand--2">
-            <span>2</span>
+            <span className="hearts__player">2</span>
             {
               !hands || !hand2?<div>Hand Pull failed</div>:
               hand2.map((card, index)=>{
@@ -79,7 +82,7 @@ function Hearts() {
             }
           </div>
           <div className="hearts__hand hearts__hand--3">
-            <span>3</span>
+            <span className="hearts__player">3</span>
             {
               !hands || !hand3?<div>Hand Pull failed</div>:
               hand3.map((card, index)=>{
@@ -92,7 +95,7 @@ function Hearts() {
             }
           </div>
           <div className="hearts__hand hearts__hand--4">
-            <span>4</span>
+            <span className="hearts__player">4</span>
             {
               !hands || !hand4?<div>Hand Pull failed</div>:
               hand4.map((card, index)=>{
