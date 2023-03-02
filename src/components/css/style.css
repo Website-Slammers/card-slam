@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=BenchNine&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
@@ -122,9 +123,220 @@ body {
       transition: all 0.25s; }
 
 .playing-card {
-  width: 2rem;
-  height: 2rem;
-  background-color: white; }
+  width: 9rem;
+  height: 14rem;
+  border-radius: 3px;
+  background-color: white;
+  margin: 2rem;
+  position: relative;
+  z-index: 1; }
+  .playing-card--s {
+    color: black;
+    background-color: white;
+    position: relative; }
+    .playing-card--s:before {
+      content: attr(data-text) " ♠";
+      font-size: 2rem;
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem; }
+    .playing-card--s:after {
+      content: attr(data-text) " ♠";
+      font-size: 2rem;
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      transform: rotate(180deg);
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem; }
+  .playing-card--h {
+    color: #cc0000;
+    background-color: white;
+    position: relative; }
+    .playing-card--h:before {
+      content: attr(data-text) " ♥";
+      font-size: 2rem;
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem; }
+    .playing-card--h:after {
+      content: attr(data-text) " ♥";
+      font-size: 2rem;
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      transform: rotate(180deg);
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem; }
+  .playing-card--c {
+    color: black;
+    background-color: white;
+    position: relative; }
+    .playing-card--c:before {
+      content: attr(data-text) " ♣";
+      font-size: 2rem;
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem; }
+    .playing-card--c:after {
+      content: attr(data-text) " ♣";
+      font-size: 2rem;
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      transform: rotate(180deg);
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem; }
+  .playing-card--d {
+    color: #cc0000;
+    background-color: white;
+    position: relative; }
+    .playing-card--d:before {
+      content: attr(data-text) " ♦";
+      font-size: 2rem;
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem; }
+    .playing-card--d:after {
+      content: attr(data-text) " ♦";
+      font-size: 2rem;
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      transform: rotate(180deg);
+      width: 1.5rem;
+      text-align: center;
+      overflow: wrap;
+      line-height: 1.5rem; }
+  .playing-card--1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    flex: 0 0 1; }
+  .playing-card--2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 3rem;
+    text-align: center;
+    flex: 0 0 1;
+    flex-wrap: wrap; }
+  .playing-card--3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center; }
+  .playing-card--4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center; }
+  .playing-card--5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1.5rem;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center; }
+  .playing-card--6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1.5rem;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center; }
+  .playing-card--7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center; }
+  .playing-card--8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center; }
+  .playing-card--9 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center; }
+  .playing-card--10 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding: 2rem;
+    flex: 0 0 1;
+    flex-wrap: wrap;
+    text-align: center; }
+  .playing-card--J {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    flex: 0 0 1; }
+  .playing-card--Q {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    flex: 0 0 1; }
+  .playing-card--K {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    flex: 0 0 1; }
 
 .header {
   font-size: 1.6rem;
@@ -170,106 +382,10 @@ body {
       .header__nav-item:hover {
         color: #bababa; }
 
-.hearts {
-  font-size: 1.6rem;
-  color: #f1fdac;
+.about__main {
   display: flex;
-  flex-direction: column; }
-  .hearts__table {
-    align-self: center;
-    display: flex;
-    position: relative;
-    border: 2px solid pink;
-    height: 60rem;
-    width: 60rem;
-    margin: 2rem; }
-  .hearts__player {
-    font-size: 4rem;
-    line-height: 4rem;
-    text-align: center;
-    height: 4rem;
-    width: 4rem;
-    display: block;
-    color: #e07233;
-    border: 1px solid #e07233;
-    border-radius: 50%; }
-  .hearts__hand {
-    display: flex;
-    flex-direction: row;
-    background-color: #585858;
-    width: 50rem;
-    height: 5rem;
-    position: absolute; }
-    .hearts__hand--1 {
-      top: 90%;
-      left: 10%; }
-    .hearts__hand--2 {
-      top: 45%;
-      left: -35%;
-      transform: rotate(90deg); }
-    .hearts__hand--3 {
-      top: 0%;
-      left: 10%;
-      transform: rotate(180deg); }
-    .hearts__hand--4 {
-      top: 45%;
-      right: -35%;
-      transform: rotate(270deg); }
-  .hearts__cards {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-  .hearts__card {
-    border: 2px dotted #7a2222;
-    height: 4rem;
-    width: 4rem;
-    box-sizing: border-box;
-    position: relative; }
-    .hearts__card:not(:last-child) {
-      margin-right: -1.5rem; }
-    .hearts__card:nth-child(1) {
-      background-color: green;
-      z-index: 1; }
-    .hearts__card:nth-child(2) {
-      background-color: blue;
-      z-index: 2; }
-    .hearts__card:nth-child(3) {
-      background-color: green;
-      z-index: 2; }
-    .hearts__card:nth-child(4) {
-      background-color: blue;
-      z-index: 2; }
-    .hearts__card:nth-child(5) {
-      background-color: green;
-      z-index: 2; }
-    .hearts__card:nth-child(6) {
-      background-color: blue;
-      z-index: 2; }
-    .hearts__card:nth-child(7) {
-      background-color: green;
-      z-index: 2; }
-    .hearts__card:nth-child(8) {
-      background-color: blue;
-      z-index: 2; }
-    .hearts__card:nth-child(9) {
-      background-color: green;
-      z-index: 2; }
-    .hearts__card:nth-child(10) {
-      background-color: blue;
-      z-index: 2; }
-    .hearts__card:nth-child(11) {
-      background-color: green;
-      z-index: 2; }
-    .hearts__card:nth-child(12) {
-      background-color: blue;
-      z-index: 2; }
-    .hearts__card:nth-child(13) {
-      background-color: green;
-      z-index: 2; }
+  flex-direction: row;
+  flex-wrap: wrap; }
 
 .home {
   height: 100vh;
