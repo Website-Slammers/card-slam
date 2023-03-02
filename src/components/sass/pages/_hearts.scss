@@ -1,27 +1,59 @@
 .hearts {
   font-size: 2rem;
+  color:rgb(241, 253, 172);
 
+  
+  &__table {
+    display:flex;
+    position:relative;
+    border:2px solid pink;
+    height:50rem;
+    width:50rem;
+    margin:2rem;
+  }
+
+
+  & span{
+    display:block;
+  }
   &__hand {
-    // create flexbox
+    display:flex;
+    flex-direction:row;
+    background-color: rgb(88, 88, 88);
+    width:40rem;
+    height:5rem;
+    position:absolute;
+    // transform-origin:center;
+    
 
     &--1 {
-      //rotate box  
+      top:90%;
+      left:10%
     }
 
     &--2 {
-      //rotate box  
+      top:45%;
+      left:-35%;
+      transform:rotate(90deg);
     }
 
-    &--3 {
-      //rotate box  
+    &--3 { 
+      top:0%;
+      left:10%;
+      transform:rotate(180deg);
     }
 
     &--4 {
-      //rotate box  
+      top:45%;
+      right:-35%;
+      transform:rotate(270deg);
     }
   }
 
   &__card {
+    border:1px solid rgb(85, 12, 12);
+    height:4rem;
+    width:4rem;
     // define height, width
     
     &--front {

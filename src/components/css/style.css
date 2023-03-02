@@ -199,3 +199,42 @@ body {
       background-image: url("https://i.imgur.com/FY2GBbu.png");
       background-size: cover;
       background-position: right; }
+
+.hearts {
+  font-size: 2rem;
+  color: #f1fdac; }
+  .hearts__table {
+    display: flex;
+    position: relative;
+    border: 2px solid pink;
+    height: 50rem;
+    width: 50rem;
+    margin: 2rem; }
+  .hearts span {
+    display: block; }
+  .hearts__hand {
+    display: flex;
+    flex-direction: row;
+    background-color: #585858;
+    width: 40rem;
+    height: 5rem;
+    position: absolute; }
+    .hearts__hand--1 {
+      top: 90%;
+      left: 10%; }
+    .hearts__hand--2 {
+      top: 45%;
+      left: -35%;
+      transform: rotate(90deg); }
+    .hearts__hand--3 {
+      top: 0%;
+      left: 10%;
+      transform: rotate(180deg); }
+    .hearts__hand--4 {
+      top: 45%;
+      right: -35%;
+      transform: rotate(270deg); }
+  .hearts__card {
+    border: 1px solid #550c0c;
+    height: 4rem;
+    width: 4rem; }

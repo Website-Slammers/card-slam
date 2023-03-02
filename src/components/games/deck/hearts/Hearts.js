@@ -33,24 +33,19 @@ function Hearts() {
   // useEffect(()=>{
   //   console.log(hand1)
   // }, [hand1])
+  const pickACard =()=>{
+
+  }
+
   return (
     <div className="hearts">
-      Hearts
-      <div onClick={pickACard} className="hearts__hand hearts__hand--1">Player 1</div>
-      {
-        !hands || !hand1 ?<div>Hand Pull failed</div>:
-        hand1.map((card, index)=>{
-          return(
-            <div className='hearts__card'>
-              {card}
-            </div>
-          )
-        })
-      }
-        <div className="hearts__hand hearts__hand--2">Player 2</div>
+      <div className="hearts__table">
+        Hearts
+        <div onClick={pickACard} className="hearts__hand hearts__hand--1">
+          <span>Player 1</span>
           {
-            !hands || !hand2?<div>Hand Pull failed</div>:
-            hand2.map((card, index)=>{
+            !hands || !hand1 ?<div>Hand Pull failed</div>:
+            hand1.map((card, index)=>{
               return(
                 <div className='hearts__card'>
                   {card}
@@ -58,30 +53,47 @@ function Hearts() {
               )
             })
           }
-        <div className="hearts__hand hearts__hand--3">Player 3</div>
-          {
-            !hands || !hand3?<div>Hand Pull failed</div>:
-            hand3.map((card, index)=>{
-              return(
-                <div className='hearts__card'>
-                  {card}
-                </div>
-              )
-            })
-          }
-        <div className="hearts__hand hearts__hand--4">Player 4</div>
-          {
-            !hands || !hand4?<div>Hand Pull failed</div>:
-            hand4.map((card, index)=>{
-              return(
-                <div className='hearts__card'>
-                  {card}
-                </div>
-              )
-            })
-          }
-
-
+        </div>
+          <div className="hearts__hand hearts__hand--2">
+            <span>Player 2</span>
+            {
+              !hands || !hand2?<div>Hand Pull failed</div>:
+              hand2.map((card, index)=>{
+                return(
+                  <div className='hearts__card'>
+                    {card}
+                  </div>
+                )
+              })
+            }
+          </div>
+          <div className="hearts__hand hearts__hand--3">
+            <span>Player 3</span>
+            {
+              !hands || !hand3?<div>Hand Pull failed</div>:
+              hand3.map((card, index)=>{
+                return(
+                  <div className='hearts__card'>
+                    {card}
+                  </div>
+                )
+              })
+            }
+          </div>
+          <div className="hearts__hand hearts__hand--4">
+            <span>Player 4</span>
+            {
+              !hands || !hand4?<div>Hand Pull failed</div>:
+              hand4.map((card, index)=>{
+                return(
+                  <div className='hearts__card'>
+                    {card}
+                  </div>
+                )
+              })
+            }
+          </div>
+      </div>
     </div>
         
   )
