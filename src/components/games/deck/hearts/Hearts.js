@@ -3,21 +3,25 @@ import { cardSorter } from '../../cardSorter'
 import { pullAHand } from '../deck'
 
 import Header from './Header'
+import { turnOrder } from './turnOrder'
 
 
 function Hearts() {
   const [chosenCard, setChosenCard] = useState('')
+  const [trick, setTrick] = useState([])
   const [hands, setHands] = useState({})
   const [hand1, setHand1] = useState([])
   const [hand2, setHand2] = useState([])
   const [hand3, setHand3] = useState([])
   const [hand4, setHand4] = useState([])
   const [scores, setScores] = useState({'player1':0, 'player2':0, 'player3':0,'player4':0})
-  const [trick, setTrick] = useState([])
+  const [startingPlayer , setStartingPlayer] = useState('')
+  const [swap, setSwap] = useState([])
+  const [roundSwapState, setRoundSwapState] = (true)
 
   useEffect(()=>{
     let newRound = pullAHand(13, 4, 'hearts')
-    console.log(newRound)
+    // console.log(newRound)
     setHands(newRound)
   },[])
 
@@ -32,6 +36,7 @@ function Hearts() {
     setHand3(tempHand)
     if(tempHand) tempHand = cardSorter(hands.player4, 'hearts')
     setHand4(tempHand)
+    setStartingPlayer(turnOrder(hands))
   },[hands])
 
   // useEffect(()=>{
@@ -40,15 +45,23 @@ function Hearts() {
 
 
   useEffect(()=>{
-    let currentTrick = trick.push(chosenCard)
+    let currentTrick = trick
+    currentTrick.push(chosenCard)
     setTrick(currentTrick)
   },[chosenCard])
 
   useEffect(()=>{
     if(trick.length == 4){
-
+      
     }
   },[trick])
+
+  useEffect(()=>{
+    if(roundSwapState == true){
+
+    }
+  },[roundSwapState])
+
 
   return (
     <div className="hearts">
@@ -125,10 +138,12 @@ function Hearts() {
           }
           </div> {/* Cards End */}
         </div> {/* Hand End */}
-
+        <div className='hearts__play'>
+          
+        </div>
       </div> {/* Table End */}
     </div>
-        
+    
   )
 }
 
