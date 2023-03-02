@@ -10,7 +10,7 @@ function Play() {
 
       <Header />
 
-      <div>CARD GAMES</div>
+      <h3 className="heading-tertiary">CARD GAMES</h3>
 
       <div className="play__main">
 
@@ -20,7 +20,7 @@ function Play() {
 
       </div>
 
-      <div>MORE GAMES</div>
+      <h3 className="heading-tertiary">MORE GAMES</h3>
 
       <div className="play__main">
 

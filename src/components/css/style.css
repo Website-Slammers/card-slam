@@ -80,6 +80,21 @@ body {
   color: #bfbfbf;
   color: red; }
 
+.heading-tertiary {
+  display: block;
+  width: 25rem;
+  font-size: 3.5rem;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 0;
+  color: white;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  box-shadow: 0 1rem 2rem black;
+  cursor: default;
+  border-radius: 3px;
+  background: linear-gradient(to right top, black, gray); }
+
 .btn {
   text-decoration: none; }
   .btn:active, .btn:visited {
@@ -305,7 +320,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding: 1.5rem;
     flex: 0 0 1;
     flex-wrap: wrap;
@@ -349,6 +364,63 @@ body {
     align-items: center;
     font-size: 3rem;
     flex: 0 0 1; }
+
+.footer {
+  background-image: radial-gradient(circle, grey, black);
+  background: black;
+  padding: 3rem 0;
+  margin-top: 4rem;
+  color: white;
+  border-radius: 3px;
+  margin-top: -1rem;
+  font-size: 16px;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none; }
+  .footer__logo-box {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: "Oswald", sans-serif;
+    font-size: 2rem;
+    color: white; }
+    .footer__logo-box--author {
+      font-family: sans-serif; }
+  .footer__flexbox {
+    display: flex; }
+  .footer__flexbox-item {
+    display: block;
+    flex: 0 0 50%;
+    padding: 2rem; }
+  .footer__navigation {
+    border-top: 1px solid white;
+    padding-top: 1rem;
+    display: block;
+    text-align: center; }
+  .footer__list {
+    list-style: none; }
+  .footer__link:link, .footer__link:visited {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    transition: all .2s; }
+  .footer__link:hover, .footer__link:active {
+    color: white;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    transform: scale(1.1); }
+  .footer__copyright {
+    border-top: 1px solid white;
+    padding-top: 1rem;
+    text-align: justify; }
 
 .header {
   font-size: 1.6rem;
@@ -491,7 +563,7 @@ body {
       background-size: cover;
       background-position: right; }
     .play__card--sudoku {
-      background-image: linear-gradient(to right bottom, rgba(255, 192, 203, 0.4), rgba(154, 205, 50, 0.4)), url("https://i.imgur.com/efHBmNO.png");
+      background-image: linear-gradient(to right bottom, rgba(255, 192, 203, 0.6), rgba(154, 205, 50, 0.4)), url("https://i.imgur.com/efHBmNO.png");
       background-size: cover;
       background-position: center; }
     .play__card--connect-four {
