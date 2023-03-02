@@ -9,7 +9,7 @@ function Header() {
         <h2 className="heading-secondary">
 
             <span className="heading-secondary--main">
-              Card Games
+              Card Games <span>+ More</span>
             </span>
             <span className="heading-secondary--sub">
               by Web Slammers
@@ -19,8 +19,8 @@ function Header() {
       </div>
 
       <div className="header__nav">
-        <div className="header__nav-item">
-          about</div>
+        <Link to="/about" className="header__nav-item">
+          about</Link>
         <div className="header__nav-item">
           options</div>
       </div>

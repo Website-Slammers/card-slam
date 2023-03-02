@@ -6,6 +6,7 @@ import Home from './components/Home'
 import App from './components/App'
 import ErrorPage from './components/ErrorPage';
 
+import About from './components/About'
 import Play from './components/Play'
 
 import Hearts from './components/games/deck/hearts/Hearts'
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home />
+            },
+            {
+                path: "about",
+                element: <About />
             },
             {
                 path: "play",

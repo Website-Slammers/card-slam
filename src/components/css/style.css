@@ -64,6 +64,8 @@ body {
   font-family: "Anton", sans-serif, sans-serif;
   font-weight: 40;
   color: white; }
+  .heading-secondary--main span {
+    color: red; }
 
 .heading-secondary--sub {
   display: block;
@@ -152,6 +154,9 @@ body {
     align-items: end;
     margin-bottom: 1.5rem;
     transition: all .5s; }
+    .header__nav a {
+      text-decoration: none;
+      color: white; }
     .header__nav-item {
       transition: all .3s;
       cursor: pointer; }
@@ -281,6 +286,14 @@ body {
       background-image: url("https://i.imgur.com/FY2GBbu.png");
       background-size: cover;
       background-position: right; }
+    .play__card--sudoku {
+      background-image: linear-gradient(to right bottom, rgba(255, 192, 203, 0.4), rgba(154, 205, 50, 0.4)), url("https://i.imgur.com/efHBmNO.png");
+      background-size: cover;
+      background-position: center; }
+    .play__card--connect-four {
+      background-image: url("https://i.imgur.com/EnfwSav.png");
+      background-size: cover;
+      background-position: center; }
 
 .hearts {
   font-size: 1.6rem;
