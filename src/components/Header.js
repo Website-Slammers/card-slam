@@ -9,7 +9,7 @@ function Header() {
         <h2 className="heading-secondary">
 
             <span className="heading-secondary--main">
-              Card Games
+              Card Games <span>+ More</span>
             </span>
             <span className="heading-secondary--sub">
               by Web Slammers
