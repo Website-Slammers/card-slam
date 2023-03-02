@@ -294,6 +294,14 @@ body {
       background-image: url("https://i.imgur.com/EnfwSav.png");
       background-size: cover;
       background-position: center; }
+    .play__card--pixelate {
+      background-image: url("https://i.imgur.com/GJcAJt4.png");
+      background-size: cover;
+      background-position: center; }
+    .play__card--puppy-clicker {
+      background-image: url("https://i.imgur.com/XBauiCd.png");
+      background-size: cover;
+      background-position: center; }
 
 .hearts {
   font-size: 1.6rem;
