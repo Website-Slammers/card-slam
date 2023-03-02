@@ -10,11 +10,19 @@ function Play() {
 
       <Header />
 
+      <div>CARD GAMES</div>
+
       <div className="play__main">
 
         <Link className="play__card play__card--hearts" to="/play/Hearts"><span>Hearts</span></Link>
 
         <Link className="play__card play__card--spades" to="/play/Spades"><span>Spades</span></Link>
+
+      </div>
+
+      <div>MORE GAMES</div>
+
+      <div className="play__main">
 
         <a className="play__card play__card--sudoku" target="_blank" href="https://sudoku-slam.netlify.app"><span>Sudoku</span></a>
 
