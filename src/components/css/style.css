@@ -467,12 +467,16 @@ body {
       .header__nav-item:hover {
         color: #bababa; }
 
-.about__main {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.about {
   background: #004b00;
-  padding: 5rem; }
+  height: 100svh;
+  width: 100vw;
+  overflow: scroll; }
+  .about__main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5rem; }
 
 .home {
   height: 100vh;

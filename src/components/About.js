@@ -14,6 +14,8 @@ function About() {
 
     <AboutHeader />
 
+    <h3 className="heading-tertiary">CSS Cards</h3>
+
     <div className="about__main">
 
       {/* <div className="playing-card playing-card--joker playing-card--s" data-text="1"><GiJesterHat /></div>

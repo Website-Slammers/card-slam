@@ -1,11 +1,14 @@
 .about {
+  background: darken(darkgreen, 5);
+  height: 100svh;
+  width: 100vw;
+  overflow: scroll;
 
   &__main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 
-    background: darken(darkgreen, 5);
     padding: 5rem;
 
     // & div {
