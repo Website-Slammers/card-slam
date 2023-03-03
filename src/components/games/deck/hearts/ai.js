@@ -7,7 +7,7 @@ export const ai =(currentPlayer,hand, trick,turn,heartsBroken)=>{
     let newCards = {}
     let rNumber = 0;
     let cardIndex =0;
-    console.log(returnTrick)
+    // console.log(returnTrick)
     if(turn == 0  && !returnTrick[0]){
         rHand.splice(0,1)
         card = '2C'
@@ -16,15 +16,15 @@ export const ai =(currentPlayer,hand, trick,turn,heartsBroken)=>{
         
         newCards = possibleCards(rHand, returnTrick, turn)
         
-        console.log(newCards)
+        // console.log(newCards)
         rNumber = Math.floor(Math.random()*newCards.possibleCards.length)
         cardIndex = newCards.possibleCardsIdx[rNumber]
-        console.log(rNumber);
+        // console.log(rNumber);
         card = rHand[cardIndex]
         rHand.splice(cardIndex,1)
         returnTrick.push(card);
     }
-    console.log('return hand, ' ,rHand)
+    // console.log('return hand, ' ,rHand)
     return {rHand, card, returnTrick}
     // return card
 }

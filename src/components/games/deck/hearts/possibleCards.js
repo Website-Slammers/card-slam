@@ -3,7 +3,10 @@ export const possibleCards =(rHand,trick,turn)=>{
     let possibleCards = [...rHand]
     let possibleCardsIdx = []
     let inSuite = false;
-    let suite = trick[0].charAt(1)
+    let suite = 0
+    let newTrick = trick
+    console.log(newTrick);
+    if(newTrick && newTrick[0])suite = newTrick[0].charAt(1)
     // console.log('ello')
     // inSuite is true if the suite is in the handarray that is being played 
     for(let i = 0; i< possibleCards.length; i++){

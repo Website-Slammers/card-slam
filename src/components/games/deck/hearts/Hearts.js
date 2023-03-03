@@ -10,7 +10,7 @@ import { turnOrder } from './turnOrder'
 
 
 function Hearts() {
-  const [chosenCard, setChosenCard] = useState('')
+  const [chosenCard, setChosenCard] = useState(['no',0])
   const [trick, setTrick] = useState([])
   const [hands, setHands] = useState({})
   const [hand1, setHand1] = useState([])
@@ -22,7 +22,7 @@ function Hearts() {
   const [brokenHearts, setBrokenHearts] = useState(false)
   const [turn, setTurn] = useState(0)
 
-  console.log( 'hand2 ', hand2, ' hand3 ', hand3, ' hand4 ', hand4 )
+  // console.log( 'hand2 ', hand2, ' hand3 ', hand3, ' hand4 ', hand4 )
   useEffect(()=>{
     let newRound = pullAHand(13, 4, 'hearts')
     // console.log(newRound)
@@ -50,7 +50,22 @@ function Hearts() {
   // whoever wins the hand gets to play next. 
   // hearts is now allowed if you don't have the in suite as well as the queen of spades.
   // 
-  
+  useEffect(()=>{
+    // console.log('ello mate')
+    // if(chosenCard[0]!='no'){
+    //   // console.log('hey', chosenCard[0]);
+    //   let newHand = [...hand1]
+    //   newHand.splice(chosenCard[1],1)
+    //   // console.log(newHand)
+    //   setHand1(newHand)
+    //   // console.log(newHand)
+    //   let newTrick = trick
+    //   console.log(trick);
+    //   newTrick.push(chosenCard[0])
+    //   console.log(newTrick)
+    //   setTrick(newTrick)
+    // }
+  },[chosenCard])
 
   useEffect(()=>{
     console.log(currentPlayer)
@@ -89,7 +104,7 @@ function Hearts() {
   },[currentPlayer])
 
   useEffect(()=>{
-    if(trick!=''){
+    if(trick[0]!=''){
       if(currentPlayer == 'player4'){
         setCurrentPlayer('player1')
       }else{
@@ -98,6 +113,11 @@ function Hearts() {
       }
     }
   },[trick])
+
+  const chooseCard = (card, index)=>{
+    setChosenCard([card,index])
+  }
+
 
   return (
     <div className="hearts">
@@ -115,7 +135,7 @@ function Hearts() {
             !hands || !hand1 ?<div>Hand Pull failed</div>:
             hand1.map((card, index)=>{
               return(
-                <div onClick={(event)=>{ setChosenCard(card) }} className='hearts__card'>
+                <div onClick={(event)=>{ chooseCard(card,index) }} className='hearts__card'>
                   {card}
                 </div>
               )
