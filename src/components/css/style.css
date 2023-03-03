@@ -487,6 +487,9 @@ body {
     flex-wrap: wrap;
     padding: 5rem; }
 
+.blackjack {
+  height: 100svh; }
+
 .hearts {
   font-size: 1.6rem;
   color: #f1fdac;
@@ -620,6 +623,9 @@ body {
       .home__bg {
         top: 25%;
         height: 75svh; } }
+
+.oh-hell {
+  height: 100svh; }
 
 .play {
   background: #004b00;
