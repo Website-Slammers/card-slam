@@ -82,8 +82,10 @@
       background: linear-gradient(to right top,rgba(black,.9),rgba(grey, 1));
     }
 
+    // Card Games
+
     &--hearts {
-      background-image: url("https://i.imgur.com/0dNQZmz.png");
+      background-image: url("https://i.imgur.com/9mkYdK2.png");
       background-size: cover;
       background-position: top;
     }
@@ -93,6 +95,20 @@
       background-size: cover;
       background-position: top;
     }
+
+    &--oh-hell {
+      background-image: url("https://i.imgur.com/tbgWemq.png");
+      background-size: cover;
+      background-position: top;
+    }
+
+    &--blackjack {
+      background-image: url("https://i.imgur.com/lxN4yBp.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    // More Games
 
     &--sudoku {
       background-image: linear-gradient(
@@ -127,5 +143,7 @@
       background-size: cover;
       background-position: center;
     }
+
+
   }
 }
