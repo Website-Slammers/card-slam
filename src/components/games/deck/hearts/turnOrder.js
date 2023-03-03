@@ -1,12 +1,22 @@
 //should return which player is playing which card
-export const turnOrder = (hands)=>{
+export const turnOrder = (hands,currentPlayer)=>{
     // console.log(hands)
-    let startingPlayer = ''
-    for (const [key, value] of Object.entries(hands)){
-        // console.log(`${key}, ${value}`);
-        if(key.includes('2C')){
-            startingPlayer = key
+    if(!currentPlayer){
+        let startingPlayer = ''
+        for (const [key, value] of Object.entries(hands)){
+            // console.log(`${key}, ${value}`);
+            if(value.includes('2C')){
+                currentPlayer = key
+            }
         }
+    }else{
+        if(currentPlayer.charAt(-1) == '4'){
+            currentPlayer = 'player1'
+        }else{
+            currentPlayer = 'player'+currentPlayer.charAt(-1)+1
+        }
+        
     }
-    return startingPlayer
+    console.log('yo, ', currentPlayer)
+    return currentPlayer
 }
