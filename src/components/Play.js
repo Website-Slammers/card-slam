@@ -14,11 +14,17 @@ function Play() {
 
       <div className="play__main">
 
-        <Link className="play__card play__card--hearts" to="/play/Hearts"><span>
+        <Link className="play__card play__card--hearts" to="/play/hearts"><span>
           Hearts</span></Link>
 
-        <Link className="play__card play__card--spades" to="/play/Spades"><span>
+        <Link className="play__card play__card--spades" to="/play/spades"><span>
           Spades</span></Link>
+
+        <Link className="play__card play__card--oh-hell" to="/play/oh-hell"><span>
+          Oh Hell</span></Link>
+
+        <Link className="play__card play__card--blackjack" to="/play/blackjack"><span>
+          Blackjack</span></Link>
 
       </div>
 

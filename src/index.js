@@ -9,7 +9,9 @@ import ErrorPage from './components/ErrorPage';
 import About from './components/About'
 import Play from './components/Play'
 
+import Blackjack from './components/games/deck/blackjack/Blackjack';
 import Hearts from './components/games/deck/hearts/Hearts'
+import OhHell from './components/games/deck/oh-hell/OhHell';
 import Spades from './components/games/deck/spades/Spades'
 
 // import Play from './components/Play'
@@ -35,8 +37,16 @@ export const router = createBrowserRouter([
                 element: <Play />
             },
             {
+                path: "play/blackjack",
+                element: <Blackjack />
+            },
+            {
                 path: "play/hearts",
                 element: <Hearts />
+            },
+            {
+                path: "play/oh-hell",
+                element: <OhHell />
             },
             {
                 path: "play/spades",
