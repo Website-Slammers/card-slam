@@ -17,8 +17,8 @@ function Home() {
                 by Web Slammers</span> */}
           </h1>
           <br />
-          <Link to="/play" className="btn btn--header-main">
-              Play<span></span></Link>
+          <a to="/#" className="btn btn--header-main">
+              Play<span></span></a>
         </div>
         {/* Header PNG */}
         <div className="header-main__img">
@@ -31,14 +31,14 @@ function Home() {
 
         <h2 className="featured__title">Featured</h2>
 
-        <Link className="featured--lg" to="/play/hearts">
+        <Link className="featured--lg" to="/hearts">
           <div className="featured__feature featured__feature--hearts">
             <p>Hearts</p></div></Link>
 
-        <Link className="featured--sm-1"to="/play/spades"><div className="featured__feature featured__feature--spades">
+        <Link className="featured--sm-1"to="/spades"><div className="featured__feature featured__feature--spades">
           <p>Spades</p></div></Link>
 
-        <Link className="featured--sm-2" to="/play/blackjack"><div className="featured__feature featured__feature--blackjack">
+        <Link className="featured--sm-2" to="/blackjack"><div className="featured__feature featured__feature--blackjack">
           <p>Blackjack</p></div></Link>
 
       </div>
