@@ -19,9 +19,9 @@ function TopNav() {
           </button>
         </form>
         <div className="top-nav__user-nav">
-          <div className="top-nav__user-box">
-            <span className="top-nav__user-name">Account</span>
-            <img className="top-nav__user-photo" src="https://i.imgur.com/7PG0Tup.png" alt="user-img" />
+          <div className="top-nav__user">
+            <span className="top-nav__user--name">Account</span>
+            <img className="top-nav__user--photo" src="https://i.imgur.com/7PG0Tup.png" alt="user-img" />
             
           </div>
           <div className="top-nav__user-icon-box">
