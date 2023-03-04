@@ -664,9 +664,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+  @media only screen and (max-width: 56.25em) {
+    .top-nav {
+      width: 100%; } }
   .top-nav__logo {
     height: 4rem;
-    margin-left: 3rem; }
+    margin-left: 3rem;
+    transition: all .2s; }
+    .top-nav__logo:hover {
+      transform: scale(1.1); }
   .top-nav__search-form {
     flex: 0 0 40%;
     display: flex;
@@ -700,29 +706,36 @@ body {
   .top-nav__user-nav {
     display: flex;
     cursor: pointer; }
-  .top-nav__user-box {
+  .top-nav__user {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 2rem; }
-  .top-nav__user-photo {
-    height: 3.75rem;
-    border-radius: 50%;
-    border: 2px solid white; }
-  .top-nav__user-name {
-    font-size: 1.8rem;
-    font-family: "Raleway", sans-serif;
-    color: white;
-    margin-right: 1rem; }
+    .top-nav__user:hover .top-nav__user--name {
+      color: lightblue; }
+    .top-nav__user:hover .top-nav__user--photo {
+      transform: scale(1.05); }
+    .top-nav__user--photo {
+      height: 3.75rem;
+      border-radius: 50%;
+      border: 2px solid white;
+      transition: all .3s; }
+    .top-nav__user--name {
+      font-size: 1.8rem;
+      font-family: "Raleway", sans-serif;
+      color: white;
+      margin-right: 1rem;
+      transition: all .3s; }
   .top-nav__user-icon-box {
     margin-right: 3rem; }
   .top-nav__user-settings {
     color: white;
     height: 3.75rem;
     width: 3.75rem;
-    transition: all 1s; }
+    transition: animation 1s; }
     .top-nav__user-settings:hover {
-      animation: spin 1s linear infinite; }
+      animation: spin 1s linear infinite;
+      transform: scale(0.9); }
 
 .about {
   background: #004b00;

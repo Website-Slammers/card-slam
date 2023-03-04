@@ -1,6 +1,8 @@
 .top-nav-container {
   display: flex;
   justify-content: center;
+  // border: 2px solid white;
+  // width: 100%;
 }
 
 .top-nav {
@@ -13,6 +15,10 @@
   border-radius: 2rem;
   margin-bottom: 3rem;
 
+  @media only screen and (max-width: $bp-medium) {
+    width: 100%;
+  }
+
   font-size: 1.4rem;
 
   display: flex;
@@ -23,6 +29,11 @@
   &__logo {
     height: 4rem;
     margin-left: 3rem;
+    transition: all .2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   // SEARCHBAR
@@ -78,25 +89,38 @@
   }
 
   // USERNAME
-  &__user-box {
+  &__user {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 2rem;
+
+    &:hover &--name {
+      color: lightblue;
+    }
+
+    &:hover &--photo {
+      transform: scale(1.05);
+    }
+
+    &--photo {
+      height: 3.75rem;
+      border-radius: 50%;
+      border: 2px solid white;
+      transition: all .3s;
+    }
+  
+    &--name {
+      font-size: 1.8rem;
+      font-family: $font-rale;
+      color: white;
+      margin-right: 1rem;
+      transition: all .3s;
+
+    }
   }
 
-  &__user-photo {
-    height: 3.75rem;
-    border-radius: 50%;
-    border: 2px solid white;
-  }
 
-  &__user-name {
-    font-size: 1.8rem;
-    font-family: $font-rale;
-    color: white;
-    margin-right: 1rem;
-  }
 
   // SETTINGS
   &__user-icon-box {
@@ -107,10 +131,11 @@
     color: white;
     height: 3.75rem;
     width: 3.75rem;
-    transition: all 1s;
+    transition: animation 1s;
 
     &:hover {
       animation: spin 1s linear infinite;
+      transform: scale(.9);
     }
   }
 
