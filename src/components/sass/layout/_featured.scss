@@ -41,7 +41,13 @@
     border-radius: 2.5rem;
     display: flex;
     align-items: flex-end;
-    box-shadow: 0 .5rem 1rem white;
+    box-shadow: 0 .5rem 1rem lightgrey;
+    transition: all .5s;
+
+    &:hover {
+      transform: scale(.99);
+      box-shadow: 0 .25rem .5rem lightgrey;
+    }
   
     & p {
       font-size: 3rem;
