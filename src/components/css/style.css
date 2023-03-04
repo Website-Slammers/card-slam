@@ -34,7 +34,7 @@ body {
 
 .app-return {
   display: grid;
-  grid-template-rows: [top-start] 10vh [top-end main-start] 90vh [main-end]; }
+  grid-template-rows: [top-start] 10vh [top-end main-start] 1fr [main-end foot-start] 30vh [foot-end]; }
 
 .heading-primary {
   font-family: sans-serif;
@@ -373,10 +373,93 @@ body {
     font-size: 3rem;
     flex: 0 0 1; }
 
+.all-games {
+  grid-column: center-start / center-end;
+  grid-row: 3 / 4; }
+  .all-games__title {
+    display: block;
+    font-size: 3rem;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: "Oswald", sans-serif, sans-serif;
+    color: white;
+    cursor: default;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 3rem;
+    transform: translateY(2rem); }
+  .all-games__main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); }
+    .all-games__main a {
+      text-decoration: none;
+      margin: 2rem; }
+  .all-games__card {
+    height: 20rem;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 2.5rem;
+    box-shadow: 0 .5rem 1rem darkgrey;
+    transition: all .5s; }
+    .all-games__card span {
+      font-size: 3rem;
+      font-family: "Oswald", sans-serif;
+      color: #e6e6e6;
+      margin-left: 3rem; }
+    .all-games__card:hover {
+      transform: scale(0.98);
+      box-shadow: 0 .25rem .5rem darkgrey; }
+    .all-games__card--hearts {
+      background-image: url("https://i.imgur.com/rqPPV9W.png");
+      background-size: cover;
+      background-position: center; }
+    .all-games__card--spades {
+      background-image: url("https://i.imgur.com/98iGlQ0.png");
+      background-size: cover;
+      background-position: center; }
+    .all-games__card--oh-hell {
+      background-image: url("https://i.imgur.com/YkVpHyj.png");
+      background-size: cover;
+      background-position: center; }
+    .all-games__card--blackjack {
+      background-image: url("https://i.imgur.com/Ecq9ou4.png");
+      background-size: cover;
+      background-position: center; }
+    .all-games__card--euchre {
+      background-image: url("https://i.imgur.com/b8zfLAM.png");
+      background-size: cover;
+      background-position: center; }
+    .all-games__card--german-whist {
+      background-image: url("https://i.imgur.com/j895HSp.png");
+      background-size: cover;
+      background-position: center; }
+    .all-games__card--sudoku {
+      background-image: url("https://i.imgur.com/6OwhyEO.png");
+      background-size: cover;
+      background-position: center; }
+    .all-games__card--connect-four {
+      background-image: url("https://i.imgur.com/qdQufMg.png");
+      background-size: cover;
+      background-position: center; }
+    .all-games__card--pixelate {
+      background-image: url("https://i.imgur.com/ze3uvRA.png");
+      background-size: cover;
+      background-position: center; }
+    .all-games__card--puppy-clicker {
+      background-image: url("https://i.imgur.com/XBauiCd.png");
+      background-size: cover;
+      background-position: center; }
+    .all-games__card--pokemon-picker {
+      background-image: url("https://i.imgur.com/WkHAEj6.png");
+      background-size: cover;
+      background-position: center; }
+
 .featured {
   grid-column: center-start / center-end;
   display: grid;
-  grid-template-rows: repeat(6, 10vh);
+  grid-template-rows: repeat(5, 10vh);
   grid-template-columns: repeat(10, 1fr); }
   .featured__title {
     display: block;
@@ -396,7 +479,6 @@ body {
     transform: translateY(2rem); }
   .featured a {
     text-decoration: none;
-    flex-grow: 1.5;
     margin: 2rem; }
   .featured--lg {
     grid-column: 1/6;
@@ -436,6 +518,7 @@ body {
       background-position: center; }
 
 .footer {
+  grid-row: footer-start / footer-end;
   padding: 3rem 0;
   margin-top: 4rem;
   color: white;
@@ -701,7 +784,7 @@ body {
 
 .home {
   display: grid;
-  grid-template-rows: 40vh 60vh 60vw;
+  grid-template-rows: 40vh 50vh 60vh;
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
 
 .oh-hell {

@@ -2,8 +2,9 @@
   grid-column: center-start / center-end;
 
   display: grid;
-  grid-template-rows: repeat(6, 10vh);
+  grid-template-rows: repeat(5, 10vh);
   grid-template-columns: repeat(10, 1fr);
+  // grid-gap: 4rem;
 
   &__title {
     display: block;
@@ -27,7 +28,6 @@
 
   & a {
     text-decoration: none;
-    flex-grow: 1.5;
     margin: 2rem;
   }
 

@@ -46,5 +46,5 @@ body {
 
 .app-return {
   display: grid;
-  grid-template-rows: [top-start] 10vh [top-end main-start] 90vh [main-end];
+  grid-template-rows: [top-start] 10vh [top-end main-start] 1fr [main-end foot-start] 30vh [foot-end];
 }

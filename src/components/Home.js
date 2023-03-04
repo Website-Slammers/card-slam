@@ -44,7 +44,49 @@ function Home() {
       </div>
       {/* Featured Games End */}
 
+      {/* All Games Start*/}
+      <div className="all-games">
 
+        <h2 className="all-games__title">All Games</h2>
+
+        <div className="all-games__main">
+
+          <Link className="all-games__card all-games__card--hearts" to="/hearts"><span>
+            Hearts</span></Link>
+
+          <Link className="all-games__card all-games__card--spades" to="/spades"><span>
+            Spades</span></Link>
+
+          <Link className="all-games__card all-games__card--oh-hell" to="/oh-hell"><span>
+            Oh Hell</span></Link>
+
+          <Link className="all-games__card all-games__card--blackjack" to="/blackjack"><span>
+            Blackjack</span></Link>
+
+          <Link className="all-games__card all-games__card--euchre" to="/spades"><span>
+            Euchre</span></Link>
+
+          <Link className="all-games__card all-games__card--german-whist" to="/oh-hell"><span>
+            German Whist</span></Link>
+
+          <a className="all-games__card all-games__card--sudoku" target="_blank" href="https://sudoku-slam.netlify.app"><span>
+          Sudoku</span></a>
+
+          <a className="all-games__card all-games__card--connect-four" target="_blank" href="https://connect4bydrewford.netlify.app"><span>
+            Connect 4</span></a>
+
+          <a className="all-games__card all-games__card--pixelate" target="_blank" href="https://pixel8game.netlify.app"><span>
+            Pixelate</span></a>
+
+          <a className="all-games__card all-games__card--puppy-clicker" target="_blank" href="https://puppy-clicker.netlify.app"><span>
+            Puppy Clicker</span></a>
+
+          <a className="all-games__card all-games__card--pokemon-picker" target="_blank" href="https://gotta-pick-em-all.netlify.app"><span>
+            Pok&eacute;mon Picker</span></a>
+
+        </div> {/* all games main End */}
+      </div>
+      {/* All Games End */}
 
     </div>
   )
