@@ -1,0 +1,85 @@
+.featured {
+  height: 50vh;
+  margin-bottom: 10rem;
+
+
+  &__title {
+    font-size: 3rem;
+    font-family: $font-oswald, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: white;
+    display: block;
+    cursor: default;
+    letter-spacing: 1rem;
+    margin-left: 3rem;
+  }
+
+  &__container {
+    display: flex;
+
+    & a {
+      text-decoration: none;
+      flex-grow: 1.5;
+    }
+  }
+
+  &__small-box {
+    margin: 1rem;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    gap: 3rem;
+    transform: translateY(-1rem)
+  }
+
+  &__feature {
+    border-radius: 2.5rem;
+    display: flex;
+    align-items: flex-end;
+  
+    & p {
+      font-size: 3rem;
+      font-family: $font-oswald;
+      color: darken(white, 10);
+      margin-left: 3rem;
+    }
+
+    &--lg {
+      height: 40rem;
+      flex-grow: 1.5;
+      background-color: white;
+      margin-right: 3rem;
+      margin-left: 1rem;
+    }
+
+    &--sm {
+      height: 18.5rem;
+      flex-grow: 1;
+      background-color: blue;
+      align-items: stretch;
+
+    }
+
+    &--hearts {
+      background-image: url("https://i.imgur.com/rqPPV9W.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    &--spades {
+      background-image: url("https://i.imgur.com/4jAr7Ou.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    &--blackjack {
+      background-image: url("https://i.imgur.com/Ecq9ou4.png");
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}

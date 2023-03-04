@@ -27,6 +27,9 @@ function Header() {
         <div className="header__nav-item">
           multiplayer</div>
       </div>
+      <div className="header__rules">
+        
+      </div>
 
     </div>
   )
