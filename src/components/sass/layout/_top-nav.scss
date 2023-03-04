@@ -3,5 +3,62 @@
   grid-column: 1 / -1;
 
   box-sizing: border-box;
-  background-color: purple;
+  background-color: green;
+
+  font-size: 1.4rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  // Logo
+  &__logo {
+    height: 4rem;
+  }
+
+  // Searchbar
+  &__search-form {
+    flex: 0 0 40%;
+    border: 2px solid white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+
+  &__search-input {
+
+  }
+
+  &__search-button {
+
+  }
+
+  &__user-nav {
+
+  }
+
+  &__user-icon-box {
+
+  }
+
+  &__user-settings {
+
+  }
+
+  &__user-box {
+
+  }
+
+  &__user-photo {
+    height: 3.75rem;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+
+  &__user-name {
+
+  }
+
 }

@@ -519,6 +519,7 @@ body {
 
 .footer {
   grid-row: footer-start / footer-end;
+  grid-column: top-col-start / top-col-end;
   padding: 3rem 0;
   margin-top: 4rem;
   color: white;
@@ -652,7 +653,23 @@ body {
   grid-row: top-start / top-end;
   grid-column: 1 / -1;
   box-sizing: border-box;
-  background-color: purple; }
+  background-color: green;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .top-nav__logo {
+    height: 4rem; }
+  .top-nav__search-form {
+    flex: 0 0 40%;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .top-nav__user-photo {
+    height: 3.75rem;
+    border-radius: 50%;
+    border: 2px solid white; }
 
 .about {
   background: #004b00;
@@ -789,95 +806,6 @@ body {
 
 .oh-hell {
   height: 100svh; }
-
-.play {
-  background: #004b00;
-  height: 100svh;
-  overflow: scroll;
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  /* Hide scrollbar for IE, Edge and Firefox */ }
-  .play::-webkit-scrollbar {
-    display: none; }
-  .play {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */ }
-  .play__main {
-    display: flex;
-    padding: 5rem;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center; }
-  .play__card {
-    display: block;
-    width: 20rem;
-    flex-grow: 1;
-    max-width: 25rem;
-    height: 20rem;
-    border-radius: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    color: white;
-    text-decoration: none;
-    font-family: "BenchNine", sans-serif;
-    letter-spacing: .25rem;
-    box-shadow: 0 1rem 2rem black;
-    transition: all .5s;
-    transform-origin: center;
-    position: relative;
-    z-index: 10;
-    border: 0px solid white; }
-    .play__card:hover {
-      transform: scale(0.98);
-      box-shadow: 0 .5rem 1rem black; }
-    .play__card span {
-      font-size: 3.5rem;
-      height: 5rem;
-      line-height: 5rem;
-      display: block;
-      width: 100%;
-      font-weight: 500;
-      text-transform: uppercase;
-      text-align: center;
-      background: linear-gradient(to right top, rgba(0, 0, 0, 0.9), gray); }
-    .play__card--hearts {
-      background-image: url("https://i.imgur.com/9mkYdK2.png");
-      background-size: cover;
-      background-position: top; }
-    .play__card--spades {
-      background-image: url("https://i.imgur.com/GhIT8FT.png");
-      background-size: cover;
-      background-position: top; }
-    .play__card--oh-hell {
-      background-image: url("https://i.imgur.com/tbgWemq.png");
-      background-size: cover;
-      background-position: top; }
-    .play__card--blackjack {
-      background-image: url("https://i.imgur.com/lxN4yBp.png");
-      background-size: cover;
-      background-position: center; }
-    .play__card--sudoku {
-      background-image: linear-gradient(to right bottom, rgba(255, 192, 203, 0.6), rgba(154, 205, 50, 0.4)), url("https://i.imgur.com/efHBmNO.png");
-      background-size: cover;
-      background-position: center; }
-    .play__card--connect-four {
-      background-image: url("https://i.imgur.com/EnfwSav.png");
-      background-size: cover;
-      background-position: center; }
-    .play__card--pixelate {
-      background-image: url("https://i.imgur.com/GJcAJt4.png");
-      background-size: cover;
-      background-position: center; }
-    .play__card--puppy-clicker {
-      background-image: url("https://i.imgur.com/XBauiCd.png");
-      background-size: cover;
-      background-position: center; }
-    .play__card--pokemon-picker {
-      background-image: url("https://i.imgur.com/6sQjakQ.png");
-      background-size: cover;
-      background-position: center; }
 
 .spades {
   height: 100svh; }

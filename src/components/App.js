@@ -12,7 +12,7 @@ function App() {
 
       <TopNav />
 
-      <Outlet context />
+      <Outlet context className="outlet-context"/>
 
       <Footer />
 
