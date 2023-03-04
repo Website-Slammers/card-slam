@@ -1,0 +1,7 @@
+.top-nav {
+  grid-row: top-start / top-end;
+  grid-column: 1 / -1;
+
+  box-sizing: border-box;
+  background-color: purple;
+}

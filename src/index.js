@@ -7,7 +7,7 @@ import App from './components/App'
 import ErrorPage from './components/ErrorPage';
 
 import About from './components/About'
-import Play from './components/Play'
+// import Play from './components/Play'
 
 import Blackjack from './components/games/deck/blackjack/Blackjack';
 import Hearts from './components/games/deck/hearts/Hearts'
@@ -32,24 +32,24 @@ export const router = createBrowserRouter([
                 path: "about",
                 element: <About />
             },
+            // {
+            //     path: "play",
+            //     element: <Play />
+            // },
             {
-                path: "play",
-                element: <Play />
-            },
-            {
-                path: "play/blackjack",
+                path: "blackjack",
                 element: <Blackjack />
             },
             {
-                path: "play/hearts",
+                path: "hearts",
                 element: <Hearts />
             },
             {
-                path: "play/oh-hell",
+                path: "oh-hell",
                 element: <OhHell />
             },
             {
-                path: "play/spades",
+                path: "spades",
                 element: <Spades />
             }
         ]

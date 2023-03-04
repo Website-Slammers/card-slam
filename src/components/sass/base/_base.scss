@@ -25,7 +25,6 @@ html {
 }
 
 body {
-    margin: 3rem;
     padding: 0;
 
     @media only screen and (max-width: $bp-medium) {
@@ -43,4 +42,9 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat:repeat;
+}
+
+.app-return {
+  display: grid;
+  grid-template-rows: [top-start] 10vh [top-end main-start] 1fr [main-end foot-start] 30vh [foot-end];
 }

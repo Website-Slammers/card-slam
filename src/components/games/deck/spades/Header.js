@@ -7,7 +7,7 @@ function Header() {
 
       <div className="header__textbox">
         <h2 className="heading-secondary">
-          <Link to="/play">
+          <Link to="/">
             <span className="heading-secondary--main">
               Spades
             </span>
@@ -16,7 +16,7 @@ function Header() {
       </div>
 
       <div className="header__nav">
-        <Link to="/play" className="header__nav-item">
+        <Link to="/" className="header__nav-item">
           home</Link>
         <div className="header__nav-item">
           new game</div>
