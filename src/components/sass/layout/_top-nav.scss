@@ -19,13 +19,13 @@
   justify-content: space-between;
   align-items: center;
 
-  // Logo
+  // LOGO
   &__logo {
     height: 4rem;
     margin-left: 3rem;
   }
 
-  // Searchbar
+  // SEARCHBAR
   &__search-form {
     flex: 0 0 40%;
     // border: 2px solid white;
@@ -37,7 +37,7 @@
   }
 
   &__search-input {
-    font-family: inherit;
+    font-family: $font-rale;
     font-size: inherit;
     color: white;
     background-color: #4f11ff;
@@ -71,21 +71,13 @@
     }
   }
 
+  // RIGHT SIDE
   &__user-nav {
     display: flex;
     cursor: pointer;
   }
 
-  &__user-icon-box {
-    margin-right: 3rem;
-  } 
-
-  &__user-settings {
-    color: white;
-    height: 3.75rem;
-    width: 3.75rem;
-  }
-
+  // USERNAME
   &__user-box {
     display: flex;
     justify-content: center;
@@ -100,8 +92,26 @@
   }
 
   &__user-name {
+    font-size: 1.8rem;
+    font-family: $font-rale;
     color: white;
     margin-right: 1rem;
+  }
+
+  // SETTINGS
+  &__user-icon-box {
+    margin-right: 3rem;
+  } 
+
+  &__user-settings {
+    color: white;
+    height: 3.75rem;
+    width: 3.75rem;
+    transition: all 1s;
+
+    &:hover {
+      animation: spin 1s linear infinite;
+    }
   }
 
 }

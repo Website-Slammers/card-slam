@@ -3,6 +3,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
 *,
 *::before,
 *::after {
@@ -667,7 +673,7 @@ body {
     align-items: center;
     justify-content: center; }
   .top-nav__search-input {
-    font-family: inherit;
+    font-family: "Raleway", sans-serif;
     font-size: inherit;
     color: white;
     background-color: #4f11ff;
@@ -694,12 +700,6 @@ body {
   .top-nav__user-nav {
     display: flex;
     cursor: pointer; }
-  .top-nav__user-icon-box {
-    margin-right: 3rem; }
-  .top-nav__user-settings {
-    color: white;
-    height: 3.75rem;
-    width: 3.75rem; }
   .top-nav__user-box {
     display: flex;
     justify-content: center;
@@ -710,8 +710,19 @@ body {
     border-radius: 50%;
     border: 2px solid white; }
   .top-nav__user-name {
+    font-size: 1.8rem;
+    font-family: "Raleway", sans-serif;
     color: white;
     margin-right: 1rem; }
+  .top-nav__user-icon-box {
+    margin-right: 3rem; }
+  .top-nav__user-settings {
+    color: white;
+    height: 3.75rem;
+    width: 3.75rem;
+    transition: all 1s; }
+    .top-nav__user-settings:hover {
+      animation: spin 1s linear infinite; }
 
 .about {
   background: #004b00;
