@@ -24,7 +24,11 @@ body {
   margin: 3rem;
   padding: 0;
   background-color: black;
-  color: green; }
+  color: green;
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://i.imgur.com/UGhMd4x.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat; }
   @media only screen and (max-width: 56.25em) {
     body {
       margin: 0; } }
@@ -430,8 +434,6 @@ body {
       background-position: center; }
 
 .footer {
-  background-image: radial-gradient(circle, grey, black);
-  background: black;
   padding: 3rem 0;
   margin-top: 4rem;
   color: white;
