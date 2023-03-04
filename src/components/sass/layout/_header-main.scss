@@ -1,5 +1,11 @@
 .header-main {
-  height: 40vh;
+  grid-column: center-start / center-end;
+  // grid-row: main-header-start / main-header-end;
+
+
+
+
+
   background-image: linear-gradient(
     to right bottom, 
     rgba(darkblue, 0.8), 
