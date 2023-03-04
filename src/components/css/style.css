@@ -395,11 +395,11 @@ body {
     border-radius: 2.5rem;
     display: flex;
     align-items: flex-end;
-    box-shadow: 0 .5rem 1rem lightgrey;
+    box-shadow: 0 .5rem 1rem darkgrey;
     transition: all .5s; }
     .featured__feature:hover {
       transform: scale(0.99);
-      box-shadow: 0 .25rem .5rem lightgrey; }
+      box-shadow: 0 .25rem .5rem darkgrey; }
     .featured__feature p {
       font-size: 3rem;
       font-family: "Oswald", sans-serif;
@@ -496,7 +496,7 @@ body {
   border-radius: 2.5rem;
   display: flex;
   flex-direction: row;
-  box-shadow: 0 .5rem 1rem lightgrey; }
+  box-shadow: 0 .5rem 1rem darkgrey; }
   .header-main__textbox {
     text-align: center;
     display: block;

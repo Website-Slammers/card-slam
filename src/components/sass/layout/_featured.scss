@@ -41,12 +41,12 @@
     border-radius: 2.5rem;
     display: flex;
     align-items: flex-end;
-    box-shadow: 0 .5rem 1rem lightgrey;
+    box-shadow: 0 .5rem 1rem darkgrey;
     transition: all .5s;
 
     &:hover {
       transform: scale(.99);
-      box-shadow: 0 .25rem .5rem lightgrey;
+      box-shadow: 0 .25rem .5rem darkgrey;
     }
   
     & p {
