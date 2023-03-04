@@ -1,0 +1,51 @@
+.header-main {
+  height: 40vh;
+  background-image: linear-gradient(
+    to right bottom, 
+    rgba(darkblue, 0.8), 
+    rgba(black, 0.8)), 
+    url("https://i.imgur.com/NAKW5i1.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  // -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  // clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  border-radius: 2.5rem;
+
+  display: flex;
+  flex-direction: row;
+
+  &__textbox {
+    text-align: center;
+    display: block;
+    width: 50%;
+    // border: 2px solid white;
+    padding-left: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+  }
+
+  &__img  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 3px solid red;
+    flex-grow: 1;
+
+    
+    & img {
+    height: 40rem;
+    width: 40rem;
+    transform: rotate(190deg);
+    transition: .5s;
+
+    &:hover {
+      transform: rotate(190deg) scale(1.05);
+    }
+   }
+  }
+}
