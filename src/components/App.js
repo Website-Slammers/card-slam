@@ -14,7 +14,7 @@ function App() {
 
       <Outlet context className="outlet-context"/>
 
-      <Footer />
+      {/* <Footer /> */}
 
     </div>
   )

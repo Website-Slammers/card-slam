@@ -32,10 +32,6 @@ body {
     body {
       margin: 0; } }
 
-.app-return {
-  display: grid;
-  grid-template-rows: [top-start] 10vh [top-end main-start] 1fr [main-end foot-start] 30vh [foot-end]; }
-
 .heading-primary {
   font-family: sans-serif;
   font-weight: 400;
@@ -518,8 +514,6 @@ body {
       background-position: center; }
 
 .footer {
-  grid-row: footer-start / footer-end;
-  grid-column: top-col-start / top-col-end;
   padding: 3rem 0;
   margin-top: 4rem;
   color: white;
@@ -649,27 +643,75 @@ body {
       .header__nav-item:hover {
         color: #bababa; }
 
+.top-nav-container {
+  display: flex;
+  justify-content: center; }
+
 .top-nav {
-  grid-row: top-start / top-end;
-  grid-column: 1 / -1;
+  height: 8vh;
+  width: 112rem;
   box-sizing: border-box;
-  background-color: green;
+  background-color: #1d0b99;
+  border-radius: 2rem;
+  margin-bottom: 3rem;
   font-size: 1.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center; }
   .top-nav__logo {
-    height: 4rem; }
+    height: 4rem;
+    margin-left: 3rem; }
   .top-nav__search-form {
     flex: 0 0 40%;
-    border: 2px solid white;
     display: flex;
     align-items: center;
     justify-content: center; }
+  .top-nav__search-input {
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    background-color: #4f11ff;
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    transition: all .2s;
+    margin-right: -3.25rem; }
+    .top-nav__search-input:focus {
+      outline: none;
+      width: 100%;
+      background-color: #622bff; }
+    .top-nav__search-input::-webkit-input-placeholder {
+      font-weight: 100;
+      color: white; }
+  .top-nav__search-button {
+    border: none;
+    background-color: inherit; }
+    .top-nav__search-button--icon {
+      height: 2rem;
+      width: 2rem;
+      fill: white; }
+  .top-nav__user-nav {
+    display: flex;
+    cursor: pointer; }
+  .top-nav__user-icon-box {
+    margin-right: 3rem; }
+  .top-nav__user-settings {
+    color: white;
+    height: 3.75rem;
+    width: 3.75rem; }
+  .top-nav__user-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem; }
   .top-nav__user-photo {
     height: 3.75rem;
     border-radius: 50%;
     border: 2px solid white; }
+  .top-nav__user-name {
+    color: white;
+    margin-right: 1rem; }
 
 .about {
   background: #004b00;

@@ -1,9 +1,17 @@
-.top-nav {
-  grid-row: top-start / top-end;
-  grid-column: 1 / -1;
+.top-nav-container {
+  display: flex;
+  justify-content: center;
+}
 
+.top-nav {
+  // grid-row: top-start / top-end;
+  // grid-column: 1 / -1;
+  height: 8vh;
+  width: 112rem;
   box-sizing: border-box;
-  background-color: green;
+  background-color: #1d0b99;
+  border-radius: 2rem;
+  margin-bottom: 3rem;
 
   font-size: 1.4rem;
 
@@ -14,12 +22,13 @@
   // Logo
   &__logo {
     height: 4rem;
+    margin-left: 3rem;
   }
 
   // Searchbar
   &__search-form {
     flex: 0 0 40%;
-    border: 2px solid white;
+    // border: 2px solid white;
 
     display: flex;
     align-items: center;
@@ -28,27 +37,60 @@
   }
 
   &__search-input {
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    background-color: #4f11ff;
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    transition: all .2s;
+    margin-right: -3.25rem;
 
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: lighten(#4f11ff, 5);
+    }
+
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      color: white;
+    }
   }
 
   &__search-button {
+    border: none;
+    background-color: inherit;
 
+    &--icon {
+      height: 2rem;
+      width: 2rem;
+      fill: white;
+    }
   }
 
   &__user-nav {
-
+    display: flex;
+    cursor: pointer;
   }
 
   &__user-icon-box {
-
-  }
+    margin-right: 3rem;
+  } 
 
   &__user-settings {
-
+    color: white;
+    height: 3.75rem;
+    width: 3.75rem;
   }
 
   &__user-box {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
   }
 
   &__user-photo {
@@ -58,7 +100,8 @@
   }
 
   &__user-name {
-
+    color: white;
+    margin-right: 1rem;
   }
 
 }

@@ -45,8 +45,7 @@ body {
 }
 
 .app-return {
-  display: grid;
-  grid-template-rows: [top-start] 10vh [top-end main-start] 1fr [main-end foot-start] 30vh [foot-end];
-
-  // grid-template-columns: [top-full-start] minmax(6rem, 1fr) [top-center-start] repeat(8, [top-col-start] minmax(min-content, 14rem) [top-col-end]) [top-center-end] minmax(6rem, 1fr) [top-full-end];
+  // display: grid;
+  
+  // grid-template-rows: [top-start] 10vh [top-end main-start] 1fr [main-end foot-start] 30vh [foot-end];
 }

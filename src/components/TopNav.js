@@ -1,27 +1,32 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import  { BiSearch } from 'react-icons/bi'
 import { BsGearWideConnected } from 'react-icons/bs'
 
 function TopNav() {
   return (
-    <div className="top-nav">
+    <div className="top-nav-container">
 
-      <img src="https://i.imgur.com/zsV00xq.png" className="top-nav__logo" alt="games-logo"/>  
+      <div className="top-nav">
 
-      <form className="top-nav__search-form">
-        <input type="text" className="top-nav__search-input" placeholder="Search games" />
-        <button className="top-nav__search-button">
-          <BiSearch />
-        </button>
-      </form>
-      <div className="top-nav__user-nav">
-        <div className="top-nav__user-icon-box">
-          <BsGearWideConnected className="top-nav__user-settings"/>
-        </div>
-        <div className="top-nav__user-box">
-          <img className="top-nav__user-photo" src="https://i.imgur.com/7PG0Tup.png" alt="user-img" />
-          <span className="top-nav__user-name">Account</span>
+        <Link to="/"><img src="https://i.imgur.com/zsV00xq.png" className="top-nav__logo" alt="games-logo"/>  </Link>
+
+        <form className="top-nav__search-form">
+          <input type="text" className="top-nav__search-input" placeholder="Search games" />
+          <button className="top-nav__search-button">
+            <BiSearch className="top-nav__search-button--icon"/>
+          </button>
+        </form>
+        <div className="top-nav__user-nav">
+          <div className="top-nav__user-box">
+            <span className="top-nav__user-name">Account</span>
+            <img className="top-nav__user-photo" src="https://i.imgur.com/7PG0Tup.png" alt="user-img" />
+            
+          </div>
+          <div className="top-nav__user-icon-box">
+            <BsGearWideConnected className="top-nav__user-settings"/>
+          </div>
         </div>
       </div>
     </div>
