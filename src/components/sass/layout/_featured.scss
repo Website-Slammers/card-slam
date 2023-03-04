@@ -21,6 +21,7 @@
     & a {
       text-decoration: none;
       flex-grow: 1.5;
+  
     }
   }
 
@@ -40,6 +41,7 @@
     border-radius: 2.5rem;
     display: flex;
     align-items: flex-end;
+    box-shadow: 0 .5rem 1rem white;
   
     & p {
       font-size: 3rem;
