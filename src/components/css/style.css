@@ -34,7 +34,7 @@ body {
 
 .app-return {
   display: grid;
-  grid-template-rows: [top-start] 12vh [top-end main-start] max-content [main-end foot-start] 30vh [foot-end];
+  grid-template-rows: [top-start] 14vh [top-end main-start] max-content [main-end foot-start] 30vh [foot-end];
   grid-template-columns: 100vw; }
 
 .heading-primary {
@@ -403,7 +403,7 @@ body {
     display: flex;
     align-items: flex-end;
     border-radius: 2.5rem;
-    box-shadow: 0 .5rem 1rem darkgrey;
+    box-shadow: 0 0.5rem 1rem #86c5da;
     transition: all .5s; }
     .all-games__card span {
       font-size: 3rem;
@@ -413,7 +413,7 @@ body {
       margin-bottom: 2rem; }
     .all-games__card:hover {
       transform: scale(0.98);
-      box-shadow: 0 .25rem .5rem darkgrey; }
+      box-shadow: 0 0.25rem 0.5rem #72bcd4; }
     .all-games__card--hearts {
       background-image: url("https://i.imgur.com/1HL3aq3.png");
       background-size: cover;
@@ -497,11 +497,11 @@ body {
     display: flex;
     align-items: flex-end;
     border-radius: 2.5rem;
-    box-shadow: 0 .5rem 1rem darkgrey;
+    box-shadow: 0 0.5rem 1rem #86c5da;
     transition: all .5s; }
     .featured__feature:hover {
       transform: scale(0.99);
-      box-shadow: 0 .25rem .5rem darkgrey; }
+      box-shadow: 0 0.25rem 0.5rem #72bcd4; }
     .featured__feature p {
       font-size: 3rem;
       font-family: "Oswald", sans-serif;
@@ -589,7 +589,7 @@ body {
   border-radius: 2.5rem;
   display: flex;
   flex-direction: row;
-  box-shadow: 0 .5rem 1rem darkgrey; }
+  box-shadow: 0 0.5rem 1rem #86c5da; }
   .header-main__textbox {
     text-align: center;
     display: block;
@@ -674,6 +674,7 @@ body {
   background-image: linear-gradient(#1d0b99, #1a082f);
   border-radius: 2rem;
   margin-bottom: 3rem;
+  margin-top: 2rem;
   font-size: 1.4rem;
   display: flex;
   justify-content: space-between;

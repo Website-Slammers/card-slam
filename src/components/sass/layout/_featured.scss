@@ -52,13 +52,13 @@
     align-items: flex-end;
 
     border-radius: 2.5rem;
-    box-shadow: 0 .5rem 1rem darkgrey;
+    box-shadow: $shadow-raised;
     transition: all .5s;
     // margin on anchor tag
 
     &:hover {
       transform: scale(.99);
-      box-shadow: 0 .25rem .5rem darkgrey;
+      box-shadow: $shadow-pressed;
     }
   
     & p {
