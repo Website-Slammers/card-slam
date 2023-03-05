@@ -70,6 +70,7 @@
   &__search-button {
     border: none;
     background-color: inherit;
+    cursor: pointer;
 
     &--icon {
       height: 2rem;
@@ -124,7 +125,6 @@
     color: white;
     height: 3.75rem;
     width: 3.75rem;
-    transition: animation 1s;
 
     &:hover {
       animation: spin 1s linear infinite;
