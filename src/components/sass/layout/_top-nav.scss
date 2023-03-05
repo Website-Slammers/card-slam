@@ -71,11 +71,15 @@
     border: none;
     background-color: inherit;
     cursor: pointer;
+    display: flex;
+    transform: translateX(-.5rem);
+
 
     &--icon {
       height: 2rem;
       width: 2rem;
       fill: white;
+      // margin-right: .5rem;
     }
   }
 
