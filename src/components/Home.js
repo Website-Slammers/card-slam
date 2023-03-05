@@ -21,7 +21,7 @@ function Home() {
         </div>
         {/* Header PNG */}
         <div className="header-main__img">
-          <img src="https://i.imgur.com/t3TQZmq.png" />
+          <img src="https://i.imgur.com/t3TQZmq.png" alt="image of winning blackjack hand. ace of spades and jack of spades."/>
         </div>
       </div> {/* Home Header End */}
 

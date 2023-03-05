@@ -50,9 +50,9 @@
     transform: rotate(190deg);
     transition: .5s;
 
-    @media only screen and (max-width: $bp-largest) {
-      height: 40rem;
-      width: 40rem;
+    @media only screen and (min-width: $bp-largest) {
+      height: 35rem;
+      width: 35rem;
     }
 
     @media only screen and (max-width: $bp-smallest) {
