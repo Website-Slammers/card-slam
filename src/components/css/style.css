@@ -745,7 +745,10 @@ body {
       margin-right: 1rem;
       transition: all .3s; }
   .top-nav__user-icon-box {
-    margin-right: 3rem; }
+    margin-right: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   .top-nav__user-settings {
     color: lightblue;
     height: 3.75rem;
