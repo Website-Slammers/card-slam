@@ -38,6 +38,10 @@ body {
     body {
       margin: 0; } }
 
+.app-return {
+  display: grid;
+  grid-template-rows: [top-start] 10vh [top-end main-start] max-content [main-end foot-start] 30vh [foot-end]; }
+
 .heading-primary {
   font-family: sans-serif;
   font-weight: 400;
@@ -520,6 +524,7 @@ body {
       background-position: center; }
 
 .footer {
+  grid-row: foot-start / foot-end;
   padding: 3rem 0;
   margin-top: 4rem;
   color: white;
@@ -651,7 +656,8 @@ body {
 
 .top-nav-container {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  grid-row: top-start / top-end; }
 
 .top-nav {
   height: 8vh;

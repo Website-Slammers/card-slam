@@ -1,13 +1,11 @@
 .top-nav-container {
   display: flex;
   justify-content: center;
-  // border: 2px solid white;
-  // width: 100%;
+
+  grid-row: top-start / top-end;
 }
 
 .top-nav {
-  // grid-row: top-start / top-end;
-  // grid-column: 1 / -1;
   height: 8vh;
   width: 112rem;
   box-sizing: border-box;
@@ -39,12 +37,10 @@
   // SEARCHBAR
   &__search-form {
     flex: 0 0 40%;
-    // border: 2px solid white;
 
     display: flex;
     align-items: center;
     justify-content: center;
-  
   }
 
   &__search-input {
@@ -116,11 +112,8 @@
       color: white;
       margin-right: 1rem;
       transition: all .3s;
-
     }
   }
-
-
 
   // SETTINGS
   &__user-icon-box {
@@ -138,5 +131,4 @@
       transform: scale(.9);
     }
   }
-
 }
