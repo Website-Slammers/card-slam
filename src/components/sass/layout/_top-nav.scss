@@ -47,7 +47,7 @@
     font-family: $font-rale;
     font-size: inherit;
     color: white;
-    background-color: #4f11ff;
+    background-color: #1d0b99;
     border: none;
     padding: .7rem 2rem;
     border-radius: 100px;
@@ -58,7 +58,7 @@
     &:focus {
       outline: none;
       width: 100%;
-      background-color: lighten(#4f11ff, 5);
+      background-color: lighten(#1d0b99, 10);
     }
 
     &::-webkit-input-placeholder {
