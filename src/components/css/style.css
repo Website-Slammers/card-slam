@@ -607,10 +607,18 @@ body {
     align-items: center;
     flex-grow: 1; }
     .header-main__img img {
-      height: 40rem;
-      width: 40rem;
+      height: 30rem;
+      width: 30rem;
       transform: rotate(190deg);
       transition: .5s; }
+      @media only screen and (max-width: 75em) {
+        .header-main__img img {
+          height: 40rem;
+          width: 40rem; } }
+      @media only screen and (max-width: 31.25em) {
+        .header-main__img img {
+          height: 25rem;
+          width: 25rem; } }
       .header-main__img img:hover {
         transform: rotate(190deg) scale(1.05); }
 
