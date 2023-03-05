@@ -39,3 +39,4 @@ export const possibleCards =(rHand,trick,turn)=>{
     // console.log("possible Cards", possibleCards);
     return {possibleCards, possibleCardsIdx}
 }
+

@@ -29,20 +29,7 @@ function Hearts() {
     setHands(newRound)
   },[])
 
-  useEffect(()=>{
-    console.log(hands)
-    let tempHand = hands.player1
-    if(tempHand) tempHand =  cardSorter(hands.player1, 'hearts')
-    setHand1(tempHand)
-    if(tempHand) tempHand = cardSorter(hands.player2, 'hearts')
-    setHand2(tempHand)
-    if(tempHand) tempHand = cardSorter(hands.player3, 'hearts')
-    setHand3(tempHand)
-    if(tempHand) tempHand = cardSorter(hands.player4, 'hearts')
-    setHand4(tempHand)
-    setCurrentPlayer(turnOrder(hands,currentPlayer))
-  },[hands])
-
+  
   // sudo code workout
   // default game rules and playout
   // whoever has the 2 of clubs has to play it, whether AI or player then the next player gets to play in the round, to the left of whoever played the 2 of clubs (check the two of clubs)
@@ -50,25 +37,10 @@ function Hearts() {
   // whoever wins the hand gets to play next. 
   // hearts is now allowed if you don't have the in suite as well as the queen of spades.
   // 
-  useEffect(()=>{
-    // console.log('ello mate')
-    // if(chosenCard[0]!='no'){
-    //   // console.log('hey', chosenCard[0]);
-    //   let newHand = [...hand1]
-    //   newHand.splice(chosenCard[1],1)
-    //   // console.log(newHand)
-    //   setHand1(newHand)
-    //   // console.log(newHand)
-    //   let newTrick = trick
-    //   console.log(trick);
-    //   newTrick.push(chosenCard[0])
-    //   console.log(newTrick)
-    //   setTrick(newTrick)
-    // }
-  },[chosenCard])
+  
 
   useEffect(()=>{
-    console.log(currentPlayer)
+    console.log("computer code", currentPlayer)
     if(currentPlayer == 'player1'){
 
     }else if(currentPlayer){
@@ -104,6 +76,21 @@ function Hearts() {
   },[currentPlayer])
 
   useEffect(()=>{
+    console.log('hello')
+    let tempHand = hands.player1
+    if(tempHand) tempHand =  cardSorter(hands.player1, 'hearts')
+    setHand1(tempHand)
+    if(tempHand) tempHand = cardSorter(hands.player2, 'hearts')
+    setHand2(tempHand)
+    if(tempHand) tempHand = cardSorter(hands.player3, 'hearts')
+    setHand3(tempHand)
+    if(tempHand) tempHand = cardSorter(hands.player4, 'hearts')
+    setHand4(tempHand)
+    setCurrentPlayer(turnOrder(hands,currentPlayer))
+  },[hands])
+
+
+  useEffect(()=>{
     if(trick[0]!=''){
       if(currentPlayer == 'player4'){
         setCurrentPlayer('player1')
@@ -113,6 +100,23 @@ function Hearts() {
       }
     }
   },[trick])
+
+  useEffect(()=>{
+    console.log('ello mate')
+    if(chosenCard[0]!='no'){
+      console.log('hey', chosenCard[0]);
+      let newHand = [...hand1]
+      newHand.splice(chosenCard[1],1)
+      // console.log(newHand)
+      setHand1(newHand)
+      // console.log(newHand)
+      let newTrick = trick
+      console.log(trick);
+      newTrick.push(chosenCard[0])
+      console.log(newTrick)
+      setTrick(newTrick)
+    }
+  },[chosenCard])
 
   const chooseCard = (card, index)=>{
     setChosenCard([card,index])
