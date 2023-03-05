@@ -45,7 +45,7 @@ body {
 }
 
 .app-return {
-  // display: grid;
-  
-  // grid-template-rows: [top-start] 10vh [top-end main-start] 1fr [main-end foot-start] 30vh [foot-end];
+  display: grid;
+
+  grid-template-rows: [top-start] 10vh [top-end main-start] max-content [main-end foot-start] 30vh [foot-end];
 }
