@@ -29,12 +29,8 @@ html {
 body {
   padding: 0;
   margin: 0;
-  background-color: black;
-  color: green;
-  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://i.imgur.com/UGhMd4x.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: repeat; }
+  background-color: #06021c;
+  color: green; }
 
 .app-return {
   display: grid;
