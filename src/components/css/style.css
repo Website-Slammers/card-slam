@@ -106,12 +106,13 @@ body {
     text-decoration: none;
     letter-spacing: 4px;
     color: transparent;
-    border: 3px solid #fff;
+    border: 2px solid #fff;
     font-size: 2rem;
     line-height: 2rem;
     position: relative;
     overflow: hidden;
-    border-radius: 3px; }
+    border-radius: 3px;
+    cursor: pointer; }
     .btn--header-main:before {
       content: "play";
       position: absolute;
@@ -459,7 +460,7 @@ body {
       background-size: cover;
       background-position: center; }
     .all-games__card--pokemon-picker {
-      background-image: url("https://i.imgur.com/WkHAEj6.png");
+      background-image: url("https://i.imgur.com/D57sPLH.png");
       background-size: cover;
       background-position: center; }
 
@@ -664,7 +665,7 @@ body {
   height: 8vh;
   width: 112rem;
   box-sizing: border-box;
-  background-color: #1d0b99;
+  background-image: linear-gradient(#1d0b99, #1a082f);
   border-radius: 2rem;
   margin-bottom: 3rem;
   font-size: 1.4rem;
@@ -720,29 +721,32 @@ body {
     align-items: center;
     margin-right: 2rem; }
     .top-nav__user:hover .top-nav__user--name {
-      color: lightblue; }
+      color: white; }
     .top-nav__user:hover .top-nav__user--photo {
-      transform: scale(1.05); }
+      transform: scale(1.05);
+      border: 2px solid white; }
     .top-nav__user--photo {
       height: 3.75rem;
       border-radius: 50%;
-      border: 2px solid white;
+      border: 2px solid lightblue;
       transition: all .3s; }
     .top-nav__user--name {
       font-size: 1.8rem;
       font-family: "Raleway", sans-serif;
-      color: white;
+      color: lightblue;
       margin-right: 1rem;
       transition: all .3s; }
   .top-nav__user-icon-box {
     margin-right: 3rem; }
   .top-nav__user-settings {
-    color: white;
+    color: lightblue;
     height: 3.75rem;
-    width: 3.75rem; }
+    width: 3.75rem;
+    transition: all .3s; }
     .top-nav__user-settings:hover {
       animation: spin 1s linear infinite;
-      transform: scale(0.9); }
+      transform: scale(0.9);
+      color: white; }
 
 .about {
   background: #004b00;
