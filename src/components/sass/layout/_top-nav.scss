@@ -93,24 +93,25 @@
     margin-right: 2rem;
 
     &:hover &--name {
-      color: lightblue;
+      color: white;
     }
 
     &:hover &--photo {
       transform: scale(1.05);
+      border: 2px solid white;
     }
 
     &--photo {
       height: 3.75rem;
       border-radius: 50%;
-      border: 2px solid white;
+      border: 2px solid lightblue;
       transition: all .3s;
     }
   
     &--name {
       font-size: 1.8rem;
       font-family: $font-rale;
-      color: white;
+      color: lightblue;
       margin-right: 1rem;
       transition: all .3s;
     }
@@ -122,13 +123,15 @@
   } 
 
   &__user-settings {
-    color: white;
+    color: lightblue;
     height: 3.75rem;
     width: 3.75rem;
+    transition: all .3s;
 
     &:hover {
       animation: spin 1s linear infinite;
       transform: scale(.9);
+      color: white;
     }
   }
 }
