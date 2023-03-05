@@ -715,7 +715,9 @@ body {
   .top-nav__search-button {
     border: none;
     background-color: inherit;
-    cursor: pointer; }
+    cursor: pointer;
+    display: flex;
+    transform: translateX(-0.5rem); }
     .top-nav__search-button--icon {
       height: 2rem;
       width: 2rem;
