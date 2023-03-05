@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
   display: grid;
+
+  width: 100vw;
+
   grid-template-rows: 40vh 50vh min-content;
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
