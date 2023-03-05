@@ -120,6 +120,9 @@
   // SETTINGS
   &__user-icon-box {
     margin-right: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   } 
 
   &__user-settings {
