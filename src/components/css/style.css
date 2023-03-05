@@ -40,7 +40,8 @@ body {
 
 .app-return {
   display: grid;
-  grid-template-rows: [top-start] 10vh [top-end main-start] max-content [main-end foot-start] 30vh [foot-end]; }
+  grid-template-rows: [top-start] 12vh [top-end main-start] max-content [main-end foot-start] 30vh [foot-end];
+  grid-template-columns: 100vw; }
 
 .heading-primary {
   font-family: sans-serif;
@@ -611,10 +612,10 @@ body {
       width: 30rem;
       transform: rotate(190deg);
       transition: .5s; }
-      @media only screen and (max-width: 75em) {
+      @media only screen and (min-width: 75em) {
         .header-main__img img {
-          height: 40rem;
-          width: 40rem; } }
+          height: 35rem;
+          width: 35rem; } }
       @media only screen and (max-width: 31.25em) {
         .header-main__img img {
           height: 25rem;

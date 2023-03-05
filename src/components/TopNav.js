@@ -14,7 +14,7 @@ function TopNav() {
 
         <form className="top-nav__search-form">
           <input type="text" className="top-nav__search-input" placeholder="Search games" />
-          <button className="top-nav__search-button">
+          <button name="search" className="top-nav__search-button">
             <BiSearch className="top-nav__search-button--icon"/>
           </button>
         </form>
