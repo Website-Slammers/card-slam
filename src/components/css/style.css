@@ -690,7 +690,7 @@ body {
     font-family: "Raleway", sans-serif;
     font-size: inherit;
     color: white;
-    background-color: #4f11ff;
+    background-color: #1d0b99;
     border: none;
     padding: .7rem 2rem;
     border-radius: 100px;
@@ -700,7 +700,7 @@ body {
     .top-nav__search-input:focus {
       outline: none;
       width: 100%;
-      background-color: #622bff; }
+      background-color: #260ec9; }
     .top-nav__search-input::-webkit-input-placeholder {
       font-weight: 100;
       color: white; }
