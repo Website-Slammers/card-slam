@@ -32,13 +32,13 @@ function Home() {
 
         <Link className="featured--lg" to="/hearts">
           <div className="featured__feature featured__feature--hearts">
-            <p>Hearts</p></div></Link>
+            <p>Play Hearts</p></div></Link>
 
         <Link className="featured--sm-1"to="/spades"><div className="featured__feature featured__feature--spades">
-          <p>Spades</p></div></Link>
+          <p>Play Spades</p></div></Link>
 
         <Link className="featured--sm-2" to="/blackjack"><div className="featured__feature featured__feature--blackjack">
-          <p>Blackjack</p></div></Link>
+          <p>Play Blackjack</p></div></Link>
 
       </div>
       {/* Featured Games End */}

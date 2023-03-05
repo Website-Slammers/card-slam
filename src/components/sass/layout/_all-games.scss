@@ -45,7 +45,8 @@
       font-size: 3rem;
       font-family: $font-oswald;
       color: darken(white, 10);
-      margin-left: 3rem;
+      margin-left: 2rem;
+      margin-bottom: 2rem;
     }
 
     &:hover {
@@ -54,7 +55,7 @@
     }
 
     &--hearts {
-      background-image: url("https://i.imgur.com/rqPPV9W.png");
+      background-image: url("https://i.imgur.com/1HL3aq3.png");
       background-size: cover;
       background-position: center;
     }
@@ -72,9 +73,9 @@
     }
 
     &--blackjack {
-      background-image: url("https://i.imgur.com/Ecq9ou4.png");
+      background-image: url("https://i.imgur.com/EdJlBfB.png");
       background-size: cover;
-      background-position: center;
+      background-position: right;
     }
 
     &--euchre {

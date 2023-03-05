@@ -413,12 +413,13 @@ body {
       font-size: 3rem;
       font-family: "Oswald", sans-serif;
       color: #e6e6e6;
-      margin-left: 3rem; }
+      margin-left: 2rem;
+      margin-bottom: 2rem; }
     .all-games__card:hover {
       transform: scale(0.98);
       box-shadow: 0 .25rem .5rem darkgrey; }
     .all-games__card--hearts {
-      background-image: url("https://i.imgur.com/rqPPV9W.png");
+      background-image: url("https://i.imgur.com/1HL3aq3.png");
       background-size: cover;
       background-position: center; }
     .all-games__card--spades {
@@ -430,9 +431,9 @@ body {
       background-size: cover;
       background-position: center; }
     .all-games__card--blackjack {
-      background-image: url("https://i.imgur.com/Ecq9ou4.png");
+      background-image: url("https://i.imgur.com/EdJlBfB.png");
       background-size: cover;
-      background-position: center; }
+      background-position: right; }
     .all-games__card--euchre {
       background-image: url("https://i.imgur.com/b8zfLAM.png");
       background-size: cover;
@@ -511,7 +512,7 @@ body {
       color: #e6e6e6;
       margin-left: 3rem; }
     .featured__feature--hearts {
-      background-image: url("https://i.imgur.com/rqPPV9W.png");
+      background-image: url("https://i.imgur.com/Jwsc4X0.png");
       background-size: cover;
       background-position: center; }
     .featured__feature--spades {
@@ -519,7 +520,7 @@ body {
       background-size: cover;
       background-position: center; }
     .featured__feature--blackjack {
-      background-image: url("https://i.imgur.com/Ecq9ou4.png");
+      background-image: url("https://i.imgur.com/EdJlBfB.png");
       background-size: cover;
       background-position: center; }
 
@@ -704,7 +705,8 @@ body {
       color: white; }
   .top-nav__search-button {
     border: none;
-    background-color: inherit; }
+    background-color: inherit;
+    cursor: pointer; }
     .top-nav__search-button--icon {
       height: 2rem;
       width: 2rem;
@@ -737,8 +739,7 @@ body {
   .top-nav__user-settings {
     color: white;
     height: 3.75rem;
-    width: 3.75rem;
-    transition: animation 1s; }
+    width: 3.75rem; }
     .top-nav__user-settings:hover {
       animation: spin 1s linear infinite;
       transform: scale(0.9); }
