@@ -13,8 +13,8 @@ function App() {
       <TopNav />
 
       <Outlet context className="outlet-context"/>
-{/* 
-      <Footer /> */}
+
+      <Footer />
 
     </div>
   )
