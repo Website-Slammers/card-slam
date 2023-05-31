@@ -3,13 +3,16 @@ import { Outlet } from 'react-router-dom'
 
 import './css/style.css'
 
+import TopNav from './TopNav'
 import Footer from './Footer'
 
 function App() {
   return (
-    <div>
+    <div className="app-return">
 
-      <Outlet context />
+      <TopNav />
+
+      <Outlet context className="outlet-context"/>
 
       <Footer />
 

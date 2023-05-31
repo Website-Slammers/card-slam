@@ -1,6 +1,9 @@
 .footer {
-  background-image: radial-gradient(circle, grey, black);
-  background: black;
+  
+
+  grid-row: foot-start / foot-end;
+  // grid-column: top-col-start / top-col-end;
+  // background: black;
    
   padding: 3rem 0;
   margin-top: 4rem;
@@ -22,8 +25,10 @@
   &__logo-box {
     text-align: center;
     margin-bottom: 3rem;
-    font-family: $font-oswald;
+    font-family: $font-rale;
     font-size: 2rem;
+    font-weight: 600;
+    text-decoration: overline;
     color: white;
 
 
@@ -43,6 +48,7 @@
     flex: 0 0 50%;
     padding: 2rem;
     max-width: 60rem;
+    font-family: $font-oswald;
   }
 
   &__navigation {
@@ -61,7 +67,7 @@
   &__link {
     &:link,
     &:visited {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: $font-oswald;
       color: white;
       text-decoration: none;
       display: inline-block;

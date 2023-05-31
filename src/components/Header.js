@@ -9,7 +9,7 @@ function Header() {
         <h2 className="heading-secondary">
           <Link to="/">
             <span className="heading-secondary--main">
-              Games
+              All Games
             </span>
             <span className="heading-secondary--sub">
               by Web Slammers

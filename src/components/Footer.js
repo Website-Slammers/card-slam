@@ -5,7 +5,7 @@ function Footer() {
     <div className="footer">
 
       <div className="footer__logo-box">
-        <span>Webslammers </span>
+        <span> a webSlam project </span>
       </div>
 
       <div className="footer__flexbox">

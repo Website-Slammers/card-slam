@@ -22,7 +22,6 @@ function About() {
 
       <div className="playing-card playing-card--joker playing-card--s" data-text="1"><GiJesterHat /></div> */}
 
-      <div className="playing-card playing-card--1 playing-card--s" data-text="1">&#9824;</div>
 
       <div className="playing-card playing-card--2 playing-card--s" data-text="2">&#9824; &#9824;</div>
 
@@ -52,8 +51,6 @@ function About() {
 
       {/* Hearts */}
 
-      <div className="playing-card playing-card--1 playing-card--h" data-text="1">&#9829;</div>
-
       <div className="playing-card playing-card--2 playing-card--h" data-text="2">&#9829; &#9829;</div>
 
       <div className="playing-card playing-card--3 playing-card--h" data-text="3">&#9829; &#9829; &#9829;</div>
@@ -82,8 +79,6 @@ function About() {
 
       {/* Clubs */}
 
-      <div className="playing-card playing-card--1 playing-card--c" data-text="1">&#9827;</div>
-
       <div className="playing-card playing-card--2 playing-card--c" data-text="2">&#9827; &#9827;</div>
 
       <div className="playing-card playing-card--3 playing-card--c" data-text="3">&#9827; &#9827; &#9827;</div>
@@ -111,8 +106,6 @@ function About() {
       <div className="playing-card playing-card--a playing-card--c" data-text="A">&#9827;</div>
 
       {/* Diamonds */}
-
-      <div className="playing-card playing-card--1 playing-card--d" data-text="1">&#9830;</div>
 
       <div className="playing-card playing-card--2 playing-card--d" data-text="2">&#9830; &#9830;</div>
 

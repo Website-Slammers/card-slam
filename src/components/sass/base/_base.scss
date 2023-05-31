@@ -25,8 +25,25 @@ html {
 }
 
 body {
-    margin: 0;
     padding: 0;
-    background-color: black;
+    margin: 0;
+
+    background-color: darken(#0f054c, 10);
     color: green;
+
+    // background-image: linear-gradient(
+    //   to right bottom, 
+    //   rgba(black, 0.8), 
+    //   rgba(black, 0.8)), 
+    //   url("https://i.imgur.com/UGhMd4x.png");
+    // background-size: cover;
+    // background-position: center;
+    // background-repeat:repeat-y
+}
+
+.app-return {
+  display: grid;
+
+  grid-template-rows: [top-start] 14vh [top-end main-start] max-content [main-end foot-start] 30vh [foot-end];
+  grid-template-columns: 100vw;
 }

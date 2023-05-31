@@ -9,7 +9,7 @@ function Header() {
         <h2 className="heading-secondary">
           <Link to="/">
             <span className="heading-secondary--main">
-              Hearts
+              Oh Hell
             </span>
           </Link>
         </h2>
@@ -26,9 +26,6 @@ function Header() {
           options</div>
         <div className="header__nav-item">
           multiplayer</div>
-      </div>
-      <div className="header__rules">
-        
       </div>
 
     </div>

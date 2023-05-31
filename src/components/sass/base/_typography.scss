@@ -2,37 +2,36 @@
   font-family: sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
-  margin-left: 2rem;
 
   &--main {
-    font-size: 10rem;
-    font-family: $font-header, sans-serif;
-    font-weight: 40;
-    color: white;
-    display: inline-block;
-    cursor: default;
-
-    @media only screen and (max-width: $bp-medium) {
-      font-size: 6rem;
-    }
-
-  }
-
-  &--sub {
-    font-family: $font-oswald, sans-serif;
     font-size: 5rem;
-    color: darken(white, 25);
-    color: red;
-    font-weight: 600;
+    font-family: $font-oswald, sans-serif;
+    font-weight: 700;
+    color: white;
     display: block;
-    margin-top: -2rem;
-    margin-left: .5rem;
+    cursor: default;
+    letter-spacing: 1rem;
 
-    @media only screen and (max-width: $bp-medium) {
-      font-size: 4rem;
-      margin-left: 0;
-    }
+    // @media only screen and (max-width: $bp-medium) {
+    //   font-size: 6rem;
+    // }
   }
+
+  // &--sub {
+  //   font-family: $font-oswald, sans-serif;
+  //   font-size: 5rem;
+  //   color: darken(white, 25);
+  //   color: red;
+  //   font-weight: 600;
+  //   display: block;
+  //   margin-top: -2rem;
+  //   margin-left: .5rem;
+
+  //   @media only screen and (max-width: $bp-medium) {
+  //     font-size: 4rem;
+  //     margin-left: 0;
+  //   }
+  // }
 }
 
 .heading-secondary {

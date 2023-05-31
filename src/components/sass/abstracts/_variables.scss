@@ -15,3 +15,7 @@ $font-bench: 'BenchNine', sans-serif;
 $font-rale: 'Raleway', sans-serif;
 $font-header: 'Anton', sans-serif;
 $font-oswald: 'Oswald', sans-serif;
+
+// Box Shadow
+$shadow-raised: 0 .5rem 1rem darken(lightblue, 10);
+$shadow-pressed: 0 .25rem .5rem darken(lightblue, 15);

@@ -10,11 +10,17 @@
 @import "components/buttons";
 @import "components/playing-cards";
 
+@import "layout/all-games";
+@import "layout/featured";
 @import "layout/footer";
+@import "layout/header-main";
 @import "layout/header";
 @import "layout/navigation";
+@import "layout/top-nav";
 
 @import "pages/about";
-@import "pages/home";
-@import "pages/play";
+@import "pages/blackjack";
 @import "pages/hearts";
+@import "pages/home";
+@import "pages/oh-hell";
+@import "pages/spades";
