@@ -1,4 +1,4 @@
-//should return which player is playing which card
+//this is a now defunct function that actually took too much work.
 export const turnOrder = (hands,currentPlayer)=>{
     // console.log(hands)
     if(!currentPlayer){
