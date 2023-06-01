@@ -53,11 +53,10 @@ function Hearts() {
     // console.log(roundScores)
     if(currentPlayer == 'player1'){
 
-    }else if(currentPlayer){
-      
+    }else if(currentPlayer && trick != 4){
       //valuable object is all the information required to change the hand and set the trick, 
       //Ai is code I wrote called ai that plays cards according to the rules (using possible cards)
-
+      
       let valuableObject= {}
       switch(currentPlayer){
         case 'player2':
@@ -95,7 +94,6 @@ function Hearts() {
       setRoundScores({...roundScores, [playerWin]: roundScores[playerWin] + points})
       setRoundWinner(playerWin)
       setTrick([])
-      
     }
   },[currentPlayer])
 
@@ -149,7 +147,10 @@ function Hearts() {
     setChosenCard([card,index])
   }
 
-
+  //player Ai function
+  const aiRun=()=>{
+    
+  }
   return (
     <div className="hearts">
       <Header />
@@ -157,7 +158,7 @@ function Hearts() {
       {/* Table Start */}
       <div className="hearts__table">
         Hearts
-
+      
         {/* Player One Start */}
         <div  className="hearts__hand hearts__hand--1">
           <span className="hearts__player">1</span>
@@ -225,12 +226,22 @@ function Hearts() {
           }
           </div> {/* Cards End */}
         </div> {/* Hand End */}
-        <div className='hearts__play'>
-          
+        <div className='hearts__trick'> {/*trick start*/}
+          <div className="hearts__cards">
+          {
+            !hands || !trick  || !trick.length?<div>No cards in play</div>:
+            trick.map((card, index)=>{
+              return(
+                <div key5={index} className='hearts__card'>
+                  {card}
+                </div>
+              )
+            })
+          }
+          </div> {/* Cards End */}
         </div>
       </div> {/* Table End */}
     </div>
-    
   )
 }
 
