@@ -56,37 +56,8 @@ function Hearts() {
     }else if(currentPlayer && trick != 4){
       //valuable object is all the information required to change the hand and set the trick, 
       //Ai is code I wrote called ai that plays cards according to the rules (using possible cards)
+      setTimeout(aiRun(),5000)
       
-      let valuableObject= {}
-      switch(currentPlayer){
-        case 'player2':
-          // console.log(hand2)
-          valuableObject = ai(currentPlayer, hand2, trick, turn,brokenHearts)
-          // console.log('valuableObject', valuableObject)
-          setHand2(valuableObject.rHand)
-          setTrick(valuableObject.returnTrick)
-          break;
-
-        case 'player3':
-          // console.log(hand3)
-          valuableObject = ai (currentPlayer, hand3, trick, turn,brokenHearts)
-          // console.log('valuableObject', valuableObject)
-          setHand3(valuableObject.rHand)
-          setTrick(valuableObject.returnTrick)
-          break;
-
-        case 'player4':
-          // console.log(hand4)
-          valuableObject = ai (currentPlayer, hand4, trick, turn,brokenHearts)
-          // console.log('valuableObject', valuableObject)
-          setHand4(valuableObject.rHand)
-          setTrick(valuableObject.returnTrick)
-          break;
-
-        default:
-          console.log('something has gone wrong.  ', currentPlayer)
-      }
-
     }
     if(trick.length == 4){
       let {playerWin,points} = trickWin(trick,hands)
@@ -96,6 +67,22 @@ function Hearts() {
       setTrick([])
     }
   },[currentPlayer])
+
+  
+  const [count, setCount] = useState(1);
+
+  useEffect(function () {
+      const timeout = setTimeout(function () {
+          console.log('Hello from setTimeout')
+      }, 5000)
+      
+      return function ()  {
+          clearTimeout(timeout)
+      }
+  }, [count])
+  
+
+
 
   //sets all hands to each player using the hands object and sorts the cards in order of suits,
   //also using the card sorter function that has the potential to sort for other types of games, as well as sets the turn order based on the 2 of clubs
@@ -137,8 +124,8 @@ function Hearts() {
         let returnPlayer = `player${+currentPlayer.charAt(6)+1}`
         setCurrentPlayer(returnPlayer)
       }
-    }else if(trick ==[] ){
-      setCurrentPlayer(roundWinner)
+    }else if(trick[0] === undefined ){
+      setCurrentPlayer(roundWinner) 
     }
   },[trick.length])
 
@@ -149,7 +136,36 @@ function Hearts() {
 
   //player Ai function
   const aiRun=()=>{
-    
+    let valuableObject= {}
+    switch(currentPlayer){
+      case 'player2':
+        // console.log(hand2)
+        valuableObject = ai(currentPlayer, hand2, trick, turn,brokenHearts)
+        // console.log('valuableObject', valuableObject)
+        setHand2(valuableObject.rHand)
+        setTrick(valuableObject.returnTrick)
+        break;
+
+      case 'player3':
+        // console.log(hand3)
+        valuableObject = ai (currentPlayer, hand3, trick, turn,brokenHearts)
+        // console.log('valuableObject', valuableObject)
+        setHand3(valuableObject.rHand)
+        setTrick(valuableObject.returnTrick)
+        break;
+
+      case 'player4':
+        // console.log(hand4)
+        valuableObject = ai (currentPlayer, hand4, trick, turn,brokenHearts)
+        // console.log('valuableObject', valuableObject)
+        setHand4(valuableObject.rHand)
+        setTrick(valuableObject.returnTrick)
+        break;
+
+      default:
+        console.log('something has gone wrong.  ', currentPlayer)
+    }
+
   }
   return (
     <div className="hearts">
