@@ -3,8 +3,6 @@
 // Ai should focus on getting rid of suits in their hand(imo)
 // Then High cards
 
-
-
 export const aiTrade = (hand) =>{
     let tradedCards = []
     let clubs = []
