@@ -41,8 +41,7 @@ function Hearts() {
   
 
   //1st priority is to make the player only able to play cards in suit
-  //1.5st priority is to make the round order work
-  //2nd priority is to make a round work.
+  //2nd priority is to prevent the AI from dying if hearts is all they have and it hasn't been broken
   //3rd priority is to make trading happen
   //4th priority is to make a win state
   //5th priority is to make it show the hands as they are played
@@ -59,7 +58,9 @@ function Hearts() {
     }else if(currentPlayer != 'player1' && trick.length < 4){
       //valuable object is all the information required to change the hand and set the trick, 
       //Ai is code I wrote called ai that plays cards according to the rules (using possible cards)
-      setTimeout(aiRun(),5000)
+      const timer = setTimeout(()=>{
+        aiRun()},1000)
+      return () => clearTimeout(timer)
     }
     if(trick.length === 4){
       console.log('finishing Trick, ', trick)
@@ -69,9 +70,11 @@ function Hearts() {
       setRoundScores ({...roundScores, [playerWin]: roundScores[playerWin] + points})
       console.log('hello ',playerWin, points,roundScores)
       setRoundWinner(playerWin)
-      setTrick([])
+
+      const timer = setTimeout(()=>{setTrick([])},2000)
       setCurrentPlayer(playerWin)
       setTurn(turn+1)
+      return()=> clearTimeout(timer)
     }else if(trick.length >4){
       console.log('something has gone wrong with trick length ', currentPlayer)
     }
@@ -146,6 +149,7 @@ function Hearts() {
   //needs to check validity of chosen card in suite or otherwise (not yet written)
   // {     chosen Card     }
   useEffect(()=>{
+
     if(chosenCard[0]!='no'){
       let newHand = [...hand1]
       newHand.splice(chosenCard[1],1)
@@ -161,9 +165,11 @@ function Hearts() {
       setRoundScores ({...roundScores, [playerWin]: roundScores[playerWin] + points})
       console.log('hello ',playerWin, points,roundScores)
       setRoundWinner(playerWin)
-      setTrick([])
+      const timer = setTimeout(()=>{setTrick([])},2000)
       setCurrentPlayer(playerWin)
       setTurn(turn+1)
+      return () => clearTimeout(timer)
+
     }else if(trick.length >4){
       console.log('something has gone wrong with trick length ', currentPlayer)
     }
