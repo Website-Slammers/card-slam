@@ -34,6 +34,6 @@ export const trickWin = (trick,hands)=>{
     if(hands.player3.includes(winningCard)) playerWin = `player3` 
     if(hands.player4.includes(winningCard)) playerWin = `player4` 
     
-    console.log(playerWin, points)
+    // console.log(playerWin, points)
     return {playerWin,points}
 }

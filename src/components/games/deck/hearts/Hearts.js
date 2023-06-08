@@ -23,6 +23,7 @@ function Hearts() {
   const [currentPlayer , setCurrentPlayer] = useState('')
   const [brokenHearts, setBrokenHearts] = useState(false)
   const [turn, setTurn] = useState(0)
+  const [cardsPlayed, setCardsPlayed] = useState(-1)
 
   // pulls all hands for a new round and sets them 
   useEffect(()=>{
@@ -48,44 +49,84 @@ function Hearts() {
   //6th priority is to write more AI
   
   // runs AI code if it's not player 1's turn.
+  //////// {    current Player     }
   useEffect(()=>{
     console.log("current player is ", currentPlayer)
     // console.log(roundScores)
+    
     if(currentPlayer == 'player1'){
 
-    }else if(currentPlayer && trick != 4){
+    }else if(currentPlayer != 'player1' && trick.length < 4){
       //valuable object is all the information required to change the hand and set the trick, 
       //Ai is code I wrote called ai that plays cards according to the rules (using possible cards)
       setTimeout(aiRun(),5000)
-      
     }
-    if(trick.length == 4){
-      let {playerWin,points} = trickWin(trick,hands)
-      console.log('nienty three', roundScores)
-      setRoundScores({...roundScores, [playerWin]: roundScores[playerWin] + points})
+    if(trick.length === 4){
+      console.log('finishing Trick, ', trick)
+      
+      let { playerWin, points } = trickWin(trick,hands)
+      // console.log('nienty three', roundScores)
+      setRoundScores ({...roundScores, [playerWin]: roundScores[playerWin] + points})
+      console.log('hello ',playerWin, points,roundScores)
       setRoundWinner(playerWin)
       setTrick([])
+      setCurrentPlayer(playerWin)
+      setTurn(turn+1)
+    }else if(trick.length >4){
+      console.log('something has gone wrong with trick length ', currentPlayer)
     }
-  },[currentPlayer])
+    
+  },[cardsPlayed])
 
+  const aiRun=()=>{
+    // console.log('aiRun')
+    let valuableObject= {}
+
+    switch(currentPlayer){
+      case 'player2':
+        console.log('player2')
+        valuableObject = ai(currentPlayer, hand2, trick, turn,brokenHearts)
+        // console.log('valuableObject', valuableObject)
+        if(valuableObject.card.charAt(1) == 'H'){
+          setBrokenHearts(true)
+        }
+        setHand2(valuableObject.rHand)
+        setTrick(valuableObject.returnTrick)
+        break;
+
+      case 'player3':
+        console.log('player3')
+        valuableObject = ai (currentPlayer, hand3, trick, turn,brokenHearts)
+        // console.log('valuableObject', valuableObject)
+        if(valuableObject.card.charAt(1) == 'H'){
+          setBrokenHearts(true)
+        }
+        setHand3(valuableObject.rHand)
+        setTrick(valuableObject.returnTrick)
+        break;
+
+      case 'player4':
+        console.log('player4')
+        valuableObject = ai (currentPlayer, hand4, trick, turn,brokenHearts)
+        // console.log('valuableObject', valuableObject)
+        if(valuableObject.card.charAt(1) == 'H'){
+          setBrokenHearts(true)
+        }
+        setHand4(valuableObject.rHand)
+        setTrick(valuableObject.returnTrick)
+        break;
+
+      default:
+        console.log('something has gone wrong.  ', currentPlayer)
+    }
+
+  }
   
   const [count, setCount] = useState(1);
 
-  useEffect(function () {
-      const timeout = setTimeout(function () {
-          console.log('Hello from setTimeout')
-      }, 5000)
-      
-      return function ()  {
-          clearTimeout(timeout)
-      }
-  }, [count])
-  
-
-
-
   //sets all hands to each player using the hands object and sorts the cards in order of suits,
   //also using the card sorter function that has the potential to sort for other types of games, as well as sets the turn order based on the 2 of clubs
+  //    {     hands     }
   useEffect(()=>{
     let tempHand = hands.player1
     if(tempHand) tempHand =  cardSorter(hands.player1, 'hearts')
@@ -98,10 +139,12 @@ function Hearts() {
     setHand4(tempHand)
     console.log('game Starto')
     setCurrentPlayer(turnStart(hands))
+    setCardsPlayed(cardsPlayed +1)
   },[hands])
 
   //player interaction where you choose a card. 
   //needs to check validity of chosen card in suite or otherwise (not yet written)
+  // {     chosen Card     }
   useEffect(()=>{
     if(chosenCard[0]!='no'){
       let newHand = [...hand1]
@@ -112,61 +155,43 @@ function Hearts() {
       // console.log('newTrick ',newTrick)
       setTrick(newTrick)
     }
+    if(trick.length == 4){
+      
+      let { playerWin, points } = trickWin(trick,hands)
+      setRoundScores ({...roundScores, [playerWin]: roundScores[playerWin] + points})
+      console.log('hello ',playerWin, points,roundScores)
+      setRoundWinner(playerWin)
+      setTrick([])
+      setCurrentPlayer(playerWin)
+      setTurn(turn+1)
+    }else if(trick.length >4){
+      console.log('something has gone wrong with trick length ', currentPlayer)
+    }
+    
   },[chosenCard])
 
   //changes the player based on the trick changing
+  // {     trick     }
   useEffect(()=>{
     console.log('trick',trick)
-    if(trick[0]!='' && trick != []){
+    if(trick.length != 0 && trick.length != 4){
       if(currentPlayer == 'player4'){
         setCurrentPlayer('player1')
       }else{
         let returnPlayer = `player${+currentPlayer.charAt(6)+1}`
         setCurrentPlayer(returnPlayer)
       }
-    }else if(trick[0] === undefined ){
+    }else if(trick.length == 0 ){
       setCurrentPlayer(roundWinner) 
     }
+    setCardsPlayed(cardsPlayed +1)
   },[trick.length])
 
   //function that sets the card the player chose
   const chooseCard = (card, index)=>{
     setChosenCard([card,index])
   }
-
-  //player Ai function
-  const aiRun=()=>{
-    let valuableObject= {}
-    switch(currentPlayer){
-      case 'player2':
-        // console.log(hand2)
-        valuableObject = ai(currentPlayer, hand2, trick, turn,brokenHearts)
-        // console.log('valuableObject', valuableObject)
-        setHand2(valuableObject.rHand)
-        setTrick(valuableObject.returnTrick)
-        break;
-
-      case 'player3':
-        // console.log(hand3)
-        valuableObject = ai (currentPlayer, hand3, trick, turn,brokenHearts)
-        // console.log('valuableObject', valuableObject)
-        setHand3(valuableObject.rHand)
-        setTrick(valuableObject.returnTrick)
-        break;
-
-      case 'player4':
-        // console.log(hand4)
-        valuableObject = ai (currentPlayer, hand4, trick, turn,brokenHearts)
-        // console.log('valuableObject', valuableObject)
-        setHand4(valuableObject.rHand)
-        setTrick(valuableObject.returnTrick)
-        break;
-
-      default:
-        console.log('something has gone wrong.  ', currentPlayer)
-    }
-
-  }
+  
   return (
     <div className="hearts">
       <Header />
