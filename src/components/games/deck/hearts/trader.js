@@ -7,11 +7,10 @@ export const trader =(hand1,hand2,hand3,hand4,playerChoice)=>{
     let trade2= aiChoice2;
     let trade3= aiChoice3;
     let trade4= aiChoice4;
-    
+
     // remove cards from each players hand then put them into the other players hand, then sort
     switch (tradeDirection){
         case 'R':
-
             break;
         case 'L':
             break;
