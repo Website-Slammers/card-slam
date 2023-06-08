@@ -40,13 +40,11 @@ function Hearts() {
   // each player can play any card in suite (clubs), or if they don't have clubs, they can play any cards that aren't the hearts or queen of spades
   // whoever wins the hand gets to play next. 
   // hearts is now allowed if you don't have the in suite as well as the queen of spades.
-  
-
-  //1st priority is to make the player only able to play cards in suit
-  //2nd priority is to prevent the AI from dying if hearts is all they have and it hasn't been broken
-  //3rd priority is to make trading happen
-  //4th priority is to make a win state
-  //6th priority is to write more AI
+  // 1st priority is to get points working
+  // 2nd priority is to get rounds rotating
+  // 3rd priority is to make trading happen
+  // 4th priority is to make a win state
+  // 6th priority is to write more AI
   
   // runs AI code if it's not player 1's turn.
   //////// {    current Player     }

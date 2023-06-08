@@ -6,6 +6,7 @@ export const possibleCards =(rHand,trick,turn,brokenHearts)=>{
     let inSuite = false;
     let suite = ''
     let newTrick = trick
+    let heartsPrevention = true
     // console.log('nTrick ', newTrick);
     // console.log('Turn ', turn)
     // console.log('rHand ', rHand)
@@ -13,8 +14,12 @@ export const possibleCards =(rHand,trick,turn,brokenHearts)=>{
     //this checks which suite is currently being played, if there isn't one I have to respond by letting the player or AI pick their own possible choices
     if(newTrick.length > 0) suite = newTrick[0].charAt(1)
     // console.log('ello')
+    // preventing the hearts paradigm
     // inSuite is true if the suite is in the hand array that is being played, if not it allows the rest of the suites to be played barring hearts on turn 1 or spades
     for(let i = 0; i< possibleCards.length; i++){
+        if(possibleCards[i].charAt(1) != 'H'){
+            heartsPrevention = false
+        }
         if(possibleCards[i].charAt(1) == suite){
             inSuite = true;
         }
@@ -42,7 +47,7 @@ export const possibleCards =(rHand,trick,turn,brokenHearts)=>{
                 return element
             }
         }
-        if(trick.length == 0 && brokenHearts == true && turn != 0){
+        if(trick.length == 0 && brokenHearts == true && turn != 0 ||trick.length == 0 && heartsPrevention == true){
             possibleCardsIdx.push(idx)
             return element
         }
