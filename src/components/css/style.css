@@ -803,6 +803,12 @@ body {
     height: 60rem;
     width: 60rem;
     margin: 2rem; }
+  .hearts__trick {
+    border: 1px solid white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10; }
   .hearts__player {
     font-size: 4rem;
     line-height: 4rem;

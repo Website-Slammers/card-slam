@@ -36,13 +36,13 @@ export const cardSorter = (cardArray, gameType)=>{
                 hearts = orderSorter(hearts, cardArray[i], numberOrder)
                 break;
             default:
-                console.log('something has gone wrong.')
+                // console.log('something has gone wrong.')
         }
     }
-    console.log('clubs', ...clubs)
-    console.log('diamonds',...diamonds)
-    console.log('spades',...spades)
-    console.log('hearts', ...hearts)
+    // console.log('clubs', ...clubs)
+    // console.log('diamonds',...diamonds)
+    // console.log('spades',...spades)
+    // console.log('hearts', ...hearts)
     let returnArray = [...clubs, ...diamonds, ...spades, ...hearts]
 
     return returnArray
@@ -59,16 +59,16 @@ function orderSorter(importArray, newCard, numberOrder){
     {
         suiteArray[0] = newCard
     }else{
-        console.log('wtf? ', numberOrder.indexOf(suiteArray[0].charAt(0))>cardValue," ",numberOrder.indexOf(suiteArray[0].charAt(0)),"  ", cardValue)
+        // console.log('wtf? ', numberOrder.indexOf(suiteArray[0].charAt(0))>cardValue," ",numberOrder.indexOf(suiteArray[0].charAt(0)),"  ", cardValue)
         if(numberOrder.indexOf(suiteArray[0].charAt(0))>cardValue){
             suiteArray.unshift(newCard)
             
-            console.log("here")
+            // console.log("here")
         }else{
             for(let i =0; i<suiteArray.length; i++){
                 let handValue = numberOrder.indexOf(suiteArray[i].charAt(0))
-                console.log('card value ',  cardValue,'hand value, ', handValue)
-                console.log('new card ', newCard, 'suite Card', suiteArray[i])
+                // console.log('card value ',  cardValue,'hand value, ', handValue)
+                // console.log('new card ', newCard, 'suite Card', suiteArray[i])
                 if(handValue> cardValue){
                     suiteArray.splice(i,0,newCard)
                     i =100
@@ -81,6 +81,6 @@ function orderSorter(importArray, newCard, numberOrder){
             }
         }
     }
-    console.log(suiteArray)
+    // console.log(suiteArray)
     return suiteArray
 }

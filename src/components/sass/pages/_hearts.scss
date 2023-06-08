@@ -19,7 +19,13 @@
     width: 60rem;
     margin: 2rem;
   }
-
+  &__trick {
+    border:1px solid white;
+    position: absolute;
+    top:50%;
+    left:50%; 
+    z-index: 10;
+  }
 
   &__player{
     font-size:4rem;
