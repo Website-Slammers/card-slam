@@ -33,10 +33,13 @@ export const possibleCards =(rHand,trick,turn,brokenHearts)=>{
             if(inSuite == true && element.charAt(1) == suite){
                 possibleCardsIdx.push(idx)
                 return element
-                // if they don't have the suite and the card isn't a heart, add it to the possible cards index.
-            }else if(inSuite == false && element.charAt(1) != 'H'){
-                possibleCardsIdx.push(idx)
-                return element
+                // if they don't have the suite and the card isn't a heart or the queen of spades, add it to the possible cards index.
+                
+            }else if(inSuite == false){
+                if(element.charAt(1) != 'H' || element.charAt(1) != 'S' && element.charAt(0) !='Q'){
+                    possibleCardsIdx.push(idx)
+                    return element
+                }
             }
         }
 

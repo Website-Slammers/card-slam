@@ -40,11 +40,16 @@ function Hearts() {
   // each player can play any card in suite (clubs), or if they don't have clubs, they can play any cards that aren't the hearts or queen of spades
   // whoever wins the hand gets to play next. 
   // hearts is now allowed if you don't have the in suite as well as the queen of spades.
-  // 1st priority is to get points working
   // 2nd priority is to get rounds rotating
+  // 2.5th new round button that resets hands
   // 3rd priority is to make trading happen
   // 4th priority is to make a win state
+  // 5th priority is to clean up code and make it more legible and split up
   // 6th priority is to write more AI
+  
+  // round end would be cool if it displayed players point cards (guess that's a possibility... but it's a lot of work)
+
+
   
   // runs AI code if it's not player 1's turn.
   //////// {    current Player     }
@@ -65,7 +70,7 @@ function Hearts() {
       console.log('finishing Trick, ', trick)
       
       let { playerWin, points } = trickWin(trick,hands)
-      // console.log('nienty three', roundScores)
+      console.log('playerWin ', playerWin, ' points ', points)
       setRoundScores ({...roundScores, [playerWin]: roundScores[playerWin] + points})
       console.log('hello ',playerWin, points,roundScores)
       setRoundWinner(playerWin)
@@ -86,7 +91,7 @@ function Hearts() {
 
     switch(currentPlayer){
       case 'player2':
-        console.log('player2')
+        // console.log('player2')
         valuableObject = ai(currentPlayer, hand2, trick, turn,brokenHearts)
         // console.log('valuableObject', valuableObject)
         if(valuableObject.card.charAt(1) == 'H'){
@@ -97,7 +102,7 @@ function Hearts() {
         break;
 
       case 'player3':
-        console.log('player3')
+        // console.log('player3')
         valuableObject = ai (currentPlayer, hand3, trick, turn,brokenHearts)
         // console.log('valuableObject', valuableObject)
         if(valuableObject.card.charAt(1) == 'H'){
@@ -108,7 +113,7 @@ function Hearts() {
         break;
 
       case 'player4':
-        console.log('player4')
+        // console.log('player4')
         valuableObject = ai (currentPlayer, hand4, trick, turn,brokenHearts)
         // console.log('valuableObject', valuableObject)
         if(valuableObject.card.charAt(1) == 'H'){
@@ -180,7 +185,7 @@ function Hearts() {
   //changes the player based on the trick changing
   // {     trick     }
   useEffect(()=>{
-    console.log('trick',trick)
+    // console.log('trick',trick)
     if(trick.length != 0 && trick.length != 4){
       if(currentPlayer == 'player4'){
         setCurrentPlayer('player1')
@@ -197,7 +202,7 @@ function Hearts() {
   //function that sets the card the player chose
   const chooseCard = (card, index)=>{
     let pCards = possibleCards(hand1,trick,turn,brokenHearts)
-    console.log(pCards.possibleCards)
+    // console.log(pCards.possibleCards)
     if(pCards.possibleCards.includes(card)){
       setChosenCard([card,index])
     }

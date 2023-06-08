@@ -16,9 +16,9 @@ export const trickWin = (trick,hands)=>{
     //a certain card gets the winning card spot 
     
     for(let i = 0; i<4 ;i++){
-        if(suit == 'H'){
+        if(trick[i].charAt(1) == 'H'){
             points += 1
-        }else if(suit == 'S' && trick[i].charAt(1) == 'Q'){
+        }else if(trick[i].charAt(1) == 'S' && trick[i].charAt(0) == 'Q'){
             points += 13
         }
 
@@ -27,7 +27,7 @@ export const trickWin = (trick,hands)=>{
         }
         
     }
-    // console.log('winning card', winningCard)
+    console.log('winning card', winningCard)
     //no switch statement, feeling lazy
     if(hands.player1.includes(winningCard)) playerWin = `player1` 
     if(hands.player2.includes(winningCard)) playerWin = `player2` 
