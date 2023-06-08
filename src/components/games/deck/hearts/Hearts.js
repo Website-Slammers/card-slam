@@ -7,6 +7,7 @@ import { turnStart } from './turnStart'
 import Header from './Header'
 import { turnOrder } from './turnOrder'
 import { trickWin } from './trick'
+import { possibleCards } from './possibleCards'
 
 function Hearts() {
 
@@ -24,6 +25,7 @@ function Hearts() {
   const [brokenHearts, setBrokenHearts] = useState(false)
   const [turn, setTurn] = useState(0)
   const [cardsPlayed, setCardsPlayed] = useState(-1)
+  const [validCard, setValidCard] = useState(true)
 
   // pulls all hands for a new round and sets them 
   useEffect(()=>{
@@ -44,7 +46,6 @@ function Hearts() {
   //2nd priority is to prevent the AI from dying if hearts is all they have and it hasn't been broken
   //3rd priority is to make trading happen
   //4th priority is to make a win state
-  //5th priority is to make it show the hands as they are played
   //6th priority is to write more AI
   
   // runs AI code if it's not player 1's turn.
@@ -150,7 +151,7 @@ function Hearts() {
   // {     chosen Card     }
   useEffect(()=>{
 
-    if(chosenCard[0]!='no'){
+    if(chosenCard[0] != 'no'){
       let newHand = [...hand1]
       newHand.splice(chosenCard[1],1)
       setHand1(newHand)
@@ -158,6 +159,8 @@ function Hearts() {
       newTrick.push(chosenCard[0])
       // console.log('newTrick ',newTrick)
       setTrick(newTrick)
+    }else{
+
     }
     if(trick.length == 4){
       
@@ -195,7 +198,14 @@ function Hearts() {
 
   //function that sets the card the player chose
   const chooseCard = (card, index)=>{
-    setChosenCard([card,index])
+    let pCards = possibleCards(hand1,trick,turn,brokenHearts)
+    console.log(pCards.possibleCards)
+    if(pCards.possibleCards.includes(card)){
+      setChosenCard([card,index])
+    }
+    else{
+      console.log('This card is not a valid pick!')
+    }
   }
   
   return (
