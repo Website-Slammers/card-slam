@@ -8,6 +8,7 @@ import Header from './Header'
 import { turnOrder } from './turnOrder'
 import { trickWin } from './trick'
 import { possibleCards } from './possibleCards'
+import {trader} from './trader'
 
 function Hearts() {
 
@@ -25,7 +26,7 @@ function Hearts() {
   const [brokenHearts, setBrokenHearts] = useState(false)
   const [turn, setTurn] = useState(0)
   const [cardsPlayed, setCardsPlayed] = useState(-1)
-  const [validCard, setValidCard] = useState(true)
+  const [gameStart, setGameStart]= useState(false)
 
   // pulls all hands for a new round and sets them 
   useEffect(()=>{
