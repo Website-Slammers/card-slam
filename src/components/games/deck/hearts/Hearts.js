@@ -374,6 +374,16 @@ function Hearts() {
         <span className={`${btnDisplay}`} onClick={()=>hideRoundBtn()} >
           New Round
         </span>
+        <span className='scores__thisRound'>
+          scores this round <br/>
+          P1: {roundScores.player1} &nbsp;
+          P2: {roundScores.player2} &nbsp;
+          P3: {roundScores.player3} &nbsp;
+          P4: {roundScores.player4} &nbsp;
+        </span>
+        <div className='scores__scoreBoard'>
+          scoreboard
+        </div>
       </div> {/* Table End */}
     </div>
   )
