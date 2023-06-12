@@ -6,19 +6,19 @@ export const possibleCards =(rHand,trick,turn,brokenHearts)=>{
     let inSuite = false;
     let suite = ''
     let newTrick = trick
-    let heartsPrevention = true
+    let heartsParadigm = true
     // console.log('nTrick ', newTrick);
     // console.log('Turn ', turn)
-    // console.log('rHand ', rHand)
+    console.log('error ', rHand)
     // console.log('heartsBroken ', brokenHearts)
     //this checks which suite is currently being played, if there isn't one I have to respond by letting the player or AI pick their own possible choices
     if(newTrick.length > 0) suite = newTrick[0].charAt(1)
     // console.log('ello')
-    // preventing the hearts paradigm
     // inSuite is true if the suite is in the hand array that is being played, if not it allows the rest of the suites to be played barring hearts on turn 1 or spades
+   
     for(let i = 0; i< possibleCards.length; i++){
         if(possibleCards[i].charAt(1) != 'H'){
-            heartsPrevention = false
+            heartsParadigm = false
         }
         if(possibleCards[i].charAt(1) == suite){
             inSuite = true;
@@ -36,7 +36,7 @@ export const possibleCards =(rHand,trick,turn,brokenHearts)=>{
                 // if they don't have the suite and the card isn't a heart or the queen of spades, add it to the possible cards index.
                 
             }else if(inSuite == false){
-                if(element.charAt(1) != 'H' || element.charAt(1) != 'S' && element.charAt(0) !='Q'){
+                if(element.charAt(1) != 'H' || element != 'QS'){
                     possibleCardsIdx.push(idx)
                     return element
                 }
@@ -44,31 +44,37 @@ export const possibleCards =(rHand,trick,turn,brokenHearts)=>{
         }
 
         //first card played in a new trick
-        if(trick.length == 0 && brokenHearts == false && turn != 0){
-            if(element.charAt(1) != 'H'){
-                possibleCardsIdx.push(idx)
-                return element
+        if(turn != 0){
+            if(trick.length == 0){
+                if(brokenHearts == false || heartsParadigm == true){
+                    if(element.charAt(1) != 'H'){
+                        possibleCardsIdx.push(idx)
+                        return element
+                    }
+                }
+                if(brokenHearts == true){
+                    possibleCardsIdx.push(idx)
+                    return element
+                }
             }
-        }
-        if(trick.length == 0 && brokenHearts == true && turn != 0 ||trick.length == 0 && heartsPrevention == true){
-            possibleCardsIdx.push(idx)
-            return element
-        }
-
-        //other cards played in a trick
-        if(trick.length != 0 && turn != 0 && inSuite == false){
-            possibleCardsIdx.push(idx)
-            return element
-        }
-
-        if(trick.length != 0 && turn != 0 && inSuite == true ){
-            if(inSuite == true && element.charAt(1) == suite){
-                possibleCardsIdx.push(idx)
-                return element
+    
+            //other cards played in a trick
+            if(trick.length !=0 ){
+                if(inSuite == false){
+                    possibleCardsIdx.push(idx)
+                    return element
+                }
+        
+                if(inSuite == true ){
+                    if(inSuite == true && element.charAt(1) == suite){
+                        possibleCardsIdx.push(idx)
+                        return element
+                    }
+                }
             }
+            
         }
     })
-    // console.log("possible Cards", possibleCards);
+    console.log("possible Cards", possibleCards);
     return {possibleCards, possibleCardsIdx}
 }
-

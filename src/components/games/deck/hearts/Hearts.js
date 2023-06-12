@@ -27,13 +27,28 @@ function Hearts() {
   const [turn, setTurn] = useState(0)
   const [cardsPlayed, setCardsPlayed] = useState(-1)
   const [gameStart, setGameStart]= useState(false)
+  const [roundReset,setRoundReset]=useState(false)
+  const [btnDisplay,setBtnDisplay]= useState('hidden')
 
   // pulls all hands for a new round and sets them 
   useEffect(()=>{
-    let newRound = pullAHand(13, 4, 'hearts')
-    // console.log(newRound)
-    setHands(newRound)
-  },[])
+    if(roundReset == true){
+      newRoundBtn()
+    }
+    else if(roundReset == false){
+      let newRound = pullAHand(13, 4, 'hearts')
+      // console.log(newRound)
+      setHands(newRound)
+    }
+  },[roundReset])
+
+  const newRoundBtn=()=>{
+    setBtnDisplay("btn--newRound")
+  }
+  const hideRoundBtn=()=>{
+    setBtnDisplay("hidden")
+    // setRoundReset(false)
+  }
 
   // sudo code workout
   // default game rules and playout
@@ -79,6 +94,10 @@ function Hearts() {
       const timer = setTimeout(()=>{setTrick([])},2000)
       setCurrentPlayer(playerWin)
       setTurn(turn+1)
+      if(hand1.length == 0 && hand2.length == 0 && hand3.length == 0 && hand4.length == 0){
+        console.log('elloChum')
+        setRoundReset(true)
+      }
       return()=> clearTimeout(timer)
     }else if(trick.length >4){
       console.log('something has gone wrong with trick length ', currentPlayer)
@@ -204,12 +223,17 @@ function Hearts() {
   const chooseCard = (card, index)=>{
     let pCards = possibleCards(hand1,trick,turn,brokenHearts)
     // console.log(pCards.possibleCards)
-    if(pCards.possibleCards.includes(card)){
-      setChosenCard([card,index])
+    if(currentPlayer == 'player1'){
+      if(pCards.possibleCards.includes(card)){
+        setChosenCard([card,index])
+      }
+      else{
+        console.log('This card is not a valid pick!')
+      }
+    }else{
+      console.log("It's not your turn!")
     }
-    else{
-      console.log('This card is not a valid pick!')
-    }
+    
   }
   
   return (
@@ -301,6 +325,11 @@ function Hearts() {
           }
           </div> {/* Cards End */}
         </div>
+        {/*  this is where my infinite loop problem is spawning 
+        onClick={hideRoundBtn()} */}
+        <span className={`${btnDisplay}`} >
+          New Round
+        </span>
       </div> {/* Table End */}
     </div>
   )
