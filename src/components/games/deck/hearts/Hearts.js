@@ -382,7 +382,9 @@ function Hearts() {
           P4: {roundScores.player4} &nbsp;
         </span>
         <div className='scores__scoreBoard'>
-          scoreboard
+          scoreboard<br/>
+          P1 P2 P3 P4<br/>
+          {scores.player1}&nbsp;&nbsp;&nbsp;{scores.player2}&nbsp;&nbsp;&nbsp;{scores.player3}&nbsp;&nbsp;&nbsp;{scores.player4}
         </div>
       </div> {/* Table End */}
     </div>
