@@ -26,18 +26,36 @@ function Hearts() {
   const [brokenHearts, setBrokenHearts] = useState(false)
   const [turn, setTurn] = useState(0)
   const [cardsPlayed, setCardsPlayed] = useState(-1)
-  const [gameStart, setGameStart]= useState(false)
+  const [roundReset,setRoundReset]=useState(false)
+  const [btnDisplay,setBtnDisplay]= useState('hidden')
 
   // pulls all hands for a new round and sets them 
-  useEffect(()=>{
-    let newRound = pullAHand(13, 4, 'hearts')
-    // console.log(newRound)
-    setHands(newRound)
-  },[])
+  useEffect(()=>{{
+    if(roundReset == true){
+      newRoundBtn()
+    }
+    else if(roundReset == false){
+        let newRound = pullAHand(13, 4, 'hearts')
+        // console.log(newRound)
+        setHands(newRound)
+    }
+    
+  }},[roundReset])
 
+  const newRoundBtn=()=>{
+    setBtnDisplay("btn--newRound")
+  }
+  const hideRoundBtn=()=>{
+    setBtnDisplay('hidden')
+    setRoundReset(false)
+  }
+
+
+  // something is wrong with the hearts turn 1 prevention
   // sudo code workout
   // default game rules and playout
-  // whoever has the 2 of clubs has to play it, whether AI or player then the next player gets to play in the round, to the left of whoever played the 2 of clubs (check the two of clubs)
+  // whoever has the 2 of clubs has to play it, whether AI or player then the next player gets to play in the round,
+  // to the left of whoever played the 2 of clubs (check the two of clubs)
   // each player can play any card in suite (clubs), or if they don't have clubs, they can play any cards that aren't the hearts or queen of spades
   // whoever wins the hand gets to play next. 
   // hearts is now allowed if you don't have the in suite as well as the queen of spades.
@@ -55,7 +73,6 @@ function Hearts() {
   // runs AI code if it's not player 1's turn.
   //////// {    current Player     }
   useEffect(()=>{
-    console.log("current player is ", currentPlayer)
     // console.log(roundScores)
     
     if(currentPlayer == 'player1'){
@@ -76,10 +93,15 @@ function Hearts() {
       console.log('hello ',playerWin, points,roundScores)
       setRoundWinner(playerWin)
 
-      const timer = setTimeout(()=>{setTrick([])},2000)
+      const timer = setTimeout(()=>{setTrick([])},1000)
       setCurrentPlayer(playerWin)
       setTurn(turn+1)
+      if(hand1.length == 0 && hand2.length == 0 && hand3.length == 0 && hand4.length == 0){
+        console.log('elloChum')
+        setRoundReset(true)
+      }
       return()=> clearTimeout(timer)
+      
     }else if(trick.length >4){
       console.log('something has gone wrong with trick length ', currentPlayer)
     }
@@ -87,7 +109,7 @@ function Hearts() {
   },[cardsPlayed])
 
   const aiRun=()=>{
-    // console.log('aiRun')
+    
     let valuableObject= {}
 
     switch(currentPlayer){
@@ -129,8 +151,6 @@ function Hearts() {
     }
 
   }
-  
-  const [count, setCount] = useState(1);
 
   //sets all hands to each player using the hands object and sorts the cards in order of suits,
   //also using the card sorter function that has the potential to sort for other types of games, as well as sets the turn order based on the 2 of clubs
@@ -154,7 +174,7 @@ function Hearts() {
   //needs to check validity of chosen card in suite or otherwise (not yet written)
   // {     chosen Card     }
   useEffect(()=>{
-
+    
     if(chosenCard[0] != 'no'){
       let newHand = [...hand1]
       newHand.splice(chosenCard[1],1)
@@ -204,12 +224,17 @@ function Hearts() {
   const chooseCard = (card, index)=>{
     let pCards = possibleCards(hand1,trick,turn,brokenHearts)
     // console.log(pCards.possibleCards)
-    if(pCards.possibleCards.includes(card)){
-      setChosenCard([card,index])
+    if(currentPlayer == 'player1'){
+      if(pCards.possibleCards.includes(card)){
+        setChosenCard([card,index])
+      }
+      else{
+        console.log('This card is not a valid pick!')
+      }
+    }else{
+      console.log("It's not your turn!")
     }
-    else{
-      console.log('This card is not a valid pick!')
-    }
+    
   }
   
   return (
@@ -301,6 +326,10 @@ function Hearts() {
           }
           </div> {/* Cards End */}
         </div>
+        <span className={btnDisplay} onClick={hideRoundBtn()}>
+          New Round
+        </span>
+        
       </div> {/* Table End */}
     </div>
   )
