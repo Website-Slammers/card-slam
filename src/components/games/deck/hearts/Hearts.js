@@ -8,6 +8,7 @@ import Header from './Header'
 import { turnOrder } from './turnOrder'
 import { trickWin } from './trick'
 import { possibleCards } from './possibleCards'
+import {trader} from './trader'
 
 function Hearts() {
 
@@ -25,14 +26,29 @@ function Hearts() {
   const [brokenHearts, setBrokenHearts] = useState(false)
   const [turn, setTurn] = useState(0)
   const [cardsPlayed, setCardsPlayed] = useState(-1)
-  const [validCard, setValidCard] = useState(true)
+  const [gameStart, setGameStart]= useState(false)
+  const [roundReset,setRoundReset]=useState(false)
+  const [btnDisplay,setBtnDisplay]= useState('hidden')
 
   // pulls all hands for a new round and sets them 
   useEffect(()=>{
-    let newRound = pullAHand(13, 4, 'hearts')
-    // console.log(newRound)
-    setHands(newRound)
-  },[])
+    if(roundReset == true){
+      newRoundBtn()
+    }
+    else if(roundReset == false){
+      let newRound = pullAHand(13, 4, 'hearts')
+      // console.log(newRound)
+      setHands(newRound)
+    }
+  },[roundReset])
+
+  const newRoundBtn=()=>{
+    setBtnDisplay("btn--newRound")
+  }
+  const hideRoundBtn=()=>{
+    setBtnDisplay("hidden")
+    // setRoundReset(false)
+  }
 
   // sudo code workout
   // default game rules and playout
@@ -40,13 +56,16 @@ function Hearts() {
   // each player can play any card in suite (clubs), or if they don't have clubs, they can play any cards that aren't the hearts or queen of spades
   // whoever wins the hand gets to play next. 
   // hearts is now allowed if you don't have the in suite as well as the queen of spades.
+  // 2nd priority is to get rounds rotating
+  // 2.5th new round button that resets hands
+  // 3rd priority is to make trading happen
+  // 4th priority is to make a win state
+  // 5th priority is to clean up code and make it more legible and split up
+  // 6th priority is to write more AI
   
+  // round end would be cool if it displayed players point cards (guess that's a possibility... but it's a lot of work)
 
-  //1st priority is to make the player only able to play cards in suit
-  //2nd priority is to prevent the AI from dying if hearts is all they have and it hasn't been broken
-  //3rd priority is to make trading happen
-  //4th priority is to make a win state
-  //6th priority is to write more AI
+
   
   // runs AI code if it's not player 1's turn.
   //////// {    current Player     }
@@ -67,7 +86,7 @@ function Hearts() {
       console.log('finishing Trick, ', trick)
       
       let { playerWin, points } = trickWin(trick,hands)
-      // console.log('nienty three', roundScores)
+      console.log('playerWin ', playerWin, ' points ', points)
       setRoundScores ({...roundScores, [playerWin]: roundScores[playerWin] + points})
       console.log('hello ',playerWin, points,roundScores)
       setRoundWinner(playerWin)
@@ -75,6 +94,10 @@ function Hearts() {
       const timer = setTimeout(()=>{setTrick([])},2000)
       setCurrentPlayer(playerWin)
       setTurn(turn+1)
+      if(hand1.length == 0 && hand2.length == 0 && hand3.length == 0 && hand4.length == 0){
+        console.log('elloChum')
+        setRoundReset(true)
+      }
       return()=> clearTimeout(timer)
     }else if(trick.length >4){
       console.log('something has gone wrong with trick length ', currentPlayer)
@@ -88,7 +111,7 @@ function Hearts() {
 
     switch(currentPlayer){
       case 'player2':
-        console.log('player2')
+        // console.log('player2')
         valuableObject = ai(currentPlayer, hand2, trick, turn,brokenHearts)
         // console.log('valuableObject', valuableObject)
         if(valuableObject.card.charAt(1) == 'H'){
@@ -99,7 +122,7 @@ function Hearts() {
         break;
 
       case 'player3':
-        console.log('player3')
+        // console.log('player3')
         valuableObject = ai (currentPlayer, hand3, trick, turn,brokenHearts)
         // console.log('valuableObject', valuableObject)
         if(valuableObject.card.charAt(1) == 'H'){
@@ -110,7 +133,7 @@ function Hearts() {
         break;
 
       case 'player4':
-        console.log('player4')
+        // console.log('player4')
         valuableObject = ai (currentPlayer, hand4, trick, turn,brokenHearts)
         // console.log('valuableObject', valuableObject)
         if(valuableObject.card.charAt(1) == 'H'){
@@ -182,7 +205,7 @@ function Hearts() {
   //changes the player based on the trick changing
   // {     trick     }
   useEffect(()=>{
-    console.log('trick',trick)
+    // console.log('trick',trick)
     if(trick.length != 0 && trick.length != 4){
       if(currentPlayer == 'player4'){
         setCurrentPlayer('player1')
@@ -199,13 +222,18 @@ function Hearts() {
   //function that sets the card the player chose
   const chooseCard = (card, index)=>{
     let pCards = possibleCards(hand1,trick,turn,brokenHearts)
-    console.log(pCards.possibleCards)
-    if(pCards.possibleCards.includes(card)){
-      setChosenCard([card,index])
+    // console.log(pCards.possibleCards)
+    if(currentPlayer == 'player1'){
+      if(pCards.possibleCards.includes(card)){
+        setChosenCard([card,index])
+      }
+      else{
+        console.log('This card is not a valid pick!')
+      }
+    }else{
+      console.log("It's not your turn!")
     }
-    else{
-      console.log('This card is not a valid pick!')
-    }
+    
   }
   
   return (
@@ -297,6 +325,11 @@ function Hearts() {
           }
           </div> {/* Cards End */}
         </div>
+        {/*  this is where my infinite loop problem is spawning 
+        onClick={hideRoundBtn()} */}
+        <span className={`${btnDisplay}`} >
+          New Round
+        </span>
       </div> {/* Table End */}
     </div>
   )
