@@ -9,6 +9,7 @@ import { turnOrder } from './turnOrder'
 import { trickWin } from './trick'
 import { possibleCards } from './possibleCards'
 import {trader} from './trader'
+import { moonShooter } from './moonShooter'
 
 function Hearts() {
 
@@ -45,9 +46,9 @@ function Hearts() {
   const newRoundBtn=()=>{
     setBtnDisplay("btn--newRound")
   }
-  const hideRoundBtn=()=>{
+  const hideRoundBtn=(event)=>{
     setBtnDisplay("hidden")
-    // setRoundReset(false)
+    setRoundReset(false)
   }
 
   // sudo code workout
@@ -79,23 +80,43 @@ function Hearts() {
       //valuable object is all the information required to change the hand and set the trick, 
       //Ai is code I wrote called ai that plays cards according to the rules (using possible cards)
       const timer = setTimeout(()=>{
-        aiRun()},1000)
+        aiRun()},250)
       return () => clearTimeout(timer)
     }
     if(trick.length === 4){
       console.log('finishing Trick, ', trick)
       
       let { playerWin, points } = trickWin(trick,hands)
-      console.log('playerWin ', playerWin, ' points ', points)
+      // console.log('playerWin ', playerWin, ' points ', points)
+
       setRoundScores ({...roundScores, [playerWin]: roundScores[playerWin] + points})
-      console.log('hello ',playerWin, points,roundScores)
+      
+      // console.log('hello ',playerWin, points,roundScores)
       setRoundWinner(playerWin)
 
-      const timer = setTimeout(()=>{setTrick([])},2000)
+      const timer = setTimeout(()=>{setTrick([])},100)
       setCurrentPlayer(playerWin)
       setTurn(turn+1)
       if(hand1.length == 0 && hand2.length == 0 && hand3.length == 0 && hand4.length == 0){
         console.log('elloChum')
+        let {shot, player} = moonShooter(scores)
+
+        if(shot === true){
+          setScores({'player1':scores.player1+26,
+            'player2':scores.player2+26,
+            'player3':scores.player3+26,
+            'player4':scores.player4+26})
+          setScores({...scores,player:scores[player]-26})
+          console.log(scores)
+
+        }else{
+          setScores({'player1':scores.player1+roundScores.player1,
+          'player2':scores.player2+roundScores.player2,
+          'player3':scores.player3+roundScores.player3,
+          'player4':scores.player4+roundScores.player4})
+          console.log(scores)
+        }
+        setRoundScores({'player1':0, 'player2':0, 'player3':0, 'player4':0})
         setRoundReset(true)
       }
       return()=> clearTimeout(timer)
@@ -191,9 +212,32 @@ function Hearts() {
       setRoundScores ({...roundScores, [playerWin]: roundScores[playerWin] + points})
       console.log('hello ',playerWin, points,roundScores)
       setRoundWinner(playerWin)
-      const timer = setTimeout(()=>{setTrick([])},2000)
+      const timer = setTimeout(()=>{setTrick([])},100)
       setCurrentPlayer(playerWin)
       setTurn(turn+1)
+
+      if(hand1.length == 0 && hand2.length == 0 && hand3.length == 0 && hand4.length == 0){
+        console.log('elloChum')
+        let {shot, player} = moonShooter(scores)
+
+        if(shot === true){
+          setScores({'player1':scores.player1+26,
+            'player2':scores.player2+26,
+            'player3':scores.player3+26,
+            'player4':scores.player4+26})
+          setScores({...scores,player:scores[player]-26})
+          console.log(scores)
+
+        }else{
+          setScores({'player1':scores.player1+roundScores.player1,
+          'player2':scores.player2+roundScores.player2,
+          'player3':scores.player3+roundScores.player3,
+          'player4':scores.player4+roundScores.player4})
+          console.log(scores)
+        }
+        setRoundScores({'player1':0, 'player2':0, 'player3':0, 'player4':0})
+        setRoundReset(true)
+      }
       return () => clearTimeout(timer)
 
     }else if(trick.length >4){
@@ -269,7 +313,7 @@ function Hearts() {
             !hands || !hand2?<div>Hand Pull failed</div>:
             hand2.map((card, index)=>{
               return(
-                <div key2={index} className='hearts__card'>
+                <div key={index} className='hearts__card'>
                   {card}
                 </div>
               )
@@ -286,7 +330,7 @@ function Hearts() {
             !hands || !hand3?<div>Hand Pull failed</div>:
             hand3.map((card, index)=>{
               return(
-                <div key3={index} className='hearts__card'>
+                <div key={index} className='hearts__card'>
                   {card}
                 </div>
               )
@@ -303,7 +347,7 @@ function Hearts() {
             !hands || !hand4?<div>Hand Pull failed</div>:
             hand4.map((card, index)=>{
               return(
-                <div key4={index} className='hearts__card'>
+                <div key={index} className='hearts__card'>
                   {card}
                 </div>
               )
@@ -317,7 +361,7 @@ function Hearts() {
             !hands || !trick  || !trick.length?<div>No cards in play</div>:
             trick.map((card, index)=>{
               return(
-                <div key5={index} className='hearts__card'>
+                <div key={index} className='hearts__card'>
                   {card}
                 </div>
               )
@@ -325,9 +369,9 @@ function Hearts() {
           }
           </div> {/* Cards End */}
         </div>
-        {/*  this is where my infinite loop problem is spawning 
-        onClick={hideRoundBtn()} */}
-        <span className={`${btnDisplay}`} >
+         this is where my infinite loop problem is spawning 
+        
+        <span className={`${btnDisplay}`} onClick={()=>hideRoundBtn()} >
           New Round
         </span>
       </div> {/* Table End */}
