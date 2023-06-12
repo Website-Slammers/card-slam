@@ -1,0 +1,13 @@
+.scores{
+    &__thisRound{
+        display:block;
+        position:absolute;
+        left:20%;
+        top:80%;
+    }
+    &__scoreBoard{
+        position:absolute;
+        right:20%;
+        top:80%;
+    }
+}

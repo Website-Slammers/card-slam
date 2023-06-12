@@ -67,6 +67,14 @@
       opacity: 1;
     }
   }
-  
+  &--newRound{
+    display:inline-block;
+    height:3rem;
+    width:3rem;
+    background-color:green;
+    position:absolute;
+    top:60%;
+    left:50%;
+  }
 
 }

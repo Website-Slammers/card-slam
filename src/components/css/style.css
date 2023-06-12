@@ -90,6 +90,9 @@ body {
   border-radius: 3px;
   background: linear-gradient(to right top, black, gray); }
 
+.hidden {
+  display: none; }
+
 .btn {
   text-decoration: none; }
   .btn:active, .btn:visited {
@@ -146,6 +149,14 @@ body {
       left: 0;
       transform: scale(1) rotateY(360deg);
       opacity: 1; }
+  .btn--newRound {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    background-color: green;
+    position: absolute;
+    top: 60%;
+    left: 50%; }
 
 .playing-card {
   width: 9rem;
@@ -374,6 +385,17 @@ body {
     align-items: center;
     font-size: 3rem;
     flex: 0 0 1; }
+
+.scores__thisRound {
+  display: block;
+  position: absolute;
+  left: 20%;
+  top: 80%; }
+
+.scores__scoreBoard {
+  position: absolute;
+  right: 20%;
+  top: 80%; }
 
 .all-games {
   grid-column: center-start / center-end;
