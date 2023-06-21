@@ -32,46 +32,40 @@ function Hearts() {
   const [btnDisplay,setBtnDisplay]= useState('hidden')
 
   // pulls all hands for a new round and sets them 
+
   useEffect(()=>{
     if(roundReset == true){
-      newRoundBtn()
-    }
-    else if(roundReset == false){
+      
+    }else if(roundReset == false){
       let newRound = pullAHand(13, 4, 'hearts')
       // console.log(newRound)
       setHands(newRound)
+      setCurrentPlayer(turnStart(hands))
+      setBrokenHearts(false)
+      setCardsPlayed(cardsPlayed + 1)
+      setTrick([])
+      console.log('hands, ',hands)
     }
   },[roundReset])
 
-  const newRoundBtn=()=>{
-    setBtnDisplay("btn--newRound")
-  }
-  const hideRoundBtn=(event)=>{
-    setBtnDisplay("hidden")
-    setRoundReset(false)
-  }
-
+ 
   // sudo code workout
   // default game rules and playout
   // whoever has the 2 of clubs has to play it, whether AI or player then the next player gets to play in the round, to the left of whoever played the 2 of clubs (check the two of clubs)
   // each player can play any card in suite (clubs), or if they don't have clubs, they can play any cards that aren't the hearts or queen of spades
   // whoever wins the hand gets to play next. 
   // hearts is now allowed if you don't have the in suite as well as the queen of spades.
-  // 2nd priority is to get rounds rotating
   // 2.5th new round button that resets hands
   // 3rd priority is to make trading happen
   // 4th priority is to make a win state
   // 5th priority is to clean up code and make it more legible and split up
   // 6th priority is to write more AI
-  
   // round end would be cool if it displayed players point cards (guess that's a possibility... but it's a lot of work)
-
-
   
   // runs AI code if it's not player 1's turn.
   //////// {    current Player     }
   useEffect(()=>{
-    console.log("current player is ", currentPlayer)
+    // console.log("current player is ", currentPlayer)
     // console.log(roundScores)
     
     if(currentPlayer == 'player1'){
@@ -83,48 +77,46 @@ function Hearts() {
         aiRun()},250)
       return () => clearTimeout(timer)
     }
-    if(trick.length === 4){
-      console.log('finishing Trick, ', trick)
+    if(trick.length === 4 && currentPlayer != 'player1'){
       
       let { playerWin, points } = trickWin(trick,hands)
-      // console.log('playerWin ', playerWin, ' points ', points)
-
+      console.log('ai trick score firing')
+      console.log('problem ', points, playerWin)
       setRoundScores ({...roundScores, [playerWin]: roundScores[playerWin] + points})
-      
-      // console.log('hello ',playerWin, points,roundScores)
       setRoundWinner(playerWin)
 
-      const timer = setTimeout(()=>{setTrick([])},100)
-      setCurrentPlayer(playerWin)
-      setTurn(turn+1)
-      if(hand1.length == 0 && hand2.length == 0 && hand3.length == 0 && hand4.length == 0){
-        console.log('elloChum')
-        let {shot, player} = moonShooter(scores)
-
-        if(shot === true){
-          setScores({'player1':scores.player1+26,
-            'player2':scores.player2+26,
-            'player3':scores.player3+26,
-            'player4':scores.player4+26})
-          setScores({...scores,player:scores[player]-26})
-          console.log(scores)
-
-        }else{
-          setScores({'player1':scores.player1+roundScores.player1,
-          'player2':scores.player2+roundScores.player2,
-          'player3':scores.player3+roundScores.player3,
-          'player4':scores.player4+roundScores.player4})
-          console.log(scores)
-        }
-        setRoundScores({'player1':0, 'player2':0, 'player3':0, 'player4':0})
-        setRoundReset(true)
-      }
+      const timer = setTimeout(()=>{
+        console.log(trick)
+        setTrick([])
+        setCurrentPlayer(playerWin)
+        setTurn(turn+1)
+        
+      },100)
+      
+      
       return()=> clearTimeout(timer)
     }else if(trick.length >4){
       console.log('something has gone wrong with trick length ', currentPlayer)
     }
     
   },[cardsPlayed])
+
+//changes the player based on the trick changing
+  // {     trick     }
+  useEffect(()=>{
+    // console.log('trick',trick)
+    if(trick.length != 0 && trick.length != 4){
+      if(currentPlayer == 'player4'){
+        setCurrentPlayer('player1')
+      }else{
+        let returnPlayer = `player${+currentPlayer.charAt(6)+1}`
+        setCurrentPlayer(returnPlayer)
+      }
+    }else if(trick.length == 0 ){
+      setCurrentPlayer(roundWinner) 
+    }
+    setCardsPlayed(cardsPlayed +1)
+  },[trick.length])
 
   const aiRun=()=>{
     // console.log('aiRun')
@@ -170,8 +162,6 @@ function Hearts() {
 
   }
   
-  const [count, setCount] = useState(1);
-
   //sets all hands to each player using the hands object and sorts the cards in order of suits,
   //also using the card sorter function that has the potential to sort for other types of games, as well as sets the turn order based on the 2 of clubs
   //    {     hands     }
@@ -187,7 +177,7 @@ function Hearts() {
     setHand4(tempHand)
     console.log('game Starto')
     setCurrentPlayer(turnStart(hands))
-    setCardsPlayed(cardsPlayed +1)
+    setCardsPlayed(cardsPlayed + 1)
   },[hands])
 
   //player interaction where you choose a card. 
@@ -206,38 +196,21 @@ function Hearts() {
     }else{
 
     }
-    if(trick.length == 4){
+    if(trick.length == 4 && currentPlayer == 'player1'){
       
       let { playerWin, points } = trickWin(trick,hands)
       setRoundScores ({...roundScores, [playerWin]: roundScores[playerWin] + points})
-      console.log('hello ',playerWin, points,roundScores)
+      // console.log('player 1 trick firing')
+      // console.log('problem ', points, playerWin)
       setRoundWinner(playerWin)
-      const timer = setTimeout(()=>{setTrick([])},100)
-      setCurrentPlayer(playerWin)
-      setTurn(turn+1)
-
-      if(hand1.length == 0 && hand2.length == 0 && hand3.length == 0 && hand4.length == 0){
-        console.log('elloChum')
-        let {shot, player} = moonShooter(scores)
-
-        if(shot === true){
-          setScores({'player1':scores.player1+26,
-            'player2':scores.player2+26,
-            'player3':scores.player3+26,
-            'player4':scores.player4+26})
-          setScores({...scores,player:scores[player]-26})
-          console.log(scores)
-
-        }else{
-          setScores({'player1':scores.player1+roundScores.player1,
-          'player2':scores.player2+roundScores.player2,
-          'player3':scores.player3+roundScores.player3,
-          'player4':scores.player4+roundScores.player4})
-          console.log(scores)
-        }
-        setRoundScores({'player1':0, 'player2':0, 'player3':0, 'player4':0})
-        setRoundReset(true)
-      }
+      const timer = setTimeout(()=>{
+        console.log(trick)
+        setTrick([])
+        setCurrentPlayer(playerWin)
+        setTurn(turn+1)
+        
+      },100)
+      
       return () => clearTimeout(timer)
 
     }else if(trick.length >4){
@@ -246,22 +219,26 @@ function Hearts() {
     
   },[chosenCard])
 
-  //changes the player based on the trick changing
-  // {     trick     }
+
   useEffect(()=>{
-    // console.log('trick',trick)
-    if(trick.length != 0 && trick.length != 4){
-      if(currentPlayer == 'player4'){
-        setCurrentPlayer('player1')
-      }else{
-        let returnPlayer = `player${+currentPlayer.charAt(6)+1}`
-        setCurrentPlayer(returnPlayer)
-      }
-    }else if(trick.length == 0 ){
-      setCurrentPlayer(roundWinner) 
+    roundEnd()
+  },[trick])
+
+  useEffect(()=>{
+    newRoundBtn()
+  },[scores])
+
+  const newRoundBtn=()=>{
+    if(cardsPlayed >0 ){
+      setBtnDisplay("btn--newRound")
+      setRoundReset(true)
     }
-    setCardsPlayed(cardsPlayed +1)
-  },[trick.length])
+    
+  }
+  const hideRoundBtn=()=>{
+    setBtnDisplay("hidden")
+    setRoundReset(false)
+  }
 
   //function that sets the card the player chose
   const chooseCard = (card, index)=>{
@@ -278,6 +255,32 @@ function Hearts() {
       console.log("It's not your turn!")
     }
     
+  }
+
+  const roundEnd=()=>{
+    let value = roundScores.player1+roundScores.player2+roundScores.player3+roundScores.player4
+    if(hand1?.length == 0 && hand2?.length == 0 && hand3?.length == 0 && hand4?.length == 0 && value == 26){
+      console.log('elloChum')
+      let {shot, player} = moonShooter(roundScores)
+
+      if(shot === true){
+        setScores({'player1':scores.player1+26,
+          'player2':scores.player2+26,
+          'player3':scores.player3+26,
+          'player4':scores.player4+26})
+        setScores({...scores,[player]:scores[player]-26})
+        console.log(scores)
+
+      }else{
+        setScores({'player1':scores.player1+roundScores.player1,
+        'player2':scores.player2+roundScores.player2,
+        'player3':scores.player3+roundScores.player3,
+        'player4':scores.player4+roundScores.player4})
+        console.log(scores)
+      }
+      setRoundScores({'player1':0, 'player2':0, 'player3':0, 'player4':0})
+      setTurn(0)
+    }
   }
   
   return (
@@ -369,7 +372,7 @@ function Hearts() {
           }
           </div> {/* Cards End */}
         </div>
-         this is where my infinite loop problem is spawning 
+         
         
         <span className={`${btnDisplay}`} onClick={()=>hideRoundBtn()} >
           New Round
