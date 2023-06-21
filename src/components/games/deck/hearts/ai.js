@@ -27,7 +27,7 @@ export const ai =(currentPlayer,hand, trick,turn,brokenHearts)=>{
         newCards = possibleCards(rHand, returnTrick, turn, brokenHearts)
         rNumber = Math.floor(Math.random()*newCards.possibleCards.length)
         //location confirmed for random card
-        console.log('possibleCards index', newCards.possibleCardsIdx)
+        // console.log('possibleCards index', newCards.possibleCardsIdx)
         cardIndex = newCards.possibleCardsIdx[rNumber]
         card = rHand[cardIndex]
         rHand.splice(cardIndex,1)
