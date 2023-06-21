@@ -30,6 +30,43 @@ function Hearts() {
   const [gameStart, setGameStart]= useState(false)
   const [roundReset,setRoundReset]=useState(false)
   const [btnDisplay,setBtnDisplay]= useState('hidden')
+  const [btn2Display, setBtn2Display] = useState('hidden')
+  const [tradingRound,setTradingRound] = useState(false)
+  const [playerChoice,setPlayerChoice] = useState([])
+
+  useEffect(()=>{
+    if(tradingRound == true && hand1?.length >0 && hand2?.length && hand3?.length && hand4?.length){
+      //if trading state is true then all player selections need to do is change out the 3 cards allowed for trading. no cards should be playable during this round.
+      //I should have functions that pay attention to AI hands and trade intelligently enough.
+      if(playerChoice?.length == 3){
+        let {newHand1,newHand2,newHand3,newHand4} = trader(hand1,hand2,hand3,hand4,playerChoice,tradeDirection)
+        setHand1(newHand1)
+        setHand2(newHand2)
+        setHand3(newHand3)
+        setHand4(newHand4)
+        setTradeDirection(tradeRotation(tradeDirection))
+        setCardsPlayed(cardsPlayed + 1)
+      }else{
+        console.log('improper number of cards to trade, sir')
+        setTradingRound(false)
+      }
+      
+    }
+  },[tradingRound])
+
+  // sudo code workout
+  // default game rules and playout
+  // whoever has the 2 of clubs has to play it, whether AI or player then the next player gets to play in the round, to the left of whoever played the 2 of clubs (check the two of clubs)
+  // each player can play any card in suite (clubs), or if they don't have clubs, they can play any cards that aren't the hearts or queen of spades
+  // whoever wins the hand gets to play next. 
+  // hearts is now allowed if you don't have the in suite as well as the queen of spades.
+  // 3rd priority is to make trading happen
+  // 4th priority is to make a win state
+  // 5th priority is to clean up code and make it more legible and split up
+  // 6th priority is to write more AI
+  // round end would be cool if it displayed players point cards (guess that's a possibility... but it's a lot of work)
+  
+  // runs AI code if it's not player 1's turn.
 
   // pulls all hands for a new round and sets them 
 
@@ -48,29 +85,9 @@ function Hearts() {
     }
   },[roundReset])
 
- 
-  // sudo code workout
-  // default game rules and playout
-  // whoever has the 2 of clubs has to play it, whether AI or player then the next player gets to play in the round, to the left of whoever played the 2 of clubs (check the two of clubs)
-  // each player can play any card in suite (clubs), or if they don't have clubs, they can play any cards that aren't the hearts or queen of spades
-  // whoever wins the hand gets to play next. 
-  // hearts is now allowed if you don't have the in suite as well as the queen of spades.
-  // 2.5th new round button that resets hands
-  // 3rd priority is to make trading happen
-  // 4th priority is to make a win state
-  // 5th priority is to clean up code and make it more legible and split up
-  // 6th priority is to write more AI
-  // round end would be cool if it displayed players point cards (guess that's a possibility... but it's a lot of work)
-  
-  // runs AI code if it's not player 1's turn.
   //////// {    current Player     }
   useEffect(()=>{
-    // console.log("current player is ", currentPlayer)
-    // console.log(roundScores)
-    
-    if(currentPlayer == 'player1'){
-
-    }else if(currentPlayer != 'player1' && trick.length < 4){
+    if(currentPlayer != 'player1' && trick.length < 4){
       //valuable object is all the information required to change the hand and set the trick, 
       //Ai is code I wrote called ai that plays cards according to the rules (using possible cards)
       const timer = setTimeout(()=>{
@@ -90,9 +107,7 @@ function Hearts() {
         setTrick([])
         setCurrentPlayer(playerWin)
         setTurn(turn+1)
-        
       },100)
-      
       
       return()=> clearTimeout(timer)
     }else if(trick.length >4){
@@ -117,50 +132,6 @@ function Hearts() {
     }
     setCardsPlayed(cardsPlayed +1)
   },[trick.length])
-
-  const aiRun=()=>{
-    // console.log('aiRun')
-    let valuableObject= {}
-
-    switch(currentPlayer){
-      case 'player2':
-        // console.log('player2')
-        valuableObject = ai(currentPlayer, hand2, trick, turn,brokenHearts)
-        // console.log('valuableObject', valuableObject)
-        if(valuableObject.card.charAt(1) == 'H'){
-          setBrokenHearts(true)
-        }
-        setHand2(valuableObject.rHand)
-        setTrick(valuableObject.returnTrick)
-        break;
-
-      case 'player3':
-        // console.log('player3')
-        valuableObject = ai (currentPlayer, hand3, trick, turn,brokenHearts)
-        // console.log('valuableObject', valuableObject)
-        if(valuableObject.card.charAt(1) == 'H'){
-          setBrokenHearts(true)
-        }
-        setHand3(valuableObject.rHand)
-        setTrick(valuableObject.returnTrick)
-        break;
-
-      case 'player4':
-        // console.log('player4')
-        valuableObject = ai (currentPlayer, hand4, trick, turn,brokenHearts)
-        // console.log('valuableObject', valuableObject)
-        if(valuableObject.card.charAt(1) == 'H'){
-          setBrokenHearts(true)
-        }
-        setHand4(valuableObject.rHand)
-        setTrick(valuableObject.returnTrick)
-        break;
-
-      default:
-        console.log('something has gone wrong.  ', currentPlayer)
-    }
-
-  }
   
   //sets all hands to each player using the hands object and sorts the cards in order of suits,
   //also using the card sorter function that has the potential to sort for other types of games, as well as sets the turn order based on the 2 of clubs
@@ -177,7 +148,8 @@ function Hearts() {
     setHand4(tempHand)
     console.log('game Starto')
     setCurrentPlayer(turnStart(hands))
-    setCardsPlayed(cardsPlayed + 1)
+    setTradingRound(false)
+    setBtn2Display('btn--trade')
   },[hands])
 
   //player interaction where you choose a card. 
@@ -228,6 +200,49 @@ function Hearts() {
     newRoundBtn()
   },[scores])
 
+  const aiRun=()=>{
+    // console.log('aiRun')
+    let valuableObject= {}
+
+    switch(currentPlayer){
+      case 'player2':
+        // console.log('player2')
+        valuableObject = ai(currentPlayer, hand2, trick, turn,brokenHearts)
+        // console.log('valuableObject', valuableObject)
+        if(valuableObject.card.charAt(1) == 'H'){
+          setBrokenHearts(true)
+        }
+        setHand2(valuableObject.rHand)
+        setTrick(valuableObject.returnTrick)
+        break;
+
+      case 'player3':
+        // console.log('player3')
+        valuableObject = ai (currentPlayer, hand3, trick, turn,brokenHearts)
+        // console.log('valuableObject', valuableObject)
+        if(valuableObject.card.charAt(1) == 'H'){
+          setBrokenHearts(true)
+        }
+        setHand3(valuableObject.rHand)
+        setTrick(valuableObject.returnTrick)
+        break;
+
+      case 'player4':
+        // console.log('player4')
+        valuableObject = ai (currentPlayer, hand4, trick, turn,brokenHearts)
+        // console.log('valuableObject', valuableObject)
+        if(valuableObject.card.charAt(1) == 'H'){
+          setBrokenHearts(true)
+        }
+        setHand4(valuableObject.rHand)
+        setTrick(valuableObject.returnTrick)
+        break;
+
+      default:
+        console.log('something has gone wrong.  ', currentPlayer)
+    }
+
+  }
   const newRoundBtn=()=>{
     if(cardsPlayed >0 ){
       setBtnDisplay("btn--newRound")
@@ -239,20 +254,32 @@ function Hearts() {
     setBtnDisplay("hidden")
     setRoundReset(false)
   }
+  const hideTradeBtn=()=>{
+    if(playerChoice.length == 3){
+      setTradingRound(true)
+    }else {
+      console.log('not enough cards, strange-ah')
+    }
+  }
 
   //function that sets the card the player chose
   const chooseCard = (card, index)=>{
     let pCards = possibleCards(hand1,trick,turn,brokenHearts)
     // console.log(pCards.possibleCards)
-    if(currentPlayer == 'player1'){
+    if(currentPlayer == 'player1' && tradingRound == false){
       if(pCards.possibleCards.includes(card)){
         setChosenCard([card,index])
       }
       else{
         console.log('This card is not a valid pick!')
       }
-    }else{
-      console.log("It's not your turn!")
+    }else if(btn2Display != 'hidden'){
+      if(playerChoice.includes(card)){
+        let filter = playerChoice.filter(cards => cards != card )
+        setPlayerChoice(filter)
+      }else if(playerChoice.length <3){
+        setPlayerChoice(...playerChoice,card)
+      }
     }
     
   }
@@ -299,8 +326,11 @@ function Hearts() {
             !hands || !hand1 ?<div key={'notAccessable'}>Hand Pull failed</div>:
             hand1.map((card, index)=>{
               return(
-                <div key={index} onClick={(event)=>{ chooseCard(card,index) }} className='hearts__card'>
-                  {card}
+                <div key={index} onClick={(event)=>{ chooseCard(card,index) }}className='hearts__card'>
+                  {playerChoice.includes(card)?
+                    <div className='chosen'>{card}</div> 
+                    :<div className='notChosen'>{card}</div>
+                  }
                 </div>
               )
             })
@@ -376,6 +406,9 @@ function Hearts() {
         
         <span className={`${btnDisplay}`} onClick={()=>hideRoundBtn()} >
           New Round
+        </span>
+        <span className={`${btn2Display}`} onClick={()=>hideTradeBtn()}>
+          Trade
         </span>
         <span className='scores__thisRound'>
           scores this round <br/>

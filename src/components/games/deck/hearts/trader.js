@@ -1,8 +1,9 @@
 // it's gonna be hard to not just flesh this program out with super ai
+import {useState} from 'react'
 import {tradeRotation} from './tradeRotation'
 import { aiTrade } from './aiTrade';
-export const trader =(hand1,hand2,hand3,hand4,playerChoice)=>{
-    const [tradeDirection,setTradeDirection]= useState('R')
+export const trader =(hand1,hand2,hand3,hand4,playerChoice,tradeDirection)=>{
+    
     let trade1= playerChoice;
     let trade2= aiTrade(hand2);
     let trade3= aiTrade(hand3);
@@ -55,7 +56,6 @@ export const trader =(hand1,hand2,hand3,hand4,playerChoice)=>{
         newHand2 = cardSorter(newHand2,hearts)
         newHand3 = cardSorter(newHand3,hearts)
         newHand4 = cardSorter(newHand4,hearts)
-
-    setTradeDirection(tradeRotation(tradeDirection))
+    
     return (newHand1, newHand2, newHand3, newHand4)
 }
