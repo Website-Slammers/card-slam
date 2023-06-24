@@ -42,7 +42,7 @@ function Hearts() {
   },[playerChoice])
 
   useEffect(()=>{
-    if(tradingRound == true && hand1?.length >0 && hand2?.length && hand3?.length && hand4?.length){
+    if(btn2Display =='hidden' && hand1?.length >0 && hand2?.length && hand3?.length && hand4?.length){
       //if trading state is true then all player selections need to do is change out the 3 cards allowed for trading. no cards should be playable during this round.
       //I should have functions that pay attention to AI hands and trade intelligently enough.
       if(playerChoice?.length == 3){
@@ -54,13 +54,14 @@ function Hearts() {
         setHand4(newHand4)
         setTradeDirection(tradeRotation(tradeDirection))
         setCardsPlayed(cardsPlayed + 1)
+        setBtn2Display('hidden')
       }else{
         console.log('improper number of cards to trade, sir')
-        setTradingRound(false)
+        
       }
       
     }
-  },[tradingRound])
+  },[btn2Display])
 
   // sudo code workout
   // default game rules and playout
@@ -157,7 +158,6 @@ function Hearts() {
     setHand4(tempHand)
     console.log('game Starto')
     setCurrentPlayer(turnStart(hands))
-    setTradingRound(false)
     setBtn2Display('btn--trade')
   },[hands])
 
@@ -260,9 +260,7 @@ function Hearts() {
     
   }
   const newTradeBtn=()=>{
-    if(tradingRound == true){
-      setBtnDisplay("btn--trade")
-    }
+    setBtn2Display('btn--trade')
   }
   const hideRoundBtn=()=>{
     setBtnDisplay("hidden")
@@ -271,7 +269,7 @@ function Hearts() {
 
   const hideTradeBtn=()=>{
     if(playerChoice.length == 3){
-      setTradingRound(true)
+      setBtn2Display('hidden')
     }else {
       console.log('not enough cards, strange-ah')
     }
@@ -281,7 +279,7 @@ function Hearts() {
   const chooseCard = (card, index)=>{
     let pCards = possibleCards(hand1,trick,turn,brokenHearts)
     // console.log(pCards.possibleCards)
-    if(currentPlayer == 'player1' && tradingRound == false){
+    if(currentPlayer == 'player1' && btn2Display == 'hidden'){
       if(pCards.possibleCards.includes(card)){
         setChosenCard([card,index])
       }
