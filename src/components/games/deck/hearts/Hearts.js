@@ -42,7 +42,7 @@ function Hearts() {
   },[playerChoice])
 
   useEffect(()=>{
-    if(btn2Display =='hidden' && hand1?.length >0 && hand2?.length && hand3?.length && hand4?.length){
+    if(hand1?.length >0 && hand2?.length && hand3?.length && hand4?.length){
       //if trading state is true then all player selections need to do is change out the 3 cards allowed for trading. no cards should be playable during this round.
       //I should have functions that pay attention to AI hands and trade intelligently enough.
       if(playerChoice?.length == 3){
@@ -57,9 +57,8 @@ function Hearts() {
         setBtn2Display('hidden')
       }else{
         console.log('improper number of cards to trade, sir')
-        
+        setBtn2Display('btn--trade')
       }
-      
     }
   },[btn2Display])
 
@@ -70,7 +69,7 @@ function Hearts() {
   // whoever wins the hand gets to play next. 
   // hearts is now allowed if you don't have the in suite as well as the queen of spades.
   // hearts only in hand for 1st player not working
-  // 3rd priority is to make trading happen
+  // 3rd priority is to fix all the bugs that have been cropping up, 2c doesn't start occasionally, scores bad again, no new round button... 
   // 4th priority is to make a win state
   // 5th priority is to clean up code and make it more legible and split up
   // 6th priority is to write more AI
@@ -92,6 +91,7 @@ function Hearts() {
       setCardsPlayed(cardsPlayed + 1)
       setTrick([])
       console.log('hands, ',hands)
+      setBtn2Display('btn--trade')
     }
   },[roundReset])
 
