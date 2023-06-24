@@ -10,6 +10,7 @@ import { trickWin } from './trick'
 import { possibleCards } from './possibleCards'
 import {trader} from './trader'
 import { moonShooter } from './moonShooter'
+import { tradeRotation } from './tradeRotation'
 
 function Hearts() {
 
@@ -33,6 +34,12 @@ function Hearts() {
   const [btn2Display, setBtn2Display] = useState('hidden')
   const [tradingRound,setTradingRound] = useState(false)
   const [playerChoice,setPlayerChoice] = useState([])
+  const [tradeDirection, setTradeDirection] = useState('R')
+
+  useEffect(()=>{
+    console.log(playerChoice)
+    console.log(btn2Display)
+  },[playerChoice])
 
   useEffect(()=>{
     if(tradingRound == true && hand1?.length >0 && hand2?.length && hand3?.length && hand4?.length){
@@ -40,6 +47,7 @@ function Hearts() {
       //I should have functions that pay attention to AI hands and trade intelligently enough.
       if(playerChoice?.length == 3){
         let {newHand1,newHand2,newHand3,newHand4} = trader(hand1,hand2,hand3,hand4,playerChoice,tradeDirection)
+        console.log(newHand1,'heyssdfa')
         setHand1(newHand1)
         setHand2(newHand2)
         setHand3(newHand3)
@@ -60,6 +68,7 @@ function Hearts() {
   // each player can play any card in suite (clubs), or if they don't have clubs, they can play any cards that aren't the hearts or queen of spades
   // whoever wins the hand gets to play next. 
   // hearts is now allowed if you don't have the in suite as well as the queen of spades.
+  // hearts only in hand for 1st player not working
   // 3rd priority is to make trading happen
   // 4th priority is to make a win state
   // 5th priority is to clean up code and make it more legible and split up
@@ -250,10 +259,16 @@ function Hearts() {
     }
     
   }
+  const newTradeBtn=()=>{
+    if(tradingRound == true){
+      setBtnDisplay("btn--trade")
+    }
+  }
   const hideRoundBtn=()=>{
     setBtnDisplay("hidden")
     setRoundReset(false)
   }
+
   const hideTradeBtn=()=>{
     if(playerChoice.length == 3){
       setTradingRound(true)
@@ -277,11 +292,11 @@ function Hearts() {
       if(playerChoice.includes(card)){
         let filter = playerChoice.filter(cards => cards != card )
         setPlayerChoice(filter)
-      }else if(playerChoice.length <3){
-        setPlayerChoice(...playerChoice,card)
+      }else if(playerChoice.length <3){ 
+        let newPlayerChoice = playerChoice
+        setPlayerChoice([...newPlayerChoice,card])
       }
     }
-    
   }
 
   const roundEnd=()=>{
@@ -328,8 +343,8 @@ function Hearts() {
               return(
                 <div key={index} onClick={(event)=>{ chooseCard(card,index) }}className='hearts__card'>
                   {playerChoice.includes(card)?
-                    <div className='chosen'>{card}</div> 
-                    :<div className='notChosen'>{card}</div>
+                    <div className='hearts__card--trade' >{card}</div> 
+                    :<div>{card}</div>
                   }
                 </div>
               )

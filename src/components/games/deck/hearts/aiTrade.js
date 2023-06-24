@@ -27,11 +27,13 @@ export const aiTrade = (hand) =>{
                 break;
         }
     }
+    // console.log(clubs, diamonds, spades, hearts)
 
     //remove all suits possible in trades based on danger of suit
-    if( hearts.length<3 && hearts.length>0 && tradedCards.length + hearts.length < 3){
+    if( hearts.length<3 && hearts.length>0){
         for(let j=0; j<hearts.length; j++){
             tradedCards.push(hearts[j])
+            // console.log(tradedCards)
         }
         hearts = []
     }
@@ -53,24 +55,28 @@ export const aiTrade = (hand) =>{
         }
         clubs = []
     }
+    // console.log(tradedCards)
     if(spades.includes('QS') && tradedCards.length <3){
         tradedCards.push('QS')
         spades.splice(spades.indexOf('QS'),1)
     }
     //this code should prioritize face value cards for trade and then the highest value cards
-    while(tradedCards.length<3){
-        if(hearts.length>0){
-            tradedCards.push(hearts.pop())
-        }
-        if(spades.length>0){
-            tradedCards.push(spades.pop())
-        }
-        if(diamonds.length>0){
-            tradedCards.push(diamonds.pop())
-        }
-        if(clubs.length>0){
-            tradedCards.push(clubs.pop())
+    if(tradedCards.length<3){
+        while(tradedCards.length<3){
+            if(hearts.length>0){
+                tradedCards.push(hearts.pop())
+            }
+            else if(spades.length>0){
+                tradedCards.push(spades.pop())
+            }
+            else if(diamonds.length>0){
+                tradedCards.push(diamonds.pop())
+            }
+            else if(clubs.length>0){
+                tradedCards.push(clubs.pop())
+            }
         }
     }
+    
     return (tradedCards)
 }
